@@ -30,6 +30,7 @@ NumPy jest podstawowym pakietem do zastosowan naukowych. Jest jednak sporo nowyc
 
 W kontekscie grafiki/wizualizacji szczegolnie interesujace sa:
 - [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
+- [HoloViews](http://holoviews.org/)
 
 #### Neuro:
 * mne-python
