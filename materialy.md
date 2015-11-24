@@ -33,6 +33,10 @@ W kontekscie grafiki/wizualizacji szczegolnie interesujace sa:
 - [HoloViews](http://holoviews.org/)
 
 #### Neuro:
-* mne-python
-* pacpy
-* 
+*`EEG`*
+* [mne-python](http://martinos.org/mne/stable/index.html)
+* pacpy  
+
+*`fMRI`*
+* [lyman](http://web.stanford.edu/~mwaskom/software/lyman/)
+* [nipype](http://www.mit.edu/~satra/nipype-nightly/)
