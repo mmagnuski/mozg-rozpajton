@@ -1,7 +1,7 @@
-Ogolne:
-Najlepiej jak po każdym punkcie krótkie ćwiczenie
-Zrobić proste sciagawki
-Co pewien czas zajawki - przyklady z mne w oparciu o to, czego sie nauczyli
+Ogolne:  
+Najlepiej jak po każdym punkcie krótkie ćwiczenie  
+Zrobić proste sciagawki  
+Co pewien czas zajawki - przyklady z mne w oparciu o to, czego sie nauczyli  
 
 
 1. Postawy
@@ -19,22 +19,22 @@ Co pewien czas zajawki - przyklady z mne w oparciu o to, czego sie nauczyli
   * list comprehensions (+ cwiczenie z liczeniem autorów)
   * funkcje (definicje)
   * slowniki
-
-1.5 podstawy mne
-* filtrowanie
-* przegladanie sygnalu
-
-2. Numpy + matplotlib
-numpy --> eventy w mne
-matplotlib --> plotowanie sygnalu
-
+  
+1.5 podstawy mne  
+* filtrowanie  
+* przegladanie sygnalu  
+  
+2. Numpy + matplotlib  
+numpy --> eventy w mne  
+matplotlib --> plotowanie sygnalu  
+  
 * epokowanie - eventy, pole _data
 * ...
 * wyrzucanie epok
 * erpy
 
-pandas?
-+ seaborn
+pandas?  
++ seaborn  
 
-!mne!
+!mne!  
 
