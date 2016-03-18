@@ -12,7 +12,7 @@ Zmienne tekstowe możemy zlepiać:
 tekst + 'DEF'
 ```
 ```python
-'ABCDF'
+'ABCDEF'
 ```
 ```python
 # albo tak:
