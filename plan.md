@@ -9,7 +9,7 @@ Co pewien czas zajawki - przyklady z mne w oparciu o to, czego sie nauczyli
   * terminal
   * podstawowe operacje (1 + 2, 12/4, "ala ma" + " kota", 8 > 2)
   * zmienne 
-  * boolean, integer, floating point
+  * typy zmiennych: boolean, integer, floating point
   * tekst (kilka metod: reverse, endswith) [metody="moce"]
   * indeksowanie na tekscie (!! 0 based, slices are [) !!)
   * listy (tuz po metodach: split, join)
