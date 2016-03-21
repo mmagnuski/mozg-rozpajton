@@ -64,6 +64,7 @@ Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to
 ## Funkcje
 * od razu po zmiennych?
 * na poczatek tylko w wymiarze praktycznym - jak korzystać
+* funkcja print !
 * jakieś podstawowe funkcje
 
 ## Moduły
@@ -79,3 +80,60 @@ Moduł `os` zawiera na przykład funkcję `getcwd()`, która informuje nas w jak
 os.getcwd()
 ```
 
+
+Ok, wiemy w jakim jesteśmy folderze, ale jak przejść do innego? Służy do tego funkcja `chdir()`. Gdy na przykład chcemy przeskoczyć do folderu `D:\dane\eksperyment01\eeg` piszemy:
+```python
+os.chdir(r'D:\dane\eksperyment01\eeg')
+```
+
+### `r"?"`
+Zastanawiacie się pewnie po co to `r` przed nazwą ścieżki. `r` przed tekstem oznacza aby znaki `\` nie były w tym tekście traktowane jako znaki specjalne. 
+Większość języków programowania, a w tym python, traktuje znak `\` jako znak specjalny. Gdy w tekście pojawia się ten znak oznacza on, że kolejny znak otrzymuje specjalnie znaczenie. `"\n"` jest na przykład traktowane jako return/enter tzn. przejście do kolejnej linijki. `"\t"` to z kolei tab. Możecie to sprawdzić używając funkcji `print()`:
+```python
+print('\tto\tjest\n\t\ttaki\n\ntekst')
+```
+Problem polega tylko na tym, że gdy chcemy podać nazwę ścieżki to (przynajmniej na Windowsie) musimy użyć znaków `\` nie jako znaków specjalnych, ale po prostu ukośników (backslash). Można to zrobić na dwa sposoby:
+* stawiając `r` przed tekstem (r jest od *raw string*):
+  
+  ```python
+  print(r'\tto\tjest\n\t\ttaki\n\ntekst')
+  ```
+* zamiast `\` pisząc `\\`:
+  
+  ```python
+  print('\\tto\\tjest\\n\\t\\ttaki\\n\\ntekst')
+  ```
+
+Ta pierwsza metoda jest bardzo często wygodniejsza.
+
+### listy plików
+Inną bardzo przydatną funkcją `os` jest funkcja `listdir()`. Funkcja ta zwraca nam listę nazw plików znajdujących się w danym folderze:
+```python
+fls = os.listdir()
+```
+Możemy jako argument podać funkcji `listdir` ścieżkę folderu:
+```python
+fls = os.listdir(r'C:\mojebadanaia\nieudane')
+```
+
+Często jednak chcemy mieć listę plików, które znajdują się w danym folderze, ale mają konkretne rozszerzenie (np. `.set`). Najwygodniej jest skorzystać wtedy z modułu `glob`:
+```python
+import glob
+fls = glob.glob('*.set')
+```
+
+## Wczytywanie plików tekstowych
+(*czyli policz autorów jednej z publikacji na temat bozonu Higgsa*)
+
+Otwieranie plików tekstowych i wczytywanie tekstu jest proste. Składa się z 3 kroków:
+* otwieramy plik
+* wczytujemy z niego tekst
+* zamykamy plik
+
+W pythonie wygląda to tak:
+```python
+file = open('plik.txt')
+tekst = file.readlines()
+file.close()
+```
+Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
