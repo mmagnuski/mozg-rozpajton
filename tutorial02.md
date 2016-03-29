@@ -13,13 +13,16 @@ upraszacza nam po prostu późniejsze korzystanie z modułu `numpy`: gdy będzie
 `sum` tego modułu (sumowanie elementów) nie będziemy musieli pisać `numpy.sum` a tylko `np.sum`.
 `import numpy as np` pozwala nam więc wczytać moduł numpy i odwoływać się do niego pod inną nazwą.
 Jeżeli ktoś ma taką potrzebę to może nawet pisać `import numpy as widzimrla` ale nikt chyba nie
-ma potrzeby komplikować sobie tak życia. Numpy ma wygodną funkcję `rand` do tworzenia wektorów
-i macierzy z losowymi wartościami zmiennoprzecinkowymi między 0 i 1. Funkcja ta znajduje się w podmodule
+ma potrzeby komplikować sobie tak życia.  
+Numpy ma wygodną funkcję `rand` do tworzenia wektorów
+i macierzy z losowymi wartościami zmiennoprzecinkowymi między 
+0 i 1. Funkcja ta znajduje się w podmodule
 `random`, dostajemy się do niej w związku z tym w taki sposób:
 ```python
-x = np.rand(250)
+x = np.random.rand(250)
 ```
 
+Stworzylimy w ten sposob wektor 250 losowych wartosci.  
 Gdy chcemy obliczyć sumę ze wszystkich wartości tego wektora, piszemy:
 ```python
 np.sum(x)
@@ -47,5 +50,3 @@ np.arange?
 * `image(x, cmap='hot')
 
 * wracamy do mne, wczytujemy dane, wczytujemy eventy, filtrujemy, epokujemy, rysujemy erp'a
-
-
