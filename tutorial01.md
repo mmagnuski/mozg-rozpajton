@@ -119,11 +119,6 @@ moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
 
 Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.
 
-## Funkcje
-* od razu po zmiennych?
-* na poczatek tylko w wymiarze praktycznym - jak korzystać
-* funkcja print !
-* jakieś podstawowe funkcje
 
 ## Moduły
 Sam python oferuje bardzo podstawową funkcjonalność, do jej rozszerzania służą moduły (biblioteki). Poznamy za chwilę podstawy importowania i korzystania z bibliotek w kontekście operacji na plikach.
