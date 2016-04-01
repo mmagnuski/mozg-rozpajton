@@ -1,5 +1,61 @@
 # Fragmenty tutoriala
 
+## Zmienne liczbowe
+Zmienne to takie nazwy, które przechowują pewne wartości. Bez zmiennych trudno byłoby nam (ludziom) programować - łatwiej nam zapamiętać słowo niż wielocyfrową liczbę oznaczającą adres pamięci komputera gdzie pewna wartość jest przechowywana. W zmiennych możemy przechowywać co nam się podoba - zaczniemy jednak od wartości najprostszych czyli liczbowych.
+
+```python
+moja_zmienna = 23
+twoja_zmienna = 10.5
+
+# możemy te wartości dodać:
+moja_zmienna + twoja_zmienna
+```
+
+Pierwsza zmienna (`moja_zmienna`) przechowuje wartość całkowitą (`23`) inaczej *integer*, druga zmienna (`twoja_zmienna`) przechowuje wartość zmiennoprzecinkową, czyli prościej - niecałkowitą (`10.5`) inaczej *floting point*. Rozróznienie to jest o tyle ważne, że komputer inaczej reprezentuje te liczby w pamięci. Do różnych typów wartości liczbowych jeszcze wrócimy gdy będziemy omawiać bibliotekę `numpy`.
+
+Mamy sporą swobodę w dobieraniu nazw zmiennych. W pythonie 3 możemy np. używać w nazwie zmiennej polskich znaków:
+```python
+struś_łże = 5
+```
+
+Nie możemy w nawie zmiennej:
+* stosować przeróżnych znaków nie będących literami np.: `?`, `/`, `(`, `)`, `.`, `,` (jedynie `_` możemy stosować bez skrupułów).
+* zaczynać nazwy zmiennej od cyfry:
+  ```python
+  # nie możemy:
+  10lat = 10
+
+  # możemy
+  lat10 = 10
+  ```
+
+#### *ZADANIE*
+Stwórz jeszcze dwie zmienne przechowujące dowolne wartości. Zmienne możesz nazwać jak chcesz ale dlaczego nie np. `delfin` oraz `saper`? Odejmij od siebie te zmienne.
+
+## Funkcje
+Oprócz zmiennych do podstawowych elementów programu zaliczamy też funkcje. Funkcje to operacje, które możemy wykonać na zmiennych. Korzystamy z nich zwykle tak:
+
+```python
+nazwa_funkcji(zmienna)
+
+# albo tak:
+nazwa_funkcji(zmienna1, zmienna2)
+```
+
+Najprostsza operacja to wyświetlenie wartości zmiennej. Funkcja ta nazywa się `print`, korzystamy z niej tak:
+
+```python
+print(moja_zmienna)
+print(twoja_zmienna)
+print(moja_zmienna, twoja_zmienna)
+```
+
+Inna operacja to sprawdzenie typu zawartości zmiennej - ta funkcja to `type`:
+```python
+type(moja_zmienna)
+type(twoja_zmienna)
+``` 
+
 ## Zmienne tekstowe
 Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.
 Zmienne tekstowe definiujemy używając znaków `'` lub `"` okalających tekst (oba muszą być takie same).
@@ -37,8 +93,10 @@ Warto poznać jeszcze dwie moce tekstu: `reverse` oraz `endswith`.
 # tworzymy zmienną z naszym imieniem:
 imie = "Mikołaj"
 # odwracamy teraz nasz imię:
-imie.revere()
+imie.reverse()
 ```
+#### *ZADANIE*
+Utwórz zmienną `imie` zawierającą Twoje imię oraz zmienną `nazwisko`, która zawierać będzie Twoje nazwisko. Następnie połącz imię i nazwisko tworząc zmienną `toja`. Sprawdź czy nazwisko kończy się na `'ski'` albo `'ska'` (w zależności od Twojej płci).
 
 #### *ZADANIE*
 Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z wielkich na małe i odwróćcie tekst. Metody można ze sobą łączyć (układać je po kolei) - pokombinujcie jak zrobić to zadanie w jednej linijce.
