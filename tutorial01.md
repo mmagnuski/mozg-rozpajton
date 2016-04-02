@@ -32,6 +32,27 @@ Nie możemy w nawie zmiennej:
 #### *ZADANIE*
 Stwórz jeszcze dwie zmienne przechowujące dowolne wartości. Zmienne możesz nazwać jak chcesz ale dlaczego nie np. `delfin` oraz `saper`? Odejmij od siebie te zmienne.
 
+## Prawda i fałsz
+Ważnymi i czesto wykorzystywanymi zmiennymi są zmienne typu prawda i fałsz:
+```python
+prawda = True
+fałsz = False
+```
+
+Możemy na takich zmiennych dokonywać podstawowych operacji logicznych:
+```python
+True and True
+True and False
+prawda or fałsz
+```
+
+Wartości liczbowe takie jak `0` i `1` będą interpretowane jako `False` oraz `True` odpowiednio (w kontekście operacji logicznych):
+```python
+0 and True
+True and 1
+0 or 1
+```
+
 ## Funkcje
 Oprócz zmiennych do podstawowych elementów programu zaliczamy też funkcje. Funkcje to operacje, które możemy wykonać na zmiennych. Korzystamy z nich zwykle tak:
 
