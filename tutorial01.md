@@ -1,4 +1,4 @@
-# Fragmenty tutoriala
+# Tutorial 01
 
 ## Zmienne liczbowe
 Zmienne to takie nazwy, które przechowują pewne wartości. Bez zmiennych trudno byłoby nam (ludziom) programować - łatwiej nam zapamiętać słowo niż wielocyfrową liczbę oznaczającą adres pamięci komputera gdzie pewna wartość jest przechowywana. W zmiennych możemy przechowywać co nam się podoba - zaczniemy jednak od wartości najprostszych czyli liczbowych.
@@ -130,6 +130,35 @@ Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z
 * używamy wtedy `[]`
 * piszemy np. `imie[0]` aby dostać się do pierwszej litery
 * Python numeruje od zera, więc pierwsza litera to dla niego litera numer zero
+* możemy też wybierać całe zakresy znaków używając operatora `:`:  
+  ```python
+  imie[0:3]
+  ```  
+  pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`). 
+
+Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje uzasadnienie w teorii](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
+
+### *ZADANIE*
+Tutaj jakieś zadanie...
+
+### *dla zmieszanych i zainteresowanych*
+Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
+* zwróćcie uwagę, że ilość wybranych elementów to różnica między indeksem `od` oraz `do`. Tzn. `nazwisko[1:3]` wybiera nam dwa elementy, ten o indeksie 1 oraz o indeksie 2. Różnica `3 - 1` to właśnie dwa. 
+* dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie.
+* to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
+Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego :). Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania:
+```julia
+# julia
+imie[1:3] # bierze od pierwszego do trzeciego elementu włącznie
+```
+```R
+# R
+imie[1:3] # tak samo
+```
+```matlab
+% matlab
+imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias
+```
 
 ## Listy
 Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Brzmi mało konkretnie? Zobaczmy w praktyce:
