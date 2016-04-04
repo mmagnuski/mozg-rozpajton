@@ -116,6 +116,28 @@ imie = "Mikołaj"
 # odwracamy teraz nasz imię:
 imie.reverse()
 ```
+
+`endswith` pozwala sprawdzić czy tekst kończy się określoną literą bądź ciągiem liter. `enswith` potrzebuje więc jako argumentu zmiennej tekstowej:
+```python
+"Szczepan Beztroski".endswith("ski")
+# kończy się na "ski" więc dostaniemy w odpowiedzi: 
+True
+
+# można też tak:
+username = "Szczepan Beztroski"
+czypolak = username.endswith("ski")
+
+# albo tak:
+username = "Szczepan Beztroski"
+koncówka = "ski"
+czypolak = username.endswith(koncówka)
+```
+
+Ogólny format jest więc taki:
+```python
+tekst.endswith(tekst)
+```
+
 #### *ZADANIE*
 Utwórz zmienną `imie` zawierającą Twoje imię oraz zmienną `nazwisko`, która zawierać będzie Twoje nazwisko. Następnie połącz imię i nazwisko tworząc zmienną `toja`. Sprawdź czy nazwisko kończy się na `'ski'` albo `'ska'` (w zależności od Twojej płci).
 
@@ -124,17 +146,32 @@ Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z
 
 
 ## Adresowanie
+Adresowanie to wydobywanie elementów z jakiejś sekwencji. W naszym wypadku na razie sekwencją tą będzie tekst - tekst to w końcu po prostu ciąg znaków. Gdy chcemy dostać się do konkretnych znaków tekstu piszemy:
+```python
+nazwa_zmiennej[numer_elementu]
 
-* tekst to ciąg znaków
-* możemy dostać się do konkretnych znaków z całej sekwencji
-* używamy wtedy `[]`
-* piszemy np. `imie[0]` aby dostać się do pierwszej litery
+# np:
+imie = "Mikołaj"
+imie[0] # aby dostać się do pierwszej litery (indeks zero)
+imie[3] # aby dostać się do czwartej litery (indeks trzy)
+
+# przy czym wcale nie musimy tworzyć zmiennej:
+"Alojzy"[4]
+
+# możemy indeksowanie grupować z innymi operacjami:
+"Alojzy"[4].upper() + "orro"
+```
+
 * Python numeruje od zera, więc pierwsza litera to dla niego litera numer zero
+* Gdy używamy ujemnych wartości - indeksujemy od końca. `imie[-1]` da nam ostatnią literę a `imie[-3]` przed-przedostatnią.
 * możemy też wybierać całe zakresy znaków używając operatora `:`:  
   ```python
   imie[0:3]
   ```  
   pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`). 
+* jeżeli indeksujemy od początku możemy pominąć zero i pisać tylko `imie[:4]`
+* Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]
+* Możemy też indeksować w formacie `od:do:co_ile` np. `imie[1:5:2]` albo `imie[::2]`
 
 Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje uzasadnienie w teorii](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
 
@@ -167,7 +204,12 @@ Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy 
 moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
 ```
 
-Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.
+Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  
+```python
+moja_lista[0]
+moja_lista[:2]
+moja_lista[-1]
+```
 
 
 ## Moduły
