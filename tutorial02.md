@@ -50,3 +50,36 @@ np.arange?
 * `image(x, cmap='hot')
 
 * wracamy do mne, wczytujemy dane, wczytujemy eventy, filtrujemy, epokujemy, rysujemy erp'a
+
+
+## Matplotlib
+
+```python
+import matplotlib.pyplot as plt
+```
+
+* proste plotowanie
+* styl linii
+* dodawanie tytułu, opisów osi
+* legenda i `label=`
+* `plt.style.use`
+* znów mne - rysujemy sygnał z kanałów
+
+## Pandas
+* wczytywanie danych pd.read_excel(), pd.read_csv()
+* przeglądanie danych pd.head(), pd.nazwa_kolumny[ind1:ind2]
+* pd.loc[5:10, 'nazwa_kolumny'] pd.iloc[:6, 2:4]
+* `groupby`, `aggregate`, `pivot_table`, `cut`
+* (widget for interactive pivot table)
+
+
+## seaborn
+Najpierw korzystając z komendy `conda` w konsoli instalujemy pakiet `seaborn`.
+```
+conda install seaborn
+```
+
+W pythonie importujemy tak:
+```python
+import seaborn as sns
+```
