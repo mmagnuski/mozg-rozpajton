@@ -310,3 +310,92 @@ tekst = file.readlines()
 file.close()
 ```
 Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
+
+* `len(tekst)`
+* `tekst[1][:50]`
+* dzielimy na autorów - `autorzy = tekst[1].split(", ")`
+* ilu jest autorów - `len(autorzy)`
+
+## Pętle
+Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
+Weźmy na początek kilu pierwszych autorów jako oddzielną listę:
+```python
+au = autorzy[:15]
+```
+`au` ma w sobie teraz piętnastu pierwszych autorów. Chcielibyśmy wypisać każdego z nich w oddzielnej linijce. Pamiętamy że do wyświetlania służy nam funkcja `print`. Spróbujmy najpierw:
+```python
+print(au)
+```
+Hmm... nie do końca o to nam chodzi. Jeżeli chcemy mieć po autorze na linijkę musielibyśmy zrobić:
+```python
+print(au[0])
+print(au[1])
+print(au[2])
+# ...
+```
+ale to by było okropnie żmudne, nawet gdybyśmy mieli kopiować, wklejać i zmieniać odpowiednią wartość w kwadratowym nawiasie. Ważnym elementem programowania jest automatyzacja tego typu problemów - służy do tego pętla `for`. Poniżej przykład:
+```python
+for a in au:
+	print(a)
+```
+`for a in au:` znaczy tyle co *zrób dla kolejnych elementów listy `au` pewne operacje (opisane niżej); bierzący element `au` przechowuj w zmiennej `a`*. Przypomnijcie sobie definicje matematyczne typu:
+> Dla każdej liczby rzeczywistej *i* należącej do zbioru ...  
+
+W naszym wypadku ta definicja to:  
+> Dla każdego elementu `a` listy `au` wykonaj ...
+
+* kolejne kroki
+* pętle będą wymagać kilku konkretnych ćwiczeń
+
+### * dla ciekawskich, pętle w innych językach *
+Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
+```julia
+# julia
+for x in vec
+	wyslij_w_kosmos(x)
+end
+```
+```R
+# R
+for (x in vec) {
+	wyslij_w_kosmos(x)
+}
+```
+```matlab
+% matlab
+
+% sposób A, nie działa dla każdego vec:
+for x = vec
+	wyslij_w_kosmos(x);
+end
+
+% sposób B, działa dla większości vec (ale nie wszystkich):
+for i = 1:length(vec)
+	wyslij_w_kosmos(vec(i));
+end
+
+% sposób C, działa dla każdego vec
+for i = 1:length(vec)
+	if iscell(vec)
+		wyslij_w_kosmos(vec{i});
+	else
+		wyslij_w_kosmos(vec(i));
+	end
+end
+```
+
+## Piszemy funkcje
+
+* zadanie: funkcja `czy_polak`
+* zaczniemy jednak od banalnej funkcji `dodaj`
+* schemat funkcji:
+  ```python
+  def nazwa_funkcji(argument):
+      # coś robimy z argumentem
+  ```
+* funkcja `dodaj`:
+  ```python
+  def dodaj(a, b):
+      return a + b
+  ```
+
