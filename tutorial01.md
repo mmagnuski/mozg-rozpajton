@@ -173,7 +173,7 @@ imie[3] # aby dostać się do czwartej litery (indeks trzy)
 * Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]
 * Możemy też indeksować w formacie `od:do:co_ile` np. `imie[1:5:2]` albo `imie[::2]`
 
-Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje uzasadnienie w teorii](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
+Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
 
 ### *ZADANIE*
 Tutaj jakieś zadanie...
@@ -182,19 +182,23 @@ Tutaj jakieś zadanie...
 Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
 * zwróćcie uwagę, że ilość wybranych elementów to różnica między indeksem `od` oraz `do`. Tzn. `nazwisko[1:3]` wybiera nam dwa elementy, ten o indeksie 1 oraz o indeksie 2. Różnica `3 - 1` to właśnie dwa. 
 * dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie.
-* to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
-Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego :). Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania:
+* to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje (dyskusyjne)  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
+Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego. Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania, porównaj:
+```python
+# python
+imie[1:3] # od drugiego do trzeciego elementu (tzn. bez czwartego)
+```
 ```julia
 # julia
 imie[1:3] # bierze od pierwszego do trzeciego elementu włącznie
 ```
 ```R
 # R
-imie[1:3] # tak samo
+imie[1:3] # tak samo jak w Julii
 ```
 ```matlab
 % matlab
-imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias
+imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie, bardzo starym języku programowania)
 ```
 
 ## Listy
@@ -204,7 +208,7 @@ Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy 
 moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
 ```
 
-Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  
+Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  Sprawdźcie teraz:
 ```python
 moja_lista[0]
 moja_lista[:2]
@@ -212,7 +216,7 @@ moja_lista[-1]
 ```
 
 
-## Moduły
+## Moduł `os`
 Sam python oferuje bardzo podstawową funkcjonalność, do jej rozszerzania służą moduły (biblioteki). Poznamy za chwilę podstawy importowania i korzystania z bibliotek w kontekście operacji na plikach.
 Aby móc przetwarzać jakiekolwiek dane trzeba móc wczytywać pliki, a aby je móc wczytać trzeba umieć poruszać się w gąszczu folderów i sprawdzać gdzie jakie są pliki. Do operacji na plikach służy moduł `os`. Aby z niego korzystać musimy go jednak na początku zaimportować:
 ```python
@@ -266,6 +270,30 @@ Często jednak chcemy mieć listę plików, które znajdują się w danym folder
 import glob
 fls = glob.glob('*.set')
 ```
+
+## Pierwsze kroki w `mne`
+Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. To, co teraz zrobimy:
+* zainstalujemy `mne`
+* zaimportujemy z mne funkcję do wczytywanie plików typu `.raw` (w takim formacie zapisujemy pliki z Netstation) 
+* wczytamy za pomocą tej funkcji dane
+* wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
+* przefiltrujemy je
+* jeszcze raz wyświetlimy aby zobaczyć zmiany
+
+Instalacja z poziomu konsoli:
+```
+pip install mne
+```
+
+Importujemy funkcję do wczytywania danych zapisanych przez EGI:
+```python
+from mne.io.egi import read_raw_egi
+```
+
+Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
+
+## ipython
+Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
 
 ## Wczytywanie plików tekstowych
 (*czyli policz autorów jednej z publikacji na temat bozonu Higgsa*)
