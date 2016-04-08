@@ -8,14 +8,42 @@ Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na pythonie 3.
 
 ## Anaconda
-...
-
+Ściągamy z (tutaj link) instalator dla pythona 3.5:  
+![krok 00](/img/anaconda_install_00.PNG?raw=true)  
+  
+Otwieramy instalator, wybieramy instalację dla użytkownika ("only me" - nie wymaga uprawnień administratora)  
+![krok 01](/img/anaconda_install_01.PNG?raw=true)  
+  
+upewniamy się że oba checkboxy są zaznaczone:  
+![krok 02](/img/anaconda_install_02.PNG?raw=true)  
+  
+czekamy...  
+![krok 03](/img/anaconda_install_03.PNG?raw=true)  
+  
+czekamy...  
+![krok 04](/img/anaconda_install_04.PNG?raw=true)  
+  
+kończymy instalację.  
+![krok 05](/img/anaconda_install_05.PNG?raw=true)  
+  
+### sprawdzamy czy wszystko działa
+Otwieramy konsolę:  
+![krok 06](/img/anaconda_install_06.PNG?raw=true)  
+  
+uruchamiamy pythona wpisując `python`:  
+![krok 07](/img/anaconda_install_07.PNG?raw=true)  
+  
+powinno wyświetlić się coś takiego:  
+![krok 08](/img/anaconda_install_08.PNG?raw=true)  
+  
+  
 ## `seaborn`, ... (cos jeszcze?)
-
+W konsoli piszemy:
 ```
 conda install seaborn
 ```
-+ screenshots
+później odpowiadamy na zapytanie (patrz screen poniżej): `y`
+![krok 09](/img/anaconda_install_09.PNG?raw=true)
 
 ## `mne`
 Będziemy korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`). mne-python rozwija się bardzo dynamicznie i wiele fajnych funkcji dodanych w ostatnim czasie nie zostało jeszcze oficjalnie opublikowanych. Do instalacji musimy wykorzystać pakiet `pip` informując go, że chcemy instalować bezpośrednio z githuba:
