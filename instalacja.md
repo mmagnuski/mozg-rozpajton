@@ -25,7 +25,8 @@ Tutaj sprawa jest trudniejsza
 * nawigujemy w konsoli do miejsca, w które sciagnelismy plik i piszemy:
   ```
   pip install VTK-7.0.0-cp35-cp35m-win_amd64.whl
-  ```
+  ```  
+
 `then magic happens...`
 Tutaj jeszcze do końca nie wiem, można spróbować:
 * install mingw32 to `C:\programs\mingw\`.
@@ -36,19 +37,27 @@ Tutaj jeszcze do końca nie wiem, można spróbować:
   compiler=mingw32
   ```
 
-Można też spróbować instalowac windows visual studio:
+Można też spróbować instalowac windows visual studio:  
 https://www.visualstudio.com/products/visual-studio-community-vs
 
-Prawdopodobnie w przy `mayavi` trzeba bedzie skorzystać ze srodowisk wirualnych condy i przelaczyć sie na pythona 2
+Prawdopodobnie w przy `mayavi` trzeba bedzie skorzystać ze srodowisk wirualnych condy i przelaczyć sie na pythona 2:
+```
+conda create -n py2 python=2.7 mayavi
+```
 
-Related:
-http://stackoverflow.com/questions/6551724/how-do-i-point-easy-install-to-vcvarsall-bat
-http://stevedower.id.au/blog/building-for-python-3-5/
-https://matthew-brett.github.io/pydagogue/python_msvc.html
-https://docs.python.org/3.4/install/#gnu-c-cygwin-mingw
+Aktywujemy wirtualne srodowisko:
+```
+activate py2
+```
+
+
+Related:  
+http://stackoverflow.com/questions/6551724/how-do-i-point-easy-install-to-vcvarsall-bat  
+http://stevedower.id.au/blog/building-for-python-3-5/  
+https://matthew-brett.github.io/pydagogue/python_msvc.html  
+https://docs.python.org/3.4/install/#gnu-c-cygwin-mingw  
   
-* instalujemy `mayavi` poprzez komende:
+* instalujemy `mayavi` poprzez komende:  
   ```
   pip install mayavi
   ```
-2.) pip install mayavi
