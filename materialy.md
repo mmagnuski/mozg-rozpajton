@@ -8,7 +8,7 @@ Nie przestraszcie się cenami. Wszystkie wideo-kursy są kompletnie za darmo dla
   
 Najważniejszy z kursów na enthought to wstęp do NumPy. NumPy to podstawowa biblioteka do zastosowan naukowych. Większość naukowych bibliotek do pythona opiera się na NumPy.
 
-### Scipy lectures:
+#### Scipy lectures:
 link: http://www.scipy-lectures.org/
 
 Tych tematów na przyklad nie bedziemy omawiać na zajeciach:
