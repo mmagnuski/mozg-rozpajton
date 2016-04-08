@@ -14,7 +14,7 @@ Na warsztatach będziemy korzystać przede wszystkim z:
 * spyder
 
 inne narzędzia:
-* Atom - zaawansowany edytor tekstowy, wraz z pakietem [Hydrogen](https://atom.io/packages/hydrogen) działa podobnie do `jupyter qt console` ale edycja kodu jest dużo wygodniejsza, zresztą sami zobaczcie: ![](https://i.github-camo.com/391fdd5cb8d7b51881055353aa056557dd985f2f/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3833363337352f31343035343132382f62663836636637302d663261342d313165352d383031342d3537383430633962376133302e676966)  
+* Atom - zaawansowany edytor tekstowy, wraz z pakietem [Hydrogen](https://atom.io/packages/hydrogen) działa podobnie do `jupyter qt console` ale edycja kodu jest dużo wygodniejsza, zresztą sami zobaczcie: http://tinyurl.com/zvn3k5p  
 * sublime text (zaawansowany, wszechstronny edytor tekstowy, Atom jest nim inspirowany, sublime jest jednak znacznie szybszy)
 * PyCharm (złożone IDE)
 * Python IDLE (jest, ale chyba nie ma sensu go używać :) )
