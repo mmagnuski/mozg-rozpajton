@@ -1,5 +1,12 @@
 # Instalacja
 
+Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
+* Anaconda - dystrybucja pythona i wielu pakietów do analizy i wizualizacji danych (korzystamy z pythona 3.5, ale jeżeli ktoś woli 2.7 - nie powinno być problemu))
+* `seaborn` - do ładnych wizualizacji
+* `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych
+
+Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na pythonie 3.
+
 ## Anaconda
 ...
 
