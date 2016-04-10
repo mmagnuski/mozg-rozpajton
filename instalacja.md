@@ -1,14 +1,15 @@
 # Instalacja
 
 Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
-* Anaconda - dystrybucja pythona i wielu pakietów do analizy i wizualizacji danych (korzystamy z pythona 3.5, ale jeżeli ktoś woli 2.7 - nie powinno być problemu))
+* Anaconda - dystrybucja pythona i wielu pakietów do analizy i wizualizacji danych (korzystamy z pythona 3.5, ale jeżeli ktoś woli 2.7 - nie powinno być problemu)
 * `seaborn` - do ładnych wizualizacji
 * `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych
 
-Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na windowsie na pythonie 3 (na pythonie 2 jest łatwo). Do korzystania z R'a bez wychodzenia z pythona przyda się też `rpy2`, który neistety też nie jest łatwy w instalowaniu na Windowsie.
+Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na windowsie na pythonie 3 (na pythonie 2 jest łatwo). Do korzystania z R'a bez wychodzenia z pythona przyda się też `rpy2`, który niestety też nie jest łatwy w instalowaniu na Windowsie.
+Na pierwsze zajęcia wystarczy Wam sama Anaconda oraz `mne`.
 
 ## Anaconda
-Ściągamy z (tutaj link) instalator dla pythona 3.5:  
+Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib` czy `pandas`. Ściągamy instalator dla pythona 3.5:  
 ![krok 00](/img/anaconda_install_00.PNG?raw=true)  
   
 Otwieramy instalator, wybieramy instalację dla użytkownika ("only me" - nie wymaga uprawnień administratora)  
@@ -36,12 +37,14 @@ uruchamiamy pythona wpisując `python`:
 powinno wyświetlić się coś takiego:  
 ![krok 08](/img/anaconda_install_08.PNG?raw=true)  
   
+Teraz jesteśmy w pythonie - aby z niego wyjść (z powrotem do normalnej konsoli) wpisujemy `quit()`. Można też po prostu zamknąć okienko.
   
-## `seaborn`, ... (cos jeszcze?)
-W konsoli piszemy:
+## pakiety niedostępne w ramach Anacondy: `seaborn`
+Czasem jednak potrzebujemy innych pakietów, nie dystrybuowanych w ramach Anacondy. Anaconda daje nam na szczęście doskonałe narzędzie do instalowania pakietów (ale też tworzenia wirtualnych środowisk) - `conda`. Gdy chcemy zainstalować pakiet `seaborn` (a chcemy), piszemy w konsoli po prostu:  
 ```
 conda install seaborn
 ```
+  
 później odpowiadamy na zapytanie (patrz screen poniżej): `y`
 ![krok 09](/img/anaconda_install_09.PNG?raw=true)
 
