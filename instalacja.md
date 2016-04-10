@@ -50,9 +50,16 @@ później odpowiadamy na zapytanie (patrz screen poniżej): `y`
 ![krok 09](/img/anaconda_install_09.PNG?raw=true)
 
 ## `mne`
-Będziemy korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`). mne-python rozwija się bardzo dynamicznie i wiele fajnych funkcji dodanych w ostatnim czasie nie zostało jeszcze oficjalnie opublikowanych. Do instalacji musimy wykorzystać pakiet `pip` informując go, że chcemy instalować bezpośrednio z githuba:
+Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, ale nie będziemy tak robić.  
+Będziemy bowiem korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`). mne-python rozwija się bardzo dynamicznie i wiele fajnych funkcji dodanych w ostatnim czasie nie zostało jeszcze oficjalnie opublikowanych. Do instalacji wykorzystamy komendę `pip` informując, że chcemy instalować bezpośrednio z githuba:
 ```
 pip install git+https://github.com/mne-tools/mne-python
+```
+
+## `mypy`
+W pewnym momencie przyda się Wam również pakiet `mypy` - to taka moja przechowalania kodu, z którego często korzystam. Pakiet ten można ściągnąć komendą `pip` z githuba:
+```
+pip install git+https://github.com/mmagnuski/mypy
 ```
 
 ## RPy2
