@@ -37,11 +37,12 @@ powinno wyświetlić się coś takiego:
 ![krok 08](/img/anaconda_install_08.PNG?raw=true)  
   
   
-## `seaborn`, ... (cos jeszcze?)
-W konsoli piszemy:
+## pakiety niedostępne w ramach Anacondy: `seaborn`
+Czasem jednak potrzebujemy innych pakietów, nie dystrybuowanych w ramach Anacondy. Anaconda daje nam na szczęście doskonałe narzędzie do instalowania pakietów (ale też tworzenia wirtualnych środowisk) - `conda`. Gdy chcemy zainstalować pakiet `seaborn` (a chcemy), piszemy w konsoli po prostu:  
 ```
 conda install seaborn
 ```
+  
 później odpowiadamy na zapytanie (patrz screen poniżej): `y`
 ![krok 09](/img/anaconda_install_09.PNG?raw=true)
 
