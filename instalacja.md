@@ -5,7 +5,7 @@ Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 * `seaborn` - do ładnych wizualizacji
 * `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych
 
-Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na pythonie 3.
+Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na windowsie na pythonie 3 (na pythonie 2 jest łatwo). Do korzystania z R'a bez wychodzenia z pythona przyda się też `rpy2`, który neistety też nie jest łatwy w instalowaniu na Windowsie.
 
 ## Anaconda
 Ściągamy z (tutaj link) instalator dla pythona 3.5:  
@@ -51,6 +51,52 @@ Będziemy korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`)
 pip install git+https://github.com/mne-tools/mne-python
 ```
 
+## RPy2
+Jeżeli chcemy korzystać z R'a z poziomu pythona będziemy potrzebować pakietu `rpy2`. Większość funkcji statystycznych, które Wam się przydadzą jest w pakietach `scipy.stats` oraz `statsmodels` ale bardziej zaawansowane procedury statystyczne mogą nie być dostępne pod pythona. Wtedy warto skorzystać z R'a, ale aby nie trzeba było co chwilę przeskakiwać między pythonem i R'em oraz przemieszczać zmiennych warto skorzystać właśnie z `rpy2`. Niestety instalacja tego pakietu na Windowsie do prostych nie należy (jak to zwykle jest w open-source - na Linuxie nie ma problemu).
+
+My steps:
+1. installed precompiled windows version from:
+http://www.lfd.uci.edu/~gohlke/pythonlibs/#rpy2
+
+2. importing
+```python
+import rpy2.robjects as robjects
+```
+gives following error:
+```
+ImportError: DLL load failed: Nie można odnaleźć określonej procedury.
+```
+
+3. Add the environment variable R_HOME: [path to R, not /Rx.x/bin]
+I've set R_HOME to:
+C:\Program Files\R\R-3.2.3
+
+same error...
+
+From stack overflow:
+```
+I had a similar problem due to the fact my environment was not properly setup and import win32api would raise ImportError: DLL load failed: The specified module could not be found. In fixed it by adding to my PATH the folder containing my python.exe.
+
+Note that the exception NameError: name 'ie' is not defined is a bug in rpy2 that hides the actual exception, triggered by the failure to import either win32api or win32con.
+
+However I had another exception afterwards (RuntimeError: R_HOME not defined), so I ended up adding a R_HOME variable (= C:\Program Files\R\R-3.1.2) as suggested in another answer (and I'm also having the Unable to unlink tempfile warning, which I guess has not been fixed yet, see rpy2 windows Unable to unlink tempfile and https://bitbucket.org/lgautier/rpy2/issue/132/rpy2-windows-unable-to-unlink-tempfile)
+```
+
+additional steps
+1) install pywin32: http://sourceforge.net/projects/pywin32/
+
+
+# try fiddling with setuptools so that it sees:
+vcvarsall.bat
+on my computer it is here:
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC
+
+
+Test if rpy2 works:
+```python
+import rpy2.robjects as robjects
+%load_ext rpy2.ipython
+```
 
 ## `mayavi`
 Tutaj sprawa jest nieco trudniejsza, `mayavi` dopiero od niedawna działa na pythonie 3 i jeszcze nie jest dostępna w ramach Anacondy dla pythona 3.  
