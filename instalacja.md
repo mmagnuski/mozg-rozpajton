@@ -52,51 +52,34 @@ pip install git+https://github.com/mne-tools/mne-python
 ```
 
 ## RPy2
-Jeżeli chcemy korzystać z R'a z poziomu pythona będziemy potrzebować pakietu `rpy2`. Większość funkcji statystycznych, które Wam się przydadzą jest w pakietach `scipy.stats` oraz `statsmodels` ale bardziej zaawansowane procedury statystyczne mogą nie być dostępne pod pythona. Wtedy warto skorzystać z R'a, ale aby nie trzeba było co chwilę przeskakiwać między pythonem i R'em oraz przemieszczać zmiennych warto skorzystać właśnie z `rpy2`. Niestety instalacja tego pakietu na Windowsie do prostych nie należy (jak to zwykle jest w open-source - na Linuxie nie ma problemu).
+Jeżeli chcemy korzystać z R'a z poziomu pythona będziemy potrzebować pakietu `rpy2`. Większość funkcji statystycznych, które Wam się przydadzą jest w pakietach `scipy.stats` oraz `statsmodels` ale bardziej zaawansowane procedury statystyczne mogą nie być dostępne pod pythona. Wtedy warto skorzystać z R'a, ale aby nie trzeba było co chwilę przeskakiwać między pythonem i R'em oraz przemieszczać zmiennych warto skorzystać właśnie z `rpy2`. Niestety instalacja tego pakietu na Windowsie do prostych nie należy (jak to zwykle jest w open-source - na Linuxie nie ma problemu - `pip install rpy2`).
 
-My steps:
-1. installed precompiled windows version from:
-http://www.lfd.uci.edu/~gohlke/pythonlibs/#rpy2
+Instalacja na Windowsie wymaga następujących kroków:  
+* Upewnij się, że masz zainstalowanego R'a w [wersji 3.2](https://cran.r-project.org/bin/windows/base/).  
+* Ściągnij [stąd](http://www.lfd.uci.edu/~gohlke/pythonlibs/#rpy2) odpowiedni plik ze skompilowanym dla windowsa `rpy2`. Odpowiedni tzn dla Windowsa 64-bitowego z pythonem 3.5 ściągamy: `rpy2-2.7.8-cp35-none-win_amd64.whl`. `cp35` oznacza implementację C pythona, wersję 3.5, `win_amd64` oznacza Windowsa 64-bit.  
+* Przejdź konsolą do folderu, do którego ściągnięty został powyższy plik i uruchom komendę:  
 
-2. importing
-```python
-import rpy2.robjects as robjects
-```
-gives following error:
-```
-ImportError: DLL load failed: Nie można odnaleźć określonej procedury.
-```
+  ```
+  pip install nazwa_pliku
+  ```  
+  gdzie `nazwa_pliku` to nazwa ściągniętego pliku np. `rpy2-2.7.8-cp35-none-win_amd64.whl`.  
+* Dodaj zmienną środowiskową `R_HOME` wskazującą na folder, w którym znajduje się R. Robimy to pisząc w konsoli:  
 
-3. Add the environment variable R_HOME: [path to R, not /Rx.x/bin]
-I've set R_HOME to:
-C:\Program Files\R\R-3.2.3
+  ```
+  setx R_HOME "C:\Program Files\R\R-3.2.3"
+  ```  
+  oczywiście zamiast `"C:\Program Files\R\R-3.2.3"` wpisujecie ścieżkę, pod którą R jest zaintalowany na Waszym komputerze.  
+* Przetestuj czy możesz zaimportować bez błędu `rpy2` w pythonie:  
 
-same error...
-
-From stack overflow:
-```
-I had a similar problem due to the fact my environment was not properly setup and import win32api would raise ImportError: DLL load failed: The specified module could not be found. In fixed it by adding to my PATH the folder containing my python.exe.
-
-Note that the exception NameError: name 'ie' is not defined is a bug in rpy2 that hides the actual exception, triggered by the failure to import either win32api or win32con.
-
-However I had another exception afterwards (RuntimeError: R_HOME not defined), so I ended up adding a R_HOME variable (= C:\Program Files\R\R-3.1.2) as suggested in another answer (and I'm also having the Unable to unlink tempfile warning, which I guess has not been fixed yet, see rpy2 windows Unable to unlink tempfile and https://bitbucket.org/lgautier/rpy2/issue/132/rpy2-windows-unable-to-unlink-tempfile)
-```
-
-additional steps
-1) install pywin32: http://sourceforge.net/projects/pywin32/
+  ```python
+  import rpy2.robjects as robjects
+  ```
+  
+Gdyby coś nie działało można zainstalować jeszcze (ale nie wiem czy to pomaga):  
+https://sourceforge.net/projects/pywin32/files/pywin32/Build%20220/
+Oraz spróbować zmienić zmienną środowiskową PATH aby zawierała ścieżkę do folderu `bin` R'a (najłatwiej to zrobić z interfejsu graficznego).
 
 
-# try fiddling with setuptools so that it sees:
-vcvarsall.bat
-on my computer it is here:
-C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC
-
-
-Test if rpy2 works:
-```python
-import rpy2.robjects as robjects
-%load_ext rpy2.ipython
-```
 
 ## `mayavi`
 Tutaj sprawa jest nieco trudniejsza, `mayavi` dopiero od niedawna działa na pythonie 3 i jeszcze nie jest dostępna w ramach Anacondy dla pythona 3.  
