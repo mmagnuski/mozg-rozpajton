@@ -8,7 +8,7 @@ Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na pythonie 3.
 
 ## Anaconda
-Ściągamy z (tutaj link) instalator dla pythona 3.5:  
+Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib` czy `pandas`. Ściągamy instalator dla pythona 3.5:  
 ![krok 00](/img/anaconda_install_00.PNG?raw=true)  
   
 Otwieramy instalator, wybieramy instalację dla użytkownika ("only me" - nie wymaga uprawnień administratora)  
