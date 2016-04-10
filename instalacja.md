@@ -37,6 +37,7 @@ uruchamiamy pythona wpisując `python`:
 powinno wyświetlić się coś takiego:  
 ![krok 08](/img/anaconda_install_08.PNG?raw=true)  
   
+Teraz jesteśmy w pythonie - aby z niego wyjść (z powrotem do normalnej konsoli) wpisujemy `quit()`. Można też po prostu zamknąć okienko.
   
 ## pakiety niedostępne w ramach Anacondy: `seaborn`
 Czasem jednak potrzebujemy innych pakietów, nie dystrybuowanych w ramach Anacondy. Anaconda daje nam na szczęście doskonałe narzędzie do instalowania pakietów (ale też tworzenia wirtualnych środowisk) - `conda`. Gdy chcemy zainstalować pakiet `seaborn` (a chcemy), piszemy w konsoli po prostu:  
