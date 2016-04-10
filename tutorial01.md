@@ -53,6 +53,9 @@ True and 1
 0 or 1
 ```
 
+#### *ZADANIE*
+Przetestuj sobie działanie operatora `==` oraz `<` pisząc w pythonie stwierdzenia typu: `liczba1 operator liczba2` (podmieniając oczywiście odpowiednio `operator` na `<` lub `==` oraz `liczba1` i `liczba2` na konkretne wartości liczbowe bądź nazwy zmiennych przechowujących wartości liczbowe). Co robi operator `==` a co `<`?
+
 ## Funkcje
 Oprócz zmiennych do podstawowych elementów programu zaliczamy też funkcje. Funkcje to operacje, które możemy wykonać na zmiennych. Korzystamy z nich zwykle tak:
 
@@ -107,14 +110,25 @@ tekst3.lower()
 ```
 W tym sensie możemy rozumieć kropkę jako otwierającą paletę mocy, a nawiast jako zatwierdzenie (wywołanie) danej mocy.
 
-Warto poznać jeszcze dwie moce tekstu: `reverse` oraz `endswith`.
-`reverse` pozwala odwrócić sekwencję znaków tworzącą napis (zmienną tekstową). Jest to możliwe nawet gdybyśmy chcieli dopuścić się takiego bluźnierstwa jak odwrócenie tekstu Pana Tadeusza. Zrobimy jednak coś mniej bulwersującego:
+Warto poznać jeszcze dwie moce tekstu: `replace` oraz `endswith`.
+`replace` pozwala podmienić w całym tekście pewne ciągi znaków (np. zwroty) na inne.
+Z `replace` korzystamy tak:
+```python
+tekst.replace(co_zamienić, na_co_zamienić)
+```
 
+Konkretny przykład:
 ```python
 # tworzymy zmienną z naszym imieniem:
 imie = "Mikołaj"
-# odwracamy teraz nasz imię:
-imie.reverse()
+# podmieniamy każde `"a"` na `"u"`:
+imie.replace("a", "u")
+
+# możemy dopuścić się też zbordni na klasyce:
+mick = "Litwo, Ojczyzno moja! ty jesteś jak zdrowie"
+mick = mick.replace('Litwo', 'Ziemio')
+mick = mick.replace('zdrowie', 'złoto')
+print(mick)
 ```
 
 `endswith` pozwala sprawdzić czy tekst kończy się określoną literą bądź ciągiem liter. `enswith` potrzebuje więc jako argumentu zmiennej tekstowej:
@@ -142,7 +156,7 @@ tekst.endswith(tekst)
 Utwórz zmienną `imie` zawierającą Twoje imię oraz zmienną `nazwisko`, która zawierać będzie Twoje nazwisko. Następnie połącz imię i nazwisko tworząc zmienną `toja`. Sprawdź czy nazwisko kończy się na `'ski'` albo `'ska'` (w zależności od Twojej płci).
 
 #### *ZADANIE*
-Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z wielkich na małe i odwróćcie tekst. Metody można ze sobą łączyć (układać je po kolei) - pokombinujcie jak zrobić to zadanie w jednej linijce.
+:construction: - tu trzeba dodać zadanie. Metody można ze sobą łączyć (układać je po kolei) - pokombinujcie jak zrobić to zadanie w jednej linijce.
 
 
 ## Adresowanie
@@ -175,8 +189,12 @@ imie[3] # aby dostać się do czwartej litery (indeks trzy)
 
 Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
 
-### *ZADANIE*
-Tutaj jakieś zadanie...
+#### *ZADANIE*
+:construction: kilka prostych zadań...
+
+#### *ZADANIE*
+Pomyśl jak za pomocą adresowania odwrócić tekst. Pamiętaj o składni `[od:do:co_ile]` i pamiętaj, że nie trzeba podawać wszystkich wartości (tzn. np `[2::2]` albo `[:6:3]`).
+Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z wielkich na małe i odwróćcie tekst.
 
 ### *dla zmieszanych i zainteresowanych*
 Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
@@ -215,6 +233,18 @@ moja_lista[:2]
 moja_lista[-1]
 ```
 
+#### *ZADANIE*
+:construction: proste zadanie
+
+#### *ZADANIE*
+:construction: zadanie pokazujące modyfikację list in-place.
+```
+A = ['delfin przebrany za', 'pastora']
+B = A
+B[-1] = 'zielonego stwora'
+print(B)
+print(A)
+```
 
 ## Moduł `os`
 Sam python oferuje bardzo podstawową funkcjonalność, do jej rozszerzania służą moduły (biblioteki). Poznamy za chwilę podstawy importowania i korzystania z bibliotek w kontekście operacji na plikach.
@@ -272,8 +302,8 @@ fls = glob.glob('*.set')
 ```
 
 ## Pierwsze kroki w `mne`
-Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. To, co teraz zrobimy:
-* zainstalujemy `mne`
+Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
+* zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
 * zaimportujemy z mne funkcję do wczytywanie plików typu `.raw` (w takim formacie zapisujemy pliki z Netstation) 
 * wczytamy za pomocą tej funkcji dane
 * wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
@@ -291,6 +321,7 @@ from mne.io.egi import read_raw_egi
 ```
 
 Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
+:construction: ...
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
@@ -347,7 +378,7 @@ W naszym wypadku ta definicja to:
 * kolejne kroki
 * pętle będą wymagać kilku konkretnych ćwiczeń
 
-### * dla ciekawskich, pętle w innych językach *
+### *dla ciekawskich, pętle w innych językach*
 Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
 ```julia
 # julia
@@ -384,6 +415,9 @@ for i = 1:length(vec)
 end
 ```
 
+## comprehensions
+:construction:
+
 ## Piszemy funkcje
 
 * zadanie: funkcja `czy_polak`
@@ -399,3 +433,4 @@ end
       return a + b
   ```
 
+## Słowniki
