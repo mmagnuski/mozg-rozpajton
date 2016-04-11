@@ -3,7 +3,7 @@
 Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 * Anaconda - dystrybucja pythona i wielu pakietów do analizy i wizualizacji danych (korzystamy z pythona 3.5, ale jeżeli ktoś woli 2.7 - nie powinno być problemu)
 * `seaborn` - do ładnych wizualizacji
-* `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych
+* `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych (aby ściągnąć najnowszą wersję `mne` z GitHub'a będziecie jeszcze musieli zainstalować program `git`).
 
 Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na windowsie na pythonie 3 (na pythonie 2 `mayavi` jest dostępne razem z Anacondą). Do korzystania z R'a bez wychodzenia z pythona przyda się też `rpy2`, który niestety też nie jest łatwy w instalowaniu na Windowsie.  
   
