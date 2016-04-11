@@ -11,32 +11,32 @@ Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, któ
 
 ## Anaconda
 Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib` czy `pandas`. Ściągamy instalator dla pythona 3.5:  
-![krok 00](/img/anaconda_install_00.PNG?raw=true)  
+<img src="/img/anaconda_install_00.PNG" width="450">  
   
 Otwieramy instalator, wybieramy instalację dla użytkownika ("only me" - nie wymaga uprawnień administratora)  
-![krok 01](/img/anaconda_install_01.PNG?raw=true)  
+<img src="/img/anaconda_install_01.PNG" width="300">  
   
 upewniamy się że oba checkboxy są zaznaczone:  
-![krok 02](/img/anaconda_install_02.PNG?raw=true)  
+<img src="/img/anaconda_install_02.PNG" width="300">  
   
 czekamy...  
-![krok 03](/img/anaconda_install_03.PNG?raw=true)  
+<img src="/img/anaconda_install_03.PNG" width="300">  
   
 czekamy...  
-![krok 04](/img/anaconda_install_04.PNG?raw=true)  
+<img src="/img/anaconda_install_04.PNG" width="300">  
   
 kończymy instalację.  
-![krok 05](/img/anaconda_install_05.PNG?raw=true)  
+<img src="/img/anaconda_install_05.PNG" width="300">  
   
 ### sprawdzamy czy wszystko działa
 Otwieramy konsolę:  
-![krok 06](/img/anaconda_install_06.PNG?raw=true)  
+<img src="/img/anaconda_install_06.PNG" width="250">  
   
 uruchamiamy pythona wpisując `python`:  
-![krok 07](/img/anaconda_install_07.PNG?raw=true)  
+<img src="/img/anaconda_install_07.PNG" width="500">  
   
 powinno wyświetlić się coś takiego:  
-![krok 08](/img/anaconda_install_08.PNG?raw=true)  
+<img src="/img/anaconda_install_08.PNG" width="500">  
   
 Teraz jesteśmy w pythonie - aby z niego wyjść (z powrotem do normalnej konsoli) wpisujemy `quit()`. Można też po prostu zamknąć okienko.
   
@@ -47,7 +47,7 @@ conda install seaborn
 ```
   
 później odpowiadamy na zapytanie (patrz screen poniżej): `y`
-![krok 09](/img/anaconda_install_09.PNG?raw=true)
+<img src="/img/anaconda_install_09.PNG" width="500">  
 
 ## `mne`
 Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, ale nie będziemy tak robić.  
