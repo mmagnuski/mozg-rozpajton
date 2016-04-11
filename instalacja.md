@@ -49,6 +49,10 @@ conda install seaborn
 później odpowiadamy na zapytanie (patrz screen poniżej): `y`
 <img src="/img/anaconda_install_09.PNG" width="500">  
 
+## git
+Aby zainstalować `mne` (oraz kilka innych pakietów) bezpośrednio z GitHub'a trzeba wcześniej zainstalować `git` - system kontroli wersji na którym opiera się GitHub.  
+
+
 ## `mne`
 Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, ale nie będziemy tak robić.  
 Będziemy bowiem korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`). mne-python rozwija się bardzo dynamicznie i wiele fajnych funkcji dodanych w ostatnim czasie nie zostało jeszcze oficjalnie opublikowanych. Do instalacji wykorzystamy komendę `pip` informując, że chcemy instalować bezpośrednio z githuba:
