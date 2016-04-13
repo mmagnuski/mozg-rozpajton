@@ -1,3 +1,16 @@
+Program na dziś:
+* wątpliwości i pytania
+* `Jupyter QT Console`
+* podstawy biblioteki `numpy`
+* `mne` - wczytywanie wydarzń, lokalizacji elektrod, epokowanie, usuwanie epok, ERPy
+* `matplotlib` - czyli tworzenie wykresów w pythonie
+* rysujemy sygnał eeg, zmieniamy style
+* biblioteka `pandas`
+* ładne wykresy - `seaborn`
+
+Zaczynamy w `Jupyter QT Console` - środowisku podobnym do ipython'a, z którego korzystaliśmy ostatnio, jednak oferującego szerszą funkcjonalność. Niedługo przesiądziemy się na `Jupyter Notebook`, a później (na kolejnym spotkaniu) pobawimy się również programem `Spyder`.
+
+
 
 ## Numpy
 Aby wykonywać sprawnie i szybko obliczenia na setkach tysięcy wartości liczbowych musimy skorzystać ze specjalnego pakietu - `numpy` (num jest od numerical). Zapoznamy się teraz z jego podstawami. Korzystamy teraz z `Jupyter QT console`.
