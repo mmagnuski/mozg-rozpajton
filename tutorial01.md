@@ -55,7 +55,8 @@ True and 1
 
 #### *ZADANIE*
 Przetestuj sobie działanie operatora `==` oraz `<` pisząc w pythonie stwierdzenia typu: `liczba1 operator liczba2` (podmieniając oczywiście odpowiednio `operator` na `<` lub `==` oraz `liczba1` i `liczba2` na konkretne wartości liczbowe bądź nazwy zmiennych przechowujących wartości liczbowe). Co robi operator `==` a co `<`?
-
+  
+  
 ## Funkcje
 Oprócz zmiennych do podstawowych elementów programu zaliczamy też funkcje. Funkcje to operacje, które możemy wykonać na zmiennych. Korzystamy z nich zwykle tak:
 
@@ -79,6 +80,7 @@ Inna operacja to sprawdzenie typu zawartości zmiennej - ta funkcja to `type`:
 type(moja_zmienna)
 type(twoja_zmienna)
 ``` 
+  
 
 ## Zmienne tekstowe
 Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.
@@ -98,6 +100,12 @@ tekst + 'DEF'
 # albo tak:
 tekst2 = 'DEF'
 tekst3 = tekst + tekst2
+```
+
+Bardzo często wykorzystywaną funkcją w pythonie jest `len`. Funkcja ta pozwala sprawdzić długość danego obiektu. W przypadku tekstu `len` zwraca nam liczbę znaków tworzących tekst.
+```python
+len(tekst2)
+len(tekst3)
 ```
 
 Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
@@ -156,9 +164,10 @@ tekst.endswith(tekst)
 Utwórz zmienną `imie` zawierającą Twoje imię oraz zmienną `nazwisko`, która zawierać będzie Twoje nazwisko. Następnie połącz imię i nazwisko tworząc zmienną `toja`. Sprawdź czy nazwisko kończy się na `'ski'` albo `'ska'` (w zależności od Twojej płci).
 
 #### *ZADANIE*
-:construction: - tu trzeba dodać zadanie. Metody można ze sobą łączyć (układać je po kolei) - pokombinujcie jak zrobić to zadanie w jednej linijce.
-
-
+Utwórz zmienna `tekst` o zawartości `"Kangury mieszkają w Australii. Bardzo lubię kangury"`. Użyj metody `replace` aby podmienić `"kangury"` na `"wombaty"` (może przydać się metoda `lower`). Następnie sprawdź czy zmieniony tekst kończy się na `"baty"`.  
+Metody można ze sobą łączyć (układać je po kolei w jednej linijce) - gdy już zrobisz to zadanie pokombinuj jak je zrobić w jednej linijce.
+  
+  
 ## Adresowanie
 Adresowanie to wydobywanie elementów z jakiejś sekwencji. W naszym wypadku na razie sekwencją tą będzie tekst - tekst to w końcu po prostu ciąg znaków. Gdy chcemy dostać się do konkretnych znaków tekstu piszemy:
 ```python
@@ -176,6 +185,7 @@ imie[3] # aby dostać się do czwartej litery (indeks trzy)
 "Alojzy"[4].upper() + "orro"
 ```
 
+### Podstawowe zasady adresowania:
 * Python numeruje od zera, więc pierwsza litera to dla niego litera numer zero
 * Gdy używamy ujemnych wartości - indeksujemy od końca. `imie[-1]` da nam ostatnią literę a `imie[-3]` przed-przedostatnią.
 * możemy też wybierać całe zakresy znaków używając operatora `:`:  
@@ -184,18 +194,29 @@ imie[3] # aby dostać się do czwartej litery (indeks trzy)
   ```  
   pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`). 
 * jeżeli indeksujemy od początku możemy pominąć zero i pisać tylko `imie[:4]`
-* Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]
+* Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]`
 * Możemy też indeksować w formacie `od:do:co_ile` np. `imie[1:5:2]` albo `imie[::2]`
 
-Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
+Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
 
 #### *ZADANIE*
-:construction: kilka prostych zadań...
+Stwórz zmienną `a` zawierającą tekst: `"123456789"`. Postaraj się zaznajomić z indeksowaniem sprawdzając operacje takie jak:
+```python
+a[0]
+a[3]
+a[-2]
+
+a[1:4]
+a[:3]
+a[::2]
+a[:5:2]
+```
 
 #### *ZADANIE*
 Pomyśl jak za pomocą adresowania odwrócić tekst. Pamiętaj o składni `[od:do:co_ile]` i pamiętaj, że nie trzeba podawać wszystkich wartości (tzn. np `[2::2]` albo `[:6:3]`).
-Utwórzcie zmienna tekstową o treści "ZAKOPANEINIENAPOKAZ", zmieńcie litery z wielkich na małe i odwróćcie tekst.
-
+Utwórz zmienną tekstową o dowolnej nazwie zawierającą treść "ZAKOPANEINIENAPOKAZ", zmień litery z wielkich na małe i odwróć tekst.
+  
+  
 ### *dla zmieszanych i zainteresowanych*
 Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
 * zwróćcie uwagę, że ilość wybranych elementów to różnica między indeksem `od` oraz `do`. Tzn. `nazwisko[1:3]` wybiera nam dwa elementy, ten o indeksie 1 oraz o indeksie 2. Różnica `3 - 1` to właśnie dwa. 
@@ -218,34 +239,83 @@ imie[1:3] # tak samo jak w Julii
 % matlab
 imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie, bardzo starym języku programowania)
 ```
+  
 
 ## Listy
 Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Brzmi mało konkretnie? Zobaczmy w praktyce:
 
 ```python
 moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
+len(moja_lista)
 ```
 
 Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  Sprawdźcie teraz:
 ```python
 moja_lista[0]
-moja_lista[:2]
+moja_lista[:3]
 moja_lista[-1]
 ```
 
-#### *ZADANIE*
-:construction: proste zadanie
+Adresowanie można łączyć, np:
+```python
+moja_lista[3][-2:]
+```
 
 #### *ZADANIE*
-:construction: zadanie pokazujące modyfikację list in-place.
+:construction: proste zadanie 
+Funkcja `help` pozwala sprawdzić dokumentację dla jakiejś funkcji / metody. Chcesz dowiedzieć się co robi metoda `reverse`, możesz to sprawdźić tak:
+```python
+help(moja_lista.reverse)
+```
+Zauważ, że czym innym jest `moja_lista.reverse` oraz `moja_lista.reverse()` - to pierwsze daje nam metodę, to drugie "odpala" tę metodę (gdy nawias jest pusty - bez argumentów).  
+Twoim zadaniem jest dowiedzieć się co robi metoda `append` i użyć tej metody na liście `moja_lista` w taki sposób aby komenda `moja_lista[-1]` zwracała nam `"oczywistość oczywista"`.
+
+#### *ZADANIE*
+:construction: proste zadanie 
+W tym zadaniu poznasz funkcję `range` oraz funkcę `list` i poćwiczysz adresowanie.  
+Funkcja `range` pozwala nam stworzyć zakres liczbowy:
+```python
+rng = range(10)
+print(rng)
+print(len(rng))
+```
+
+funkcja `list` zamienia cokolwiek jej podamy w listę. Zakres liczbowy działa w zasadzie jak lista (ale nie do końca, zobaczcie na przykład co zwraca wam `print(rng)` - o tym powiem więcej po tym zadaniu). Zamienimy zakres na listę za pomocą funkcji `list`:
+```python
+lst = list(rng)
+print(rng)
+print(lst)
+```
+
+#### *ZADANIE*
+:construction: proste zadanie 
+Teraz zastosujemy funkcję `list` do wcześniej utworzonej przez nas zmiennej `a`. Co się wtedy dzieje?
+Listy też mają swoje metody ("moce"). Sprawdź co robi metoda `reverse`. 
+
+#### *ZADANIE*
+Bez kopiowania dwie zmienne będą wskazywać na tę samą listę, a więc wszelkie zmiany będą odbywać się na tym samym fragmencie pamięci komputera.
 ```
 A = ['delfin przebrany za', 'pastora']
 B = A
 B[-1] = 'zielonego stwora'
 print(B)
+# ale, uwaga:
 print(A)
 ```
+Jak sobie z tym poradzić? Sprawdź metodę `copy` listy. Użyj jej w miejscu gdzie w powyższym przykładzie jest `B = A`.
 
+#### *ZADANIE*
+Ostatnie ćwiczenie - dzielenie tekstu na listę oddzielnych elementów. Tekst ma metodę `split`, która pozwala dzielić tekst na listę mniejszych "tekstów". Domyślnie `split` dzieli po spracji:
+```python
+tekst = "Tekst taki niepozorny, niewiele znaczący."
+elementy = tekst.split()
+print(elementy)
+
+elementy2 = tekst.split(", ")
+print(elementy2)
+```
+  
+  
 ## Moduł `os`
 Sam python oferuje bardzo podstawową funkcjonalność, do jej rozszerzania służą moduły (biblioteki). Poznamy za chwilę podstawy importowania i korzystania z bibliotek w kontekście operacji na plikach.
 Aby móc przetwarzać jakiekolwiek dane trzeba móc wczytywać pliki, a aby je móc wczytać trzeba umieć poruszać się w gąszczu folderów i sprawdzać gdzie jakie są pliki. Do operacji na plikach służy moduł `os`. Aby z niego korzystać musimy go jednak na początku zaimportować:
@@ -301,6 +371,7 @@ import glob
 fls = glob.glob('*.set')
 ```
 
+  
 ## Pierwsze kroki w `mne`
 Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
 * zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
@@ -312,19 +383,56 @@ Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie 
 
 Instalacja z poziomu konsoli:
 ```
-pip install mne
+pip install git+https://github.com/mne-tools/mne-python
 ```
 
-Importujemy funkcję do wczytywania danych zapisanych przez EGI:
+Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
+```python
+os.chdir(r')
+fls = os.listdir()
+# albo: fls = glob.glob('*.raw')
+print(fls[:4])
+```
+
+Ok, mamy listę plików, ale jak wczytać dane, które się w nich znajdują? Pliki są w formacie `.raw`, `mne` ma specjalną fuknkcję do wczytywania takich plików - znajduje się ona w module `egi`, który z kolei znajduje się w module `io` (od *input-output*). Funkcja nazywa się`read_raw_egi`. Możemy zaimportować z `mne` tylko tę funkcję w ten sposób:
 ```python
 from mne.io.egi import read_raw_egi
 ```
 
-Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
-:construction: ...
+Następnie wczytujemy dane:
+```python
+eeg = read_raw_egi(fls[0])
+```
+
+Wczytane dane przechowujemy teraz w zmiennej `eeg` - zmienna ta jest jednak specyficznego typu:
+```python
+type(eeg)
+```
+
+Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (możecie sobie sprawdzić co daje komenda `dir(eeg)`), zwrócimy przede wszyskim uwagę na to, że `Raw` ma metodę ("moc") `plot` pozwalającą wyświetlić dane:
+```python
+eeg.plot()
+```
+
+Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
+```
+eeg.filter(1, 0)
+```
+
+Teraz ponownie je wyświetlimy:
+```
+eeg.plot()
+```
+
+* krótki opis opcji interfejsu do przeglądania danych
+* zaznacznie złych kanałów
+
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
+* komendy `ls` `cd` oraz `?`
+* %run
+* pokazówka %bookmark
 
 ## Wczytywanie plików tekstowych
 (*czyli policz autorów jednej z publikacji na temat bozonu Higgsa*)
@@ -346,12 +454,13 @@ Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku teksto
 * `tekst[1][:50]`
 * dzielimy na autorów - `autorzy = tekst[1].split(", ")`
 * ilu jest autorów - `len(autorzy)`
+  
 
 ## Pętle
 Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
 Weźmy na początek kilu pierwszych autorów jako oddzielną listę:
 ```python
-au = autorzy[:15]
+au = autorzy[:15] # indeksowanie daje oddzielną listę
 ```
 `au` ma w sobie teraz piętnastu pierwszych autorów. Chcielibyśmy wypisać każdego z nich w oddzielnej linijce. Pamiętamy że do wyświetlania służy nam funkcja `print`. Spróbujmy najpierw:
 ```python
@@ -369,14 +478,29 @@ ale to by było okropnie żmudne, nawet gdybyśmy mieli kopiować, wklejać i zm
 for a in au:
 	print(a)
 ```
-`for a in au:` znaczy tyle co *zrób dla kolejnych elementów listy `au` pewne operacje (opisane niżej); bierzący element `au` przechowuj w zmiennej `a`*. Przypomnijcie sobie definicje matematyczne typu:
+`for a in au:` znaczy tyle co: 
+> *zrób dla kolejnych elementów listy `au` pewne operacje (opisane niżej), bierzący element `au` przechowuj w zmiennej `a`*. 
+
+Przypomnijcie sobie definicje matematyczne typu:
 > Dla każdej liczby rzeczywistej *i* należącej do zbioru ...  
 
-W naszym wypadku ta definicja to:  
+W naszym wypadku jest podobnie przy czym ta definicja to:  
 > Dla każdego elementu `a` listy `au` wykonaj ...
 
-* kolejne kroki
+* pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
+* co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
+* dwie pętle poniżej są tożsame:
+  ```python
+  for a in au:
+      print(a)
+
+  for i in range(len(au)):
+      print(a[i])
+  ```
+* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę?
+* ...
 * pętle będą wymagać kilku konkretnych ćwiczeń
+
 
 ### *dla ciekawskich, pętle w innych językach*
 Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
@@ -417,6 +541,13 @@ end
 
 ## comprehensions
 :construction:
+Aby wyświetlić autorów, którzy kończą się na `"ski"` pisaliśmy krótką pętlę. Często do krótkich pętli przydają się bardzo comprehensions.
+
+```python
+[print(x) for x in autorzy if x.endswith("ski")]
+autorzy_na_a = [x for x in autorzy if x.beginswith("A")]
+```
+
 
 ## Piszemy funkcje
 
@@ -434,3 +565,7 @@ end
   ```
 
 ## Słowniki
+Na koniec pobawimy się słownikami.
+
+## Zadanie domowe
+:construction:
