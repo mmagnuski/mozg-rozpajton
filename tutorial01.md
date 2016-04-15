@@ -80,8 +80,19 @@ Inna operacja to sprawdzenie typu zawartości zmiennej - ta funkcja to `type`:
 type(moja_zmienna)
 type(twoja_zmienna)
 ``` 
-  
 
+#### *ZADANIE*
+Bardzo wygodna jest funkcja `help`. Funkcji `help` podajemy zazwyczaj jakąś inną funkcję i otrzymujemy o tej funkcji pomocne informacje. Zobacz sobie na przykład co pojawia nam się na ekranie gdy wpiszemy w pythonie:
+```python
+help(print)
+```
+Skorzystaj teraz z funkcji `help` aby dowiedzieć się co robi funkcja `dir`. Później odpal w pythonie:
+```python
+dir()
+```
+i zobacz co się stanie. :boom:
+  
+  
 ## Zmienne tekstowe
 Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.
 Zmienne tekstowe definiujemy używając znaków `'` lub `"` okalających tekst (oba muszą być takie same).
@@ -261,18 +272,29 @@ Adresowanie można łączyć, np:
 moja_lista[3][-2:]
 ```
 
+Sprawdzanie czy w liście znajduje się jakiś element jest bajecznie proste:
+```python
+kuchnia = ['toster', 'garnek', 'patelnia', 'klucze', 'okruszki']
+# uniwersalna ludzka niedola: szukanie kluczy. Zastanawiamy się czy klucze
+# są w kuchni. W przypadku tak krótkiej listy łatwo to zobaczyć, ale wyobraźcie
+# sobie listę 100 albo 100 000 elementów.
+
+# sprawdzamy to tak:
+'klucze' in kuchnia
+```
+
 #### *ZADANIE*
 :construction: proste zadanie 
-Funkcja `help` pozwala sprawdzić dokumentację dla jakiejś funkcji / metody. Chcesz dowiedzieć się co robi metoda `reverse`, możesz to sprawdźić tak:
+Funkcja `help` pozwala sprawdzić dokumentację dla jakiejś funkcji / metody. Wcześniej sprawdzaliśmy w ten sposób dokumentację funkcji. Teraz chcemy dowiedzieć się co robi **metoda** `reverse`, możemy to sprawdźić tak:
 ```python
-help(moja_lista.reverse)
+help(moja_lista.reverse) # bo reverse jest metodą obiektów tekstowych
 ```
 Zauważ, że czym innym jest `moja_lista.reverse` oraz `moja_lista.reverse()` - to pierwsze daje nam metodę, to drugie "odpala" tę metodę (gdy nawias jest pusty - bez argumentów).  
 Twoim zadaniem jest dowiedzieć się co robi metoda `append` i użyć tej metody na liście `moja_lista` w taki sposób aby komenda `moja_lista[-1]` zwracała nam `"oczywistość oczywista"`.
 
 #### *ZADANIE*
 :construction: proste zadanie 
-W tym zadaniu poznasz funkcję `range` oraz funkcę `list` i poćwiczysz adresowanie.  
+W tym zadaniu poznasz funkcję `range` oraz funkcę `list`.  
 Funkcja `range` pozwala nam stworzyć zakres liczbowy:
 ```python
 rng = range(10)
@@ -280,13 +302,14 @@ print(rng)
 print(len(rng))
 ```
 
-funkcja `list` zamienia cokolwiek jej podamy w listę. Zakres liczbowy działa w zasadzie jak lista (ale nie do końca, zobaczcie na przykład co zwraca wam `print(rng)` - o tym powiem więcej po tym zadaniu). Zamienimy zakres na listę za pomocą funkcji `list`:
+funkcja `list` zamienia cokolwiek jej podamy w listę :boom:. Zakres liczbowy, który dopiero co stworzyliśmy, działa w zasadzie jak lista (ale nie do końca, zobaczcie na przykład co zwraca wam `print(rng)` - o tym powiem więcej po tym zadaniu). Zamienimy zakres na listę za pomocą funkcji `list`:
 ```python
 lst = list(rng)
 print(rng)
 print(lst)
 ```
-
+Sprawdź dokumentację funkcji `range` i utwórz zakres zaczynający się na wartości 3, rosnący o 4 i kończący się na wartości 23.
+  
 #### *ZADANIE*
 :construction: proste zadanie 
 Teraz zastosujemy funkcję `list` do wcześniej utworzonej przez nas zmiennej `a`. Co się wtedy dzieje?
@@ -295,7 +318,7 @@ Listy też mają swoje metody ("moce"). Sprawdź co robi metoda `reverse`.
 #### *ZADANIE*
 Bez kopiowania dwie zmienne będą wskazywać na tę samą listę, a więc wszelkie zmiany będą odbywać się na tym samym fragmencie pamięci komputera.
 ```
-A = ['delfin przebrany za', 'pastora']
+A = ['delfin', 'przebrany za', 'pastora']
 B = A
 B[-1] = 'zielonego stwora'
 print(B)
@@ -305,7 +328,7 @@ print(A)
 Jak sobie z tym poradzić? Sprawdź metodę `copy` listy. Użyj jej w miejscu gdzie w powyższym przykładzie jest `B = A`.
 
 #### *ZADANIE*
-Ostatnie ćwiczenie - dzielenie tekstu na listę oddzielnych elementów. Tekst ma metodę `split`, która pozwala dzielić tekst na listę mniejszych "tekstów". Domyślnie `split` dzieli po spracji:
+Ostatnie ćwiczenie - dzielenie tekstu na listę oddzielnych elementów. Tekst ma metodę `split`, która pozwala dzielić tekst na listę mniejszych "tekstów". Domyślnie `split` dzieli po spacji:
 ```python
 tekst = "Tekst taki niepozorny, niewiele znaczący."
 elementy = tekst.split()
@@ -365,7 +388,7 @@ Możemy jako argument podać funkcji `listdir` ścieżkę folderu:
 fls = os.listdir(r'C:\mojebadanaia\nieudane')
 ```
 
-Często jednak chcemy mieć listę plików, które znajdują się w danym folderze, ale mają konkretne rozszerzenie (np. `.set`). Najwygodniej jest skorzystać wtedy z modułu `glob`:
+Często jednak chcemy mieć listę plików, które znajdują się w danym folderze, ale mają konkretne rozszerzenie (np. `.set` albo `.raw`). Najwygodniej jest skorzystać wtedy z modułu `glob`:
 ```python
 import glob
 fls = glob.glob('*.set')
@@ -375,15 +398,24 @@ fls = glob.glob('*.set')
 ## Pierwsze kroki w `mne`
 Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
 * zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
-* zaimportujemy z mne funkcję do wczytywanie plików typu `.raw` (w takim formacie zapisujemy pliki z Netstation) 
+* zaimportujemy z mne funkcję do wczytywania plików typu `.raw` (w takim formacie zapisujemy pliki z naszego Netstation) 
 * wczytamy za pomocą tej funkcji dane
 * wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
 * przefiltrujemy je
 * jeszcze raz wyświetlimy aby zobaczyć zmiany
 
-Instalacja z poziomu konsoli:
+Sprawdźcie czy macie `mne`:
+```python
+import mne
+```
+
+Instalacja z poziomu konsoli (wymaga gita, ale ściąganajświeższą (developerską) wersję mne):
 ```
 pip install git+https://github.com/mne-tools/mne-python
+```
+Ale na razie, jeżeli jesteście z własnymi komputerami i nie macie jeszcze `mne`, wystaczy:
+```
+pip install mne
 ```
 
 Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
@@ -415,12 +447,12 @@ eeg.plot()
 ```
 
 Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
-```
-eeg.filter(1, 0)
+```python
+eeg.filter(1, 0) # filtr górnoprzepustowy 1Hz
 ```
 
 Teraz ponownie je wyświetlimy:
-```
+```python
 eeg.plot()
 ```
 
@@ -446,7 +478,7 @@ W pythonie wygląda to tak:
 ```python
 file = open('plik.txt')
 tekst = file.readlines()
-file.close()
+file.close() # pamiętamy aby zamykać plik!
 ```
 Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
 
@@ -454,7 +486,16 @@ Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku teksto
 * `tekst[1][:50]`
 * dzielimy na autorów - `autorzy = tekst[1].split(", ")`
 * ilu jest autorów - `len(autorzy)`
-  
+
+Aby nie przejmować się zamykaniem pliku możemy użyć konstruktu `with`:
+```python
+# to samo co wcześniej z `with`:
+with open('plik.txt') as f:
+    tekst = f.readlines()
+```
+`with` jest o tyle fajne, że zawsze, nawet w wypadku wysąpienia błędu przy wczytywaniu, upewni się, że plik został poprawnie zamknięty.
+
+Możecie też porównać co daje `f.read()` oraz `f.readlines()`.
 
 ## Pętle
 Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
@@ -488,6 +529,7 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 > Dla każdego elementu `a` listy `au` wykonaj ...
 
 * pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
+* np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
 * co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
 * dwie pętle poniżej są tożsame:
   ```python
@@ -497,9 +539,10 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
   for i in range(len(au)):
       print(a[i])
   ```
-* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę?
-* ...
-* pętle będą wymagać kilku konkretnych ćwiczeń
+* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
+* spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
+
+* dodatkowo - są jeszcze bajery takie jak `enumerate` albo `zip`, ale w to zajrzymy tylko jeżeli jest czas oraz panuje ład i zrozumienie
 
 
 ### *dla ciekawskich, pętle w innych językach*
@@ -541,17 +584,28 @@ end
 
 ## comprehensions
 :construction:
-Aby wyświetlić autorów, którzy kończą się na `"ski"` pisaliśmy krótką pętlę. Często do krótkich pętli przydają się bardzo comprehensions.
 
+W poprzedniej sekcji wyświetlaliśmy między innymi autorów zaczynających się na `"A"` za pomocą krótkiej pętli:
 ```python
-[print(x) for x in autorzy if x.endswith("ski")]
-autorzy_na_a = [x for x in autorzy if x.beginswith("A")]
+for autor in autorzy:
+    if autor.beginswith('A'):
+        print(autor)
+```
+Często do takich krótkich pętli przydają się bardzo comprehensions:
+```python
+[print(x) for x in autorzy if x.beginswith("A")]
+```
+w ten sposób często szybciej napisać pętlę.
+
+Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10:
+```python
+kwadraty = [x**2 for x in range(11)] # dlaczego range(11) ?
 ```
 
 
 ## Piszemy funkcje
 
-* zadanie: funkcja `czy_polak`
+* zadanie główne: funkcja `czy_polak`
 * zaczniemy jednak od banalnej funkcji `dodaj`
 * schemat funkcji:
   ```python
@@ -563,9 +617,29 @@ autorzy_na_a = [x for x in autorzy if x.beginswith("A")]
   def dodaj(a, b):
       return a + b
   ```
+* funkcja `czy_konczysie`, ma działać tak:
+```python
+czy_konczysie('misie konczysie', 'ysie')
+# zwraca nam True
+```
+* poprawka do funkcji `czy_konczysie` - podajemy listę możliwych końcówek
+* (ewentualnie) - zróbmy tak aby działało dla listy i dla tekstu
+  
+* jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych"
 
 ## Słowniki
 Na koniec pobawimy się słownikami.
+* mapowanie wartości --> wartości np. `'jeden' -> 1`, piszemy to tak:
+```python
+d = {'jeden': 1, 'dwa': 2}
+# albo tak:
+d = dict(jeden=1, dwa=2)
+# albo też tak:
+d = dict() # d = {}
+d['jeden'] = 1
+d['dwa'] = 2
+```
 
 ## Zadanie domowe
 :construction:
+W zależności od tego, gdzie skończymy - ogłoszona zostanie wieczorem.
