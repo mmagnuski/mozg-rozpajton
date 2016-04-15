@@ -119,6 +119,9 @@ len(tekst2)
 len(tekst3)
 ```
 
+* wspomnieć ogólnie o *`teskst2` to obiekt klasy `string`* - tak jak *przedstawiciel gatunku*
+* specyficzne dla danego gatunku zachowania (dla tekstu to np. `lower` czy `endswith`)
+
 Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
 ```python
 # tak:
