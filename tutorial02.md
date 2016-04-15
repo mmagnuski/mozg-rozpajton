@@ -21,12 +21,30 @@ Najpierw stworzymy wektor losowych wartości. Aby to zrobić musimy zaimportowa�
 ```python
 import numpy as np
 ```
+
+### kilka słów o importowaniu
 Jeszcze nie mieliśmy okazji spotkać się z tym zwrotem: `import cośtam as coś`. Ten rodzaj importu
 upraszacza nam po prostu późniejsze korzystanie z modułu `numpy`: gdy będziemy korzystać z funkcji
 `sum` tego modułu (sumowanie elementów) nie będziemy musieli pisać `numpy.sum` a tylko `np.sum`.
 `import numpy as np` pozwala nam więc wczytać moduł numpy i odwoływać się do niego pod inną nazwą.
-Jeżeli ktoś ma taką potrzebę to może nawet pisać `import numpy as widzimrla` ale nikt chyba nie
+Jeżeli ktoś ma taką potrzebę to może nawet pisać `import numpy as a8fjwl237fgskn` (wtedy funkcja
+funkcja `sum` modułu numpy będzie dostępna jako `a8fjwl237fgskn.sum`) ale nikt chyba nie
 ma potrzeby komplikować sobie tak życia.  
+Można też importować wszystko z danego modułu bez koniecznościu używania odpowiedniego przedrostka później:
+```python
+from numpy import *
+```
+Tego typu importów zwykle się nie zaleca - mogą prowadzić np. do błędów gdy importując jeden moduł nadpiszemy
+funkcje dopiero co zaimportowane z innego (gdy mają taką samą nazwę). Do interaktywnej pracy tego rodzaju
+importowanie jest jednak ok. Pisząc później finalny kod z którego będziemy korzystać w naszych analizach
+warto jest jednak stosować importy typu `import numpy as np` - :construction: (jasne jest która funkcja skąd).
+Jeżeli z jakiegoś modułu potrzebujemy tylko kilka funkcji zawsze możemy pisać:
+```python
+from numpy import zeros, random
+```
+
+### tworzenie macierzy
+
 Numpy ma wygodną funkcję `rand` do tworzenia wektorów
 i macierzy z losowymi wartościami zmiennoprzecinkowymi między 
 0 i 1. Funkcja ta znajduje się w podmodule
