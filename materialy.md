@@ -1,3 +1,6 @@
+### Materiały do tych zajęć
+Dane, z których będziemy korzystac znajdziesz [tutaj](https://drive.google.com/a/swps.edu.pl/folderview?id=0B3VsSOe5fKjeX3BlNmpDeE1Oc2c&usp=sharing)
+
 ### Materiały do nauki
 
 W sieci, jak zawsze, można znaleźć materiały różnej jakości. Bardzo dobre (moim zdaniem) materiały to:
