@@ -30,13 +30,11 @@ Tych tematów na przyklad nie bedziemy omawiać na zajeciach:
 * pandas
 
 ### Przydatne w naszym kontekscie
-Póki co wczytywanie plików `.set` przez `scipy.io.loadmat` nie dziala najlepiej. Dlatego tymczasowo używać bedziemy do tego Julii. Bedziecie potrzebować w Julii pakietów: `MAT` oraz `PyCall` aby móc wczytywać dane bez problemu samemu (bez matlaba).
-Bedzie to polegalo na odpalaniu z pythona Julii za pomoca pakietu [pyjulia](https://github.com/JuliaLang/pyjulia) i zczytaniu waznych informacji z pliku set. Tym sie jeszcze zajmiemy.
 
 #### Nowe/ciekawe:
 NumPy jest podstawowym pakietem do zastosowan naukowych. Jest jednak sporo nowych bibliotek, które rywalizują z NumPy i mogą w przyszłości go zastąpić:
 - [bolt](https://github.com/bolt-project/bolt)
-- [xray](https://github.com/xray/xray)
+- [xarray](https://github.com/xray/xray)
 - [blaze](https://github.com/blaze/blaze)
 - [dask](http://dask.pydata.org/en/latest/)
 
@@ -45,12 +43,23 @@ W kontekscie grafiki/wizualizacji szczegolnie interesujace sa:
 - [HoloViews](http://holoviews.org/)
 - [VisPy](http://vispy.org/)
 - [Bokeh](http://bokeh.pydata.org/en/latest/)
+- [galry](http://www.pygal.org/en/latest/)
+
+Jeżeli kogoś interesuje uczenie maszynowe / deep learning:
+- [sci-kit learn](http://scikit-learn.org/stable/)
+- [keras](http://keras.io/)
+- [lasagne](http://lasagne.readthedocs.org/en/latest/index.html)
+- Theano
+- TensorFlow
 
 #### Neuro:
 *`EEG`*
 * [mne-python](http://martinos.org/mne/stable/index.html)
-* pacpy  
+* [source connectivity toolbox](https://github.com/scot-dev/scot)
+* [pacpy](https://github.com/voytekresearch/pacpy)  
 
 *`fMRI`*
 * [lyman](http://web.stanford.edu/~mwaskom/software/lyman/)
 * [nipype](http://www.mit.edu/~satra/nipype-nightly/)
+* [nilearn](http://nilearn.github.io/)
+* [pymvpa](http://www.pymvpa.org/)
