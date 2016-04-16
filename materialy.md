@@ -1,5 +1,5 @@
 ### Materiały do tych zajęć
-Dane, z których będziemy korzystac znajdziesz [tutaj](https://drive.google.com/a/swps.edu.pl/folderview?id=0B3VsSOe5fKjeX3BlNmpDeE1Oc2c&usp=sharing)
+Dane, z których będziemy korzystac znajdziesz [na Dropboxie](https://www.dropbox.com/sh/rexe6smd9sjkus1/AAD83oxSbup3s0VOGL5j8Qpha?dl=0) oraz [na google drive](https://drive.google.com/a/swps.edu.pl/folderview?id=0B3VsSOe5fKjeX3BlNmpDeE1Oc2c&usp=sharing).
 
 ### Materiały do nauki
 
