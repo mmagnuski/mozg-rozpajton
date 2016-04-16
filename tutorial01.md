@@ -436,7 +436,7 @@ from mne.io.egi import read_raw_egi
 
 Następnie wczytujemy dane:
 ```python
-eeg = read_raw_egi(fls[0])
+eeg = read_raw_egi(fls[0], preload=True)
 ```
 
 Wczytane dane przechowujemy teraz w zmiennej `eeg` - zmienna ta jest jednak specyficznego typu:
@@ -451,7 +451,7 @@ eeg.plot()
 
 Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
 ```python
-eeg.filter(1, 0) # filtr górnoprzepustowy 1Hz
+eeg.filter(1, None) # filtr górnoprzepustowy 1Hz
 ```
 
 Teraz ponownie je wyświetlimy:
