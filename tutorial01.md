@@ -231,30 +231,6 @@ Pomyśl jak za pomocą adresowania odwrócić tekst. Pamiętaj o składni `[od:d
 Utwórz zmienną tekstową o dowolnej nazwie zawierającą treść "ZAKOPANEINIENAPOKAZ", zmień litery z wielkich na małe i odwróć tekst.
   
   
-### *dla zmieszanych i zainteresowanych*
-Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
-* zwróćcie uwagę, że ilość wybranych elementów to różnica między indeksem `od` oraz `do`. Tzn. `nazwisko[1:3]` wybiera nam dwa elementy, ten o indeksie 1 oraz o indeksie 2. Różnica `3 - 1` to właśnie dwa. 
-* dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie.
-* to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje (dyskusyjne)  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
-Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego. Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania, porównaj:
-```python
-# python
-imie[1:3] # od drugiego do trzeciego elementu (tzn. bez czwartego)
-```
-```julia
-# julia
-imie[1:3] # bierze od pierwszego do trzeciego elementu włącznie
-```
-```R
-# R
-imie[1:3] # tak samo jak w Julii
-```
-```matlab
-% matlab
-imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie, bardzo starym języku programowania)
-```
-  
-
 ## Listy
 Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Brzmi mało konkretnie? Zobaczmy w praktyce:
 
