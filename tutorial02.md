@@ -149,59 +149,8 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 * pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
 * np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
 * co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
-
-#### Dodatkowe:
-* dwie pętle poniżej są tożsame:
-  ```python
-  for a in au:
-      print(a)
-
-  for i in range(len(au)):
-      print(a[i])
-  ```
-* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
-* spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
-
-* dodatkowo - są jeszcze bajery takie jak `enumerate` albo `zip`, ale w to zajrzymy tylko jeżeli jest czas oraz panuje ład i zrozumienie
-
-
-### *dla ciekawskich, pętle w innych językach*
-Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
-```julia
-# julia
-for x in vec
-	wyslij_w_kosmos(x)
-end
-```
-```R
-# R
-for (x in vec) {
-	wyslij_w_kosmos(x)
-}
-```
-```matlab
-% matlab
-
-% sposób A, nie działa dla każdego vec:
-for x = vec
-	wyslij_w_kosmos(x);
-end
-
-% sposób B, działa dla większości vec (ale nie wszystkich):
-for i = 1:length(vec)
-	wyslij_w_kosmos(vec(i));
-end
-
-% sposób C, działa dla każdego vec
-for i = 1:length(vec)
-	if iscell(vec)
-		wyslij_w_kosmos(vec{i});
-	else
-		wyslij_w_kosmos(vec(i));
-	end
-end
-```
-
+  
+  
 ## comprehensions
 :construction:
 
@@ -259,7 +208,6 @@ d = dict() # d = {}
 d['jeden'] = 1
 d['dwa'] = 2
 ```
-
 
 
 ## Numpy
