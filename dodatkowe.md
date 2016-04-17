@@ -24,3 +24,56 @@ imie[1:3] # tak samo jak w Julii
 % matlab
 imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie, bardzo starym języku programowania)
 ```
+
+
+#### Dodatkowe:
+* dwie pętle poniżej są tożsame:
+  ```python
+  for a in au:
+      print(a)
+
+  for i in range(len(au)):
+      print(a[i])
+  ```
+* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
+* spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
+
+* dodatkowo - są jeszcze bajery takie jak `enumerate` albo `zip`, ale w to zajrzymy tylko jeżeli jest czas oraz panuje ład i zrozumienie
+
+
+### *dla ciekawskich, pętle w innych językach*
+Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
+```julia
+# julia
+for x in vec
+	wyslij_w_kosmos(x)
+end
+```
+```R
+# R
+for (x in vec) {
+	wyslij_w_kosmos(x)
+}
+```
+```matlab
+% matlab
+
+% sposób A, nie działa dla każdego vec:
+for x = vec
+	wyslij_w_kosmos(x);
+end
+
+% sposób B, działa dla większości vec (ale nie wszystkich):
+for i = 1:length(vec)
+	wyslij_w_kosmos(vec(i));
+end
+
+% sposób C, działa dla każdego vec
+for i = 1:length(vec)
+	if iscell(vec)
+		wyslij_w_kosmos(vec{i});
+	else
+		wyslij_w_kosmos(vec(i));
+	end
+end
+```
