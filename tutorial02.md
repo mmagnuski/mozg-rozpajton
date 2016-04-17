@@ -1,12 +1,15 @@
 Program na dziś:
 * wątpliwości i pytania
-* `IPython` oraz `Jupyter QT Console`
+* `IPython`
+* pierwsze kroki w `mne`
+* wczytywanie plików tekstowych
+* pętle
+* `Jupyter QT Console`
 * podstawy biblioteki `numpy`
 * `mne` - wczytywanie wydarzń, lokalizacji elektrod, epokowanie, usuwanie epok, ERPy
 * `matplotlib` - czyli tworzenie wykresów w pythonie
 * rysujemy sygnał eeg, zmieniamy style
-* biblioteka `pandas`
-* ładne wykresy - `seaborn`
+
 
 
 ## ipython
@@ -81,9 +84,8 @@ eeg.plot()
 * zaznacznie złych kanałów
 
 
-
 ## Wczytywanie plików tekstowych
-(*czyli policz autorów jednej z publikacji na temat bozonu Higgsa*)
+(*czyli policz autorów jednej z publikacji na temat bożonu Higgsa*)
 
 Otwieranie plików tekstowych i wczytywanie tekstu jest proste. Składa się z 3 kroków:
 * otwieramy plik
@@ -98,7 +100,7 @@ file.close() # pamiętamy aby zamykać plik!
 ```
 Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
 
-* `len(tekst)`
+* ile jest linijek: `len(tekst)`
 * `tekst[1][:50]`
 * dzielimy na autorów - `autorzy = tekst[1].split(", ")`
 * ilu jest autorów - `len(autorzy)`
@@ -111,13 +113,13 @@ with open('plik.txt') as f:
 ```
 `with` jest o tyle fajne, że zawsze, nawet w wypadku wysąpienia błędu przy wczytywaniu, upewni się, że plik został poprawnie zamknięty.
 
-Możecie też porównać co daje `f.read()` oraz `f.readlines()`.
+Możecie też porównać co daje `f.read()` w porównaniu do `f.readlines()`.
 
 ## Pętle
 Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
 Weźmy na początek kilu pierwszych autorów jako oddzielną listę:
 ```python
-au = autorzy[:15] # indeksowanie daje oddzielną listę
+au = autorzy[:15] # indeksowanie daje oddzielną (skopiowaną) listę (nie trzeba robić copy)
 ```
 `au` ma w sobie teraz piętnastu pierwszych autorów. Chcielibyśmy wypisać każdego z nich w oddzielnej linijce. Pamiętamy że do wyświetlania służy nam funkcja `print`. Spróbujmy najpierw:
 ```python
@@ -147,6 +149,8 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 * pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
 * np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
 * co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
+
+#### Dodatkowe:
 * dwie pętle poniżej są tożsame:
   ```python
   for a in au:
@@ -215,9 +219,9 @@ w ten sposób często szybciej napisać pętlę.
 
 Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10:
 ```python
-kwadraty = [x**2 for x in range(11)] # dlaczego range(11) ?
+kwadraty = [x**2 for x in range(11)]
 ```
-
+*(przy okazji - dlaczego piszemy `range(11)`?)*
 
 ## Piszemy funkcje
 
@@ -244,8 +248,8 @@ czy_konczysie('misie konczysie', 'ysie')
 * jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych"
 
 ## Słowniki
-Na koniec pobawimy się słownikami.
-* mapowanie wartości --> wartości np. `'jeden' -> 1`, piszemy to tak:
+Krótki przykład działania słowników:
+* mapowanie wartości --> wartości np. `'jeden' -> 1`, słownik tworzymy tak:
 ```python
 d = {'jeden': 1, 'dwa': 2}
 # albo tak:
@@ -255,6 +259,7 @@ d = dict() # d = {}
 d['jeden'] = 1
 d['dwa'] = 2
 ```
+
 
 
 ## Numpy
