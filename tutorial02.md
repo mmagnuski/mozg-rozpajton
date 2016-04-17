@@ -132,6 +132,7 @@ print(au[1])
 print(au[2])
 # ...
 ```
+
 ale to by było okropnie żmudne, nawet gdybyśmy mieli kopiować, wklejać i zmieniać odpowiednią wartość w kwadratowym nawiasie. Ważnym elementem programowania jest automatyzacja tego typu problemów - służy do tego pętla `for`. Poniżej przykład:
 ```python
 for a in au:
@@ -150,6 +151,20 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 * np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
 * co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
   
+#### Dodatkowe:
+* dwie pętle poniżej są tożsame:
+  ```python
+  for a in au:
+      print(a)
+
+  for i in range(len(au)):
+      print(a[i])
+  ```
+* co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
+* spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
+
+* dodatkowo - są jeszcze bajery takie jak `enumerate` albo `zip`, ale w to zajrzymy tylko jeżeli jest czas oraz panuje ład i zrozumienie
+
   
 ## comprehensions
 :construction:
