@@ -396,8 +396,3 @@ Często jednak chcemy mieć listę plików, które znajdują się w danym folder
 import glob
 fls = glob.glob('*.set')
 ```
-
-
-## Zadanie domowe
-:construction:
-W zależności od tego, gdzie skończymy - ogłoszona zostanie wieczorem.
