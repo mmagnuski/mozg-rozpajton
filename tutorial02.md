@@ -8,8 +8,6 @@ Program na dziś:
 * biblioteka `pandas`
 * ładne wykresy - `seaborn`
 
-Zaczynamy w `Jupyter QT Console` - środowisku podobnym do ipython'a, z którego korzystaliśmy ostatnio, jednak oferującego szerszą funkcjonalność. Niedługo przesiądziemy się na `Jupyter Notebook`, a później (na kolejnym spotkaniu) pobawimy się również programem `Spyder`.
-
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
