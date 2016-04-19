@@ -1,18 +1,19 @@
 Program na dziś:
 * wątpliwości i pytania
 * `IPython`
-* 
 * wczytywanie plików tekstowych
-* `Jupter QT console`
-* pierwsze kroki w `mne`
 * pętle
+* `Jupter QT console`
 * podstawy biblioteki `numpy`:
   - tworzenie wektorów, macierzy 2d
   - podstwy adresowania wektorów i macierzy
-* `mne` - wczytywanie wydarzń, lokalizacji elektrod, epokowanie, usuwanie epok, ERPy
 * `matplotlib` - czyli tworzenie wykresów w pythonie
+* pierwsze kroki w `mne` (wczytywanie, wyświetlanie, filtrowanie)
 * rysujemy sygnał eeg, zmieniamy style
-
+* `mne` i ćwiczenia na koniec 
+  - wczytywanie macierzy wydarzń
+  - wczytywanie lokalizacji elektrod, korekta nazw elektrod
+  - epokowanie, usuwanie epok, ERPy...
 
 
 ## ipython
@@ -20,71 +21,6 @@ Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę 
 * komendy `ls` `cd` oraz `?`
 * %run
 * pokazówka %bookmark
-
-  
-## Pierwsze kroki w `mne`
-Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
-* zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
-* zaimportujemy z mne funkcję do wczytywania plików typu `.raw` (w takim formacie zapisujemy pliki z naszego Netstation) 
-* wczytamy za pomocą tej funkcji dane
-* wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
-* przefiltrujemy je
-* jeszcze raz wyświetlimy aby zobaczyć zmiany
-
-Sprawdźcie czy macie `mne`:
-```python
-import mne
-```
-
-Instalacja z poziomu konsoli (wymaga gita, ale ściąganajświeższą (developerską) wersję mne):
-```
-pip install git+https://github.com/mne-tools/mne-python
-```
-Ale na razie, jeżeli jesteście z własnymi komputerami i nie macie jeszcze `mne`, wystaczy:
-```
-pip install mne
-```
-
-Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
-```python
-os.chdir(r')
-fls = os.listdir()
-# albo: fls = glob.glob('*.raw')
-print(fls[:4])
-```
-
-Ok, mamy listę plików, ale jak wczytać dane, które się w nich znajdują? Pliki są w formacie `.raw`, `mne` ma specjalną fuknkcję do wczytywania takich plików - znajduje się ona w module `egi`, który z kolei znajduje się w module `io` (od *input-output*). Funkcja nazywa się`read_raw_egi`. Możemy zaimportować z `mne` tylko tę funkcję w ten sposób:
-```python
-from mne.io.egi import read_raw_egi
-```
-
-Następnie wczytujemy dane:
-```python
-eeg = read_raw_egi(fls[0], preload=True)
-```
-
-Wczytane dane przechowujemy teraz w zmiennej `eeg` - zmienna ta jest jednak specyficznego typu:
-```python
-type(eeg)
-```
-
-Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (możecie sobie sprawdzić co daje komenda `dir(eeg)`), zwrócimy przede wszyskim uwagę na to, że `Raw` ma metodę ("moc") `plot` pozwalającą wyświetlić dane:
-```python
-eeg.plot()
-```
-
-Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
-```python
-eeg.filter(1, None) # filtr górnoprzepustowy 1Hz
-```
-
-Teraz ponownie je wyświetlimy:
-```python
-eeg.plot()
-```
-
-* krótki opis opcji interfejsu do przeglądania danych
-* zaznacznie złych kanałów
 
 
 ## Wczytywanie plików tekstowych
@@ -299,6 +235,88 @@ np.arange?
 * wracamy do mne, wczytujemy dane, wczytujemy eventy, filtrujemy, epokujemy, rysujemy erp'a
 
 
+## Matplotlib
+Konwencja importu jest taka:
+```python
+import matplotlib.pyplot as plt
+```
+
+podstawowe:
+* proste plotowanie (`plt.plot`)
+* styl linii, kolor, grubość
+* dodawanie tytułu, opisów osi
+* `plt.scatter` oraz `plt.imshow`
+
+dodatkowe:
+* legenda i `label=`
+* `plt.style.use`
+
+  
+## Pierwsze kroki w `mne`
+Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
+* zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
+* zaimportujemy z mne funkcję do wczytywania plików typu `.raw` (w takim formacie zapisujemy pliki z naszego Netstation) 
+* wczytamy za pomocą tej funkcji dane
+* wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
+* przefiltrujemy je
+* jeszcze raz wyświetlimy aby zobaczyć zmiany
+
+Sprawdźcie czy macie `mne`:
+```python
+import mne
+```
+
+Instalacja z poziomu konsoli (wymaga gita, ale ściąganajświeższą (developerską) wersję mne):
+```
+pip install git+https://github.com/mne-tools/mne-python
+```
+Ale na razie, jeżeli jesteście z własnymi komputerami i nie macie jeszcze `mne`, wystaczy:
+```
+pip install mne
+```
+
+Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
+```python
+os.chdir(r')
+fls = os.listdir()
+# albo: fls = glob.glob('*.raw')
+print(fls[:4])
+```
+
+Ok, mamy listę plików, ale jak wczytać dane, które się w nich znajdują? Pliki są w formacie `.raw`, `mne` ma specjalną fuknkcję do wczytywania takich plików - znajduje się ona w module `egi`, który z kolei znajduje się w module `io` (od *input-output*). Funkcja nazywa się`read_raw_egi`. Możemy zaimportować z `mne` tylko tę funkcję w ten sposób:
+```python
+from mne.io.egi import read_raw_egi
+```
+
+Następnie wczytujemy dane:
+```python
+eeg = read_raw_egi(fls[0], preload=True)
+```
+
+Wczytane dane przechowujemy teraz w zmiennej `eeg` - zmienna ta jest jednak specyficznego typu:
+```python
+type(eeg)
+```
+
+Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (możecie sobie sprawdzić co daje komenda `dir(eeg)`), zwrócimy przede wszyskim uwagę na to, że `Raw` ma metodę ("moc") `plot` pozwalającą wyświetlić dane:
+```python
+eeg.plot()
+```
+
+Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
+```python
+eeg.filter(1, None) # filtr górnoprzepustowy 1Hz
+```
+
+Teraz ponownie je wyświetlimy:
+```python
+eeg.plot()
+```
+
+* krótki opis opcji interfejsu do przeglądania danych
+* zaznacznie złych kanałów
+
+
 ## eventy w `mne`
 MNE-python w wielu kwestiach stara się nie komplikować fromatu wykorzystywanych danych i korzysta z najprostszych reprezentacji takich jak listy, słowniki bądź macierze numpy. Tak jest w przypadku formatu w jakim mne interpretuje wydarzenia (np. pojawienie się bodźca) - są to macierze numpy o wymiarach: liczba wydarzeń (wiersze) na 3 (kolumny). Każdy wiersz to wydarzenie, pierwsza kolumna mówi o latencji (w próbkach) wydarzenia, druga kolumna jest ignorowana (przyczyną są w dużej mierze kwestie historyczne i kompatybilność wstecz, nie przejmujmy się tym), trzecia kolumna to natomiast rodzaj wydarzenia - określany liczbą całkowitą. Jako że liczby całkowite nie są dla ludziego umysłu tak sensowne, co dla komputera, będziemy używać dodatkowo słownika, który będzie tłumaczył nazwy wydarzeń na liczby całkowite.
 Ale wszystko po kolei, zerknijmy najpierw na przykładową macierz opisującą eventy:
@@ -327,18 +345,3 @@ events_dict = {'twarz': 1, 'samochód': 2}
 # ale możemy też tak utworzyć ten sam słownik:
 events_dict = dict(twarz=1, samochód=2) 
 ```
-
-## Matplotlib
-
-```python
-import matplotlib.pyplot as plt
-```
-
-* proste plotowanie
-* styl linii
-* dodawanie tytułu, opisów osi
-* legenda i `label=`
-* `plt.style.use`
-* znów mne - rysujemy sygnał z kanałów
-
-## `pandas` oraz `seaborn` pewnie się nie zmieszczą na tych zajęciach
