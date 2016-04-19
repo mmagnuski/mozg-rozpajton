@@ -1,11 +1,14 @@
 Program na dziś:
 * wątpliwości i pytania
 * `IPython`
-* pierwsze kroki w `mne`
+* 
 * wczytywanie plików tekstowych
+* `Jupter QT console`
+* pierwsze kroki w `mne`
 * pętle
-* `Jupyter QT Console`
-* podstawy biblioteki `numpy`
+* podstawy biblioteki `numpy`:
+  - tworzenie wektorów, macierzy 2d
+  - podstwy adresowania wektorów i macierzy
 * `mne` - wczytywanie wydarzń, lokalizacji elektrod, epokowanie, usuwanie epok, ERPy
 * `matplotlib` - czyli tworzenie wykresów w pythonie
 * rysujemy sygnał eeg, zmieniamy style
