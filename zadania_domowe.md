@@ -57,3 +57,13 @@ lst.extend([1, 7])
 print(lst)
 ```
 
+## Adresowanie i łączenie operacji
+W tutorialu jest następujący przykład:
+```python
+"Alojzy"[4].upper() + "orro"
+```
+
+Wymyśl po jednym przykładzie w podobnym stylu łączącym:
+* tekst, adresowanie zakresem, mnożenie wartością całkowitą
+* lista, adresowanie wartością, mnożenie watością całkowitą
+* lista, adresowanie zakresem, dodawanie innej listy (może też adresowanej?)
