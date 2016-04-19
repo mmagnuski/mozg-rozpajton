@@ -232,11 +232,11 @@ Utwórz zmienną tekstową o dowolnej nazwie zawierającą treść "ZAKOPANEINIE
   
   
 ## Listy
-Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Brzmi mało konkretnie? Zobaczmy w praktyce:
+Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Listę tworzymy otaczając nawiasem kwadratowym jej elementy rozdzielone przecinkami. Brzmi mało konkretnie? Zobaczmy w praktyce:
 
 ```python
 moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
-len(moja_lista)
+len(moja_lista) # poda nam długość listy
 ```
 
 Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  Sprawdźcie teraz:
@@ -262,8 +262,7 @@ kuchnia = ['toster', 'garnek', 'patelnia', 'klucze', 'okruszki']
 'klucze' in kuchnia
 ```
 
-#### *ZADANIE*
-:construction: proste zadanie 
+#### *ZADANIE 1*
 Funkcja `help` pozwala sprawdzić dokumentację dla jakiejś funkcji / metody. Wcześniej sprawdzaliśmy w ten sposób dokumentację funkcji. Teraz chcemy dowiedzieć się co robi **metoda** `reverse`, możemy to sprawdźić tak:
 ```python
 help(moja_lista.reverse) # bo reverse jest metodą obiektów tekstowych
@@ -271,7 +270,7 @@ help(moja_lista.reverse) # bo reverse jest metodą obiektów tekstowych
 Zauważ, że czym innym jest `moja_lista.reverse` oraz `moja_lista.reverse()` - to pierwsze daje nam metodę, to drugie "odpala" tę metodę (gdy nawias jest pusty - bez argumentów).  
 Twoim zadaniem jest dowiedzieć się co robi metoda `append` i użyć tej metody na liście `moja_lista` w taki sposób aby komenda `moja_lista[-1]` zwracała nam `"oczywistość oczywista"`.
 
-#### *ZADANIE*
+#### *ZADANIE 2*
 :construction: proste zadanie 
 W tym zadaniu poznasz funkcję `range` oraz funkcę `list`.  
 Funkcja `range` pozwala nam stworzyć zakres liczbowy:
@@ -289,12 +288,11 @@ print(lst)
 ```
 Sprawdź dokumentację funkcji `range` i utwórz zakres zaczynający się na wartości 3, rosnący o 4 i kończący się na wartości 23.
   
-#### *ZADANIE*
+#### *ZADANIE 3*
 :construction: proste zadanie 
 Teraz zastosujemy funkcję `list` do wcześniej utworzonej przez nas zmiennej `a`. Co się wtedy dzieje?
-Listy też mają swoje metody ("moce"). Sprawdź co robi metoda `reverse`. 
 
-#### *ZADANIE*
+#### *ZADANIE 4*
 Bez kopiowania dwie zmienne będą wskazywać na tę samą listę, a więc wszelkie zmiany będą odbywać się na tym samym fragmencie pamięci komputera.
 ```
 A = ['delfin', 'przebrany za', 'pastora']
@@ -306,7 +304,7 @@ print(A)
 ```
 Jak sobie z tym poradzić? Sprawdź metodę `copy` listy. Użyj jej w miejscu gdzie w powyższym przykładzie jest `B = A`.
 
-#### *ZADANIE*
+#### *ZADANIE 5*
 Ostatnie ćwiczenie - dzielenie tekstu na listę oddzielnych elementów. Tekst ma metodę `split`, która pozwala dzielić tekst na listę mniejszych "tekstów". Domyślnie `split` dzieli po spacji:
 ```python
 tekst = "Tekst taki niepozorny, niewiele znaczący."
