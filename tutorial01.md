@@ -271,7 +271,6 @@ Zauważ, że czym innym jest `moja_lista.reverse` oraz `moja_lista.reverse()` - 
 Twoim zadaniem jest dowiedzieć się co robi metoda `append` i użyć tej metody na liście `moja_lista` w taki sposób aby komenda `moja_lista[-1]` zwracała nam `"oczywistość oczywista"`.
 
 #### *ZADANIE 2*
-:construction: proste zadanie 
 W tym zadaniu poznasz funkcję `range` oraz funkcę `list`.  
 Funkcja `range` pozwala nam stworzyć zakres liczbowy:
 ```python
@@ -289,7 +288,6 @@ print(lst)
 Sprawdź dokumentację funkcji `range` i utwórz zakres zaczynający się na wartości 3, rosnący o 4 i kończący się na wartości 23.
   
 #### *ZADANIE 3*
-:construction: proste zadanie 
 Teraz zastosujemy funkcję `list` do wcześniej utworzonej przez nas zmiennej `a`. Co się wtedy dzieje?
 
 #### *ZADANIE 4*
