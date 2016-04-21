@@ -98,7 +98,7 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
       print(a)
 
   for i in range(len(au)):
-      print(a[i])
+      print(au[i])
   ```
 * co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
 * spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
