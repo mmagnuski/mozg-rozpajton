@@ -1,9 +1,10 @@
 Program na dziś:
-* wątpliwości i pytania
+* wątpliwości i pytania, przykładowy notebook
 * `IPython`
 * wczytywanie plików tekstowych
-* pętle
 * `Jupter QT console`
+* pętle
+* `Jupter QT console` / `Spyder`
 * podstawy biblioteki `numpy`:
   - tworzenie wektorów, macierzy 2d
   - podstwy adresowania wektorów i macierzy
