@@ -72,7 +72,6 @@ c = get_config()
 c.TerminalIPythonApp.display_banner = True
 c.InteractiveShellApp.log_level = 20
 
-]
 c.InteractiveShellApp.exec_lines = [
     'import numpy as np',
     'import matplotlib.pyplot as plt',
