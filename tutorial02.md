@@ -4,6 +4,7 @@ Program na dziś:
 * wczytywanie plików tekstowych
 * `Jupter QT console`
 * pętle
+* funkcje
 * `Jupter QT console` / `Spyder`
 * podstawy biblioteki `numpy`:
   - tworzenie wektorów, macierzy 2d
@@ -98,7 +99,7 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 
 * pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
 * np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
-* co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
+* co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora? a co jeżeli trzy ostatnie nazwiska autora?
   
 #### Dodatkowe:
 * dwie pętle poniżej są tożsame:
@@ -130,11 +131,32 @@ Często do takich krótkich pętli przydają się bardzo comprehensions:
 ```
 w ten sposób często szybciej napisać pętlę.
 
-Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10:
+Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10 (podniesienie do kwardatu to operacja `**2` w pythonie):
 ```python
 kwadraty = [x**2 for x in range(11)]
 ```
 *(przy okazji - dlaczego piszemy `range(11)`?)*
+
+Powyższą jednolinijkową pętlę można wzbogacić o stwierdzenie warunkowe `if` - np. powiedzmy że chcemy podnosić do kwadratu tylko wartości większe od 5. Możemy to napisać tak:
+```python
+kwadraty = [x**2 for x in range(11) if x > 5]
+
+# faktycznie zrobilibyśmy wtedy tak:
+kwadraty = [x**2 for x in range(6, 11)]
+```
+
+weźmy inny przykład. Mamy dwie listy: `poszukiwane` oraz `w_kuchni`:
+```python
+poszukiwane = ['klucze', 'szczęście']
+w_kuchni = ['garnki', 'apetyczna woń', 'koń na biegunach', 'szczęście']
+```
+chcemy utworzyć nową listę - `znalezione_w_kuchni`, w której umieścimy tylko te elementy z listy `poszukiwane`, które znajdują się w liście `w_kuchni`. Gdy korzystamy z comprehensions zadanie to staje się łatwe:
+```python
+znalezione_w_kuchni = [item for item in poszukiwane if item in w_kuchni]
+```
+
+Zadanie:
+wszystkie pętle które przerabialiśmy dopiero co przerób na comprehensions.
 
 ## Piszemy funkcje
 
@@ -156,9 +178,11 @@ czy_konczysie('misie konczysie', 'ysie')
 # zwraca nam True
 ```
 * poprawka do funkcji `czy_konczysie` - podajemy listę możliwych końcówek
-* (ewentualnie) - zróbmy tak aby działało dla listy i dla tekstu
+* (ewentualnie) - zróbmy tak aby działało dla listy i dla tekstu - to trudniejsze `isinstance`
   
-* jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych"
+* jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych". Funkcja `czy_polak` ma sprawdzać czy końcówka nazwiska brzmi "polsko". Aby uprościć sobie zadanie stworzymy listę końcówek nazwisk wszystkich uczestników.
+* Gdy już zrobimy to pętlą - robimy za pomocą comprehension
+* następnie tworzymy zmienną `nazwiska` oraz korzystamy z funkcji `filter`
 
 ## Słowniki
 Krótki przykład działania słowników:
@@ -173,9 +197,19 @@ d['jeden'] = 1
 d['dwa'] = 2
 ```
 
+Zadanie:
+sprawdź co daje nam `d.keys()` i zastanów się co robi poniższa pętla:
+```python
+for k in d.keys():
+    print(d[k])
+```
+
+## Spyder
+* otwieramy spydera
+* krótkie wprowadzenie, podstawy
 
 ## Numpy
-Aby wykonywać sprawnie i szybko obliczenia na setkach tysięcy wartości liczbowych musimy skorzystać ze specjalnego pakietu - `numpy` (num jest od numerical). Zapoznamy się teraz z jego podstawami. Korzystamy teraz z `Jupyter QT console`.
+Aby wykonywać sprawnie i szybko obliczenia na setkach tysięcy wartości liczbowych musimy skorzystać ze specjalnego pakietu - `numpy` (num jest od numerical). Zapoznamy się teraz z jego podstawami. Korzystamy teraz z `Jupyter QT console` albo `Spyer`'a (do uczenia się podstaw `numpy` polecam `spyder`'a).
 
 Najczęściej wykorzystywaną w nauce reprezentacją danych są macierze (i wektory). Zaczniemy od wektorów - są bardzo podobne do list, tylko że przechowują wartości tylko jednego typu (np. tylko 32-bitowe integer). Dzięki temu każda wartość zajmuje tyle samo miejsca w pamięci komputera - wartości są więc układane po kolei w pamięci co umożliwia wykonywanie szybkich obliczeń (poza pythonem - numpy korzysta z pradawnych bibliotek w fortranie i C). Te technikalia nie są takie istotne. Ważne jest przede wszystkim to, że numpy umożliwia wykonywanie obliczeń szybko. Wkrótce się o tym zresztą przekonamy.
 
@@ -212,7 +246,7 @@ i macierzy z losowymi wartościami zmiennoprzecinkowymi między
 0 i 1. Funkcja ta znajduje się w podmodule
 `random`, dostajemy się do niej w związku z tym w taki sposób:
 ```python
-x = np.random.rand(250)
+x = np.random.rand(15)
 ```
 
 Stworzylimy w ten sposob wektor 250 losowych wartosci.  
@@ -231,18 +265,28 @@ Wektory możemy adresować tak samo jak listy:
 z = y[5:11] # bierze elementy nr 5,6,7,8,9,10 (czyli szósty, siódmy ... i tak aż do jedenastego)
 ```
 
-Aby dobrze zrozumieć adresowanie przerobimy je na rosnących wartościach całkowitych. Utworzymy je korzystając z funkcji `arange` z biblioteki `numpy`. Najpierw sprawdźmy jakie argumenty ona przyjmuje:
+Aby przypomnieć sobie adresowanie (teraz w nowym kontekście - wektorów) przerobimy je na rosnących wartościach całkowitych. Utworzymy je korzystając z funkcji `arange` z biblioteki `numpy`. Najpierw sprawdźmy jakie argumenty ona przyjmuje:
 ```python
-np.arange?
+np.arange? # albo ctrl+i w spyderze
 ```
 
-* 2d macierze i adresowanie
+Tworzymy sobie wektor wartości od zera do 25:
+```
+vec = np.arange(26) # działa tak samo jak range tyle że zwraca `np.array` czyli wektor/macierz
+```
+Teraz pobawcie się indeksowaniem na `vec` - sprawdźcie to, co działa na listach.
+Ale sprawdźcie również coś takiego:
+```python
+vec[[2, 3, 8, 11]]
+vec[[5, 2, 21, 14]]
+```
+
+
+* 2d macierze i adresowanie `np.random.rand(10, 10)`
 * podstawowe operacje - uśrednianie, dodawanie itp.
 * inplace i kopie!
-* from showit import image
+* `from showit import image`
 * `image(x, cmap='hot')
-
-* wracamy do mne, wczytujemy dane, wczytujemy eventy, filtrujemy, epokujemy, rysujemy erp'a
 
 
 ## Matplotlib
@@ -255,11 +299,12 @@ podstawowe:
 * proste plotowanie (`plt.plot`)
 * styl linii, kolor, grubość
 * dodawanie tytułu, opisów osi
+* `plt.style.use`
 * `plt.scatter` oraz `plt.imshow`
 
 dodatkowe:
 * legenda i `label=`
-* `plt.style.use`
+
 
   
 ## Pierwsze kroki w `mne`
