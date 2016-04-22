@@ -40,16 +40,24 @@ tekst = file.readlines()
 file.close() # pamiętamy aby zamykać plik!
 ```
 Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
+  
+Spróbujcie w ten sposób otworzyć plik z listą autorów i tytułem pracy dotyczącej bożonu Higgsa.
+Jeżeli spróbujecie kodu powyżej, powinien wyskoczyć Wam błąd. Python myśli, że plik ma inne kodowanie niż ma faktycznie. Prawdopodobnie windows dezinformuje pythona aby zakłócić przebieg naszych zajęć (diableskie podszepty!).
+Zamknijcie plik (`f.close()`) i otwórzcie go ponownie, ale teraz tak:
+```python
+file = open('plik.txt', encoding='utf-8')
+# i dalej jak wcześniej
+```
+* encoding - o co chodzi, kilka słów
 
 * ile jest linijek: `len(tekst)`
-* `tekst[1][:50]`
+* pierwsze 50 znaków z drugiej linijki (w drugiej są autorzy): `tekst[1][:50]`
 * dzielimy na autorów - `autorzy = tekst[1].split(", ")`
 * ilu jest autorów - `len(autorzy)`
 
-Aby nie przejmować się zamykaniem pliku możemy użyć konstruktu `with`:
+Aby nie przejmować się zamykaniem pliku możemy używać konstruktu `with`:
 ```python
-# to samo co wcześniej z `with`:
-with open('plik.txt') as f:
+with open('plik.txt', encoding='utf-8') as f:
     tekst = f.readlines()
 ```
 `with` jest o tyle fajne, że zawsze, nawet w wypadku wysąpienia błędu przy wczytywaniu, upewni się, że plik został poprawnie zamknięty.
