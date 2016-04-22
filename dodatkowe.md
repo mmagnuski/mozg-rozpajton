@@ -26,7 +26,7 @@ imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie,
 ```
   
   
-### *dla ciekawskich, pętle w innych językach*
+## *dla ciekawskich, pętle w innych językach*
 Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
 ```julia
 # julia
@@ -61,4 +61,25 @@ for i = 1:length(vec)
 		wyslij_w_kosmos(vec(i));
 	end
 end
+```
+
+## *przykład pliku konfiguracyjnego IPythona*
+
+```python
+# plik ipython_config.py
+c = get_config()
+
+c.TerminalIPythonApp.display_banner = True
+c.InteractiveShellApp.log_level = 20
+
+]
+c.InteractiveShellApp.exec_lines = [
+    'import numpy as np',
+    'import matplotlib.pyplot as plt',
+    'import pandas as pd'
+]
+c.InteractiveShellApp.exec_files = [
+    'jakis_plik.py',
+    'jakis_inny_plik.ipy'
+]
 ```
