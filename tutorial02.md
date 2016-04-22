@@ -19,9 +19,10 @@ Program na dziś:
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
-* komendy `ls` `cd` oraz `?`
-* %run
-* pokazówka %bookmark
+* komendy `pwd`, `ls`, `cd` oraz `?`
+* `%run`
+* pokazówka `%bookmark`
+* [więcej komend specjalnych](http://ipython.readthedocs.org/en/stable/interactive/magics.html)
 
 
 ## Wczytywanie plików tekstowych
