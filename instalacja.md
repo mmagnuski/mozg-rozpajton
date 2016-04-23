@@ -94,9 +94,15 @@ Instalacja na Windowsie wymaga następujących kroków:
 
   ```
   setx R_HOME "C:\Program Files\R\R-3.2.3"
-  ```  
-  oczywiście zamiast `"C:\Program Files\R\R-3.2.3"` wpisujecie ścieżkę, pod którą R jest zaintalowany na Waszym komputerze.  
-* Przetestuj czy możesz zaimportować bez błędu `rpy2` w pythonie:  
+  ```
+oczywiście zamiast `"C:\Program Files\R\R-3.2.3"` wpisujecie ścieżkę, pod którą R jest zaintalowany na Waszym komputerze.  
+* dodaj zmienną środowiskową `R_USER` do folderu użytkownika (np folderu `Dokumenty`):
+```
+setx R_USER "C:\user\swps\Documents"
+```
+tutaj też wpisujecie odpowiednią ścieżkę - do Waszego użytkownika.
+  
+* Zrestartuj konsolę i przetestuj czy możesz zaimportować bez błędu `rpy2` w pythonie:  
 
   ```python
   import rpy2.robjects as robjects
