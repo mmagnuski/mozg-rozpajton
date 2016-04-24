@@ -2,7 +2,6 @@ Program na dziś:
 * wątpliwości i pytania, przykładowy notebook
 * `IPython`
 * wczytywanie plików tekstowych
-* `Jupter QT console`
 * pętle
 * `Jupter QT console`
 * podstawy biblioteki `numpy`:
