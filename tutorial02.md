@@ -4,18 +4,10 @@ Program na dziś:
 * wczytywanie plików tekstowych
 * `Jupter QT console`
 * pętle
-* funkcje
-* `Jupter QT console` / `Spyder`
+* `Jupter QT console`
 * podstawy biblioteki `numpy`:
   - tworzenie wektorów, macierzy 2d
   - podstwy adresowania wektorów i macierzy
-* `matplotlib` - czyli tworzenie wykresów w pythonie
-* pierwsze kroki w `mne` (wczytywanie, wyświetlanie, filtrowanie)
-* rysujemy sygnał eeg, zmieniamy style
-* `mne` i ćwiczenia na koniec 
-  - wczytywanie macierzy wydarzń
-  - wczytywanie lokalizacji elektrod, korekta nazw elektrod
-  - epokowanie, usuwanie epok, ERPy...
 
 
 ## ipython
