@@ -11,6 +11,8 @@ Program na dziś:
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
+Aby uruchomić ipythona piszemy w konsoli: `ipython`. Jeżeli macie już dosyć czerni i chcecie trochę ładniejsze
+środowisko - możecie odpalić od razu `jupyter qtconsole` (niegdyś nazywała się ipython qtconsole).
 * komendy `pwd`, `ls`, `cd` oraz `?`
 * `%run`
 * pokazówka `%bookmark`
@@ -57,6 +59,9 @@ with open('plik.txt', encoding='utf-8') as f:
 Możecie też porównać co daje `f.read()` w porównaniu do `f.readlines()`.
 
 ## Pętle
+> :warning: na windowsie jeżeli chcecie bez problemów wykonać zadanie z pętlami przeszukując wszystkich autorów, koniecznie odpalcie je w `jupyter qtconsole`. Problem polega na tym, że zwykła konsola pythona, jak i `ipython` działają w klasycznym terminalu windowsa (wierszu poleceń), który ma problem z wyświetlaniem niektórych znaków (takich jak znaki specjalne w nazwiskach niektórych autorów). :warning:  
+> Użytkownicy linuxa bądź osxa nie mają tego (oraz wielu innych) problemów. :rowboat:  
+
 Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
 Weźmy na początek kilu pierwszych autorów jako oddzielną listę:
 ```python
@@ -151,7 +156,12 @@ x = np.random.rand(15)
 Stworzylimy w ten sposob wektor 250 losowych wartosci.  
 Gdy chcemy obliczyć sumę ze wszystkich wartości tego wektora, piszemy:
 ```python
-np.sum(x)
+x.sum()
+```
+
+Możemy też policzyć średnią pisząc:
+```python
+x.mean()
 ```
 
 Gdy chcemy do wszystkich wartości dodać 2.3 piszemy po prostu:
@@ -181,8 +191,7 @@ vec[[5, 2, 21, 14]]
 ```
 
 
-* 2d macierze i adresowanie `np.random.rand(10, 10)`
+* 2d macierze i adresowanie. Tworzymy macierz `A = np.random.rand(10, 10)` i bawimy się w adresowanie.
 * podstawowe operacje - uśrednianie, dodawanie itp.
-* inplace i kopie! (o tym nie było - do pracy domowej!)
 * `from showit import image`
 * `image(x, cmap='hot')`
