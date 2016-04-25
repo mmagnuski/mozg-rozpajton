@@ -217,6 +217,9 @@ events_dict = dict(twarz=1, samochód=2)
 ```
 
 
+## mne basics - linki
+- [epoki - podstawy](https://circle-artifacts.com/gh/mne-tools/mne-python/751/artifacts/0/home/ubuntu/mne-python/doc/_build/html/auto_tutorials/plot_object_epochs.html)
+
 
 ## Pandas
 * wczytywanie danych `pd.read_excel()`, `pd.read_csv()`, `pd.read_table()`
