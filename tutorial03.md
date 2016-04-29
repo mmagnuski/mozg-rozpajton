@@ -9,48 +9,6 @@
   - epokowanie, usuwanie epok, ERPy...
 
 
-## comprehensions
-:construction:
-
-W poprzedniej sekcji wyświetlaliśmy między innymi autorów zaczynających się na `"A"` za pomocą krótkiej pętli:
-```python
-for autor in autorzy:
-    if autor.beginswith('A'):
-        print(autor)
-```
-Często do takich krótkich pętli przydają się bardzo comprehensions:
-```python
-[print(x) for x in autorzy if x.beginswith("A")]
-```
-w ten sposób często szybciej napisać pętlę.
-
-Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10 (podniesienie do kwardatu to operacja `**2` w pythonie):
-```python
-kwadraty = [x**2 for x in range(11)]
-```
-*(przy okazji - dlaczego piszemy `range(11)`?)*
-
-Powyższą jednolinijkową pętlę można wzbogacić o stwierdzenie warunkowe `if` - np. powiedzmy że chcemy podnosić do kwadratu tylko wartości większe od 5. Możemy to napisać tak:
-```python
-kwadraty = [x**2 for x in range(11) if x > 5]
-
-# faktycznie zrobilibyśmy wtedy tak:
-kwadraty = [x**2 for x in range(6, 11)]
-```
-
-weźmy inny przykład. Mamy dwie listy: `poszukiwane` oraz `w_kuchni`:
-```python
-poszukiwane = ['klucze', 'szczęście']
-w_kuchni = ['garnki', 'apetyczna woń', 'koń na biegunach', 'szczęście']
-```
-chcemy utworzyć nową listę - `znalezione_w_kuchni`, w której umieścimy tylko te elementy z listy `poszukiwane`, które znajdują się w liście `w_kuchni`. Gdy korzystamy z comprehensions zadanie to staje się łatwe:
-```python
-znalezione_w_kuchni = [item for item in poszukiwane if item in w_kuchni]
-```
-
-Zadanie:
-wszystkie pętle które przerabialiśmy dopiero co przerób na comprehensions.
-
 ## Piszemy funkcje
 
 * zadanie główne: funkcja `czy_polak`
