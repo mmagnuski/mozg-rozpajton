@@ -1,87 +1,22 @@
 Program na dziś:
-* wątpliwości i pytania
+* wątpliwości i pytania, przykładowy notebook
 * `IPython`
-* pierwsze kroki w `mne`
 * wczytywanie plików tekstowych
 * pętle
-* `Jupyter QT Console`
-* podstawy biblioteki `numpy`
-* `mne` - wczytywanie wydarzń, lokalizacji elektrod, epokowanie, usuwanie epok, ERPy
-* `matplotlib` - czyli tworzenie wykresów w pythonie
-* rysujemy sygnał eeg, zmieniamy style
-
+* `Jupter QT console`
+* podstawy biblioteki `numpy`:
+  - tworzenie wektorów, macierzy 2d
+  - podstwy adresowania wektorów i macierzy
 
 
 ## ipython
 Wracamy do nauki pythona, ale tym razem już nie w prostej konsoli, ale trochę podrasowanej jej wersji - `ipython`.
-* komendy `ls` `cd` oraz `?`
-* %run
-* pokazówka %bookmark
-
-  
-## Pierwsze kroki w `mne`
-Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie do analizy danych elektrofizjologicznych. Zrobimy na razie tylko kilka podstawowych operacji, a później wrócimy do dalszej nauki pythona. Robimy tak abyście nie musieli czekać do przedostatnich/ostatnich zajęć z analizą danych neuro, ale już mieli jakiś przedsmak tego, co Was czeka. Oto, co teraz zrobimy:
-* zainstalujemy `mne` (jeżeli ktoś nie ma zainstalowanego)
-* zaimportujemy z mne funkcję do wczytywania plików typu `.raw` (w takim formacie zapisujemy pliki z naszego Netstation) 
-* wczytamy za pomocą tej funkcji dane
-* wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
-* przefiltrujemy je
-* jeszcze raz wyświetlimy aby zobaczyć zmiany
-
-Sprawdźcie czy macie `mne`:
-```python
-import mne
-```
-
-Instalacja z poziomu konsoli (wymaga gita, ale ściąganajświeższą (developerską) wersję mne):
-```
-pip install git+https://github.com/mne-tools/mne-python
-```
-Ale na razie, jeżeli jesteście z własnymi komputerami i nie macie jeszcze `mne`, wystaczy:
-```
-pip install mne
-```
-
-Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
-```python
-os.chdir(r')
-fls = os.listdir()
-# albo: fls = glob.glob('*.raw')
-print(fls[:4])
-```
-
-Ok, mamy listę plików, ale jak wczytać dane, które się w nich znajdują? Pliki są w formacie `.raw`, `mne` ma specjalną fuknkcję do wczytywania takich plików - znajduje się ona w module `egi`, który z kolei znajduje się w module `io` (od *input-output*). Funkcja nazywa się`read_raw_egi`. Możemy zaimportować z `mne` tylko tę funkcję w ten sposób:
-```python
-from mne.io.egi import read_raw_egi
-```
-
-Następnie wczytujemy dane:
-```python
-eeg = read_raw_egi(fls[0], preload=True)
-```
-
-Wczytane dane przechowujemy teraz w zmiennej `eeg` - zmienna ta jest jednak specyficznego typu:
-```python
-type(eeg)
-```
-
-Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (możecie sobie sprawdzić co daje komenda `dir(eeg)`), zwrócimy przede wszyskim uwagę na to, że `Raw` ma metodę ("moc") `plot` pozwalającą wyświetlić dane:
-```python
-eeg.plot()
-```
-
-Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
-```python
-eeg.filter(1, None) # filtr górnoprzepustowy 1Hz
-```
-
-Teraz ponownie je wyświetlimy:
-```python
-eeg.plot()
-```
-
-* krótki opis opcji interfejsu do przeglądania danych
-* zaznacznie złych kanałów
+Aby uruchomić ipythona piszemy w konsoli: `ipython`. Jeżeli macie już dosyć czerni i chcecie trochę ładniejsze
+środowisko - możecie odpalić od razu `jupyter qtconsole` (niegdyś nazywała się ipython qtconsole).
+* komendy `pwd`, `ls`, `cd` oraz `?`
+* `%run`
+* pokazówka `%bookmark`
+* [więcej komend specjalnych](http://ipython.readthedocs.org/en/stable/interactive/magics.html)
 
 
 ## Wczytywanie plików tekstowych
@@ -99,16 +34,24 @@ tekst = file.readlines()
 file.close() # pamiętamy aby zamykać plik!
 ```
 Teraz w zmiennej `tekst` mamy wszystkie linijki tekstu znalezione w pliku tekstowym.
+  
+Spróbujcie w ten sposób otworzyć plik z listą autorów i tytułem pracy dotyczącej bożonu Higgsa.
+Jeżeli spróbujecie kodu powyżej, powinien wyskoczyć Wam błąd. Python myśli, że plik ma inne kodowanie niż ma faktycznie. Prawdopodobnie windows dezinformuje pythona aby zakłócić przebieg naszych zajęć (diableskie podszepty!).
+Zamknijcie plik (`f.close()`) i otwórzcie go ponownie, ale teraz tak:
+```python
+file = open('plik.txt', encoding='utf-8')
+# i dalej jak wcześniej
+```
+* encoding - o co chodzi, kilka słów
 
 * ile jest linijek: `len(tekst)`
-* `tekst[1][:50]`
+* pierwsze 50 znaków z drugiej linijki (w drugiej są autorzy): `tekst[1][:50]`
 * dzielimy na autorów - `autorzy = tekst[1].split(", ")`
 * ilu jest autorów - `len(autorzy)`
 
-Aby nie przejmować się zamykaniem pliku możemy użyć konstruktu `with`:
+Aby nie przejmować się zamykaniem pliku możemy używać konstruktu `with`:
 ```python
-# to samo co wcześniej z `with`:
-with open('plik.txt') as f:
+with open('plik.txt', encoding='utf-8') as f:
     tekst = f.readlines()
 ```
 `with` jest o tyle fajne, że zawsze, nawet w wypadku wysąpienia błędu przy wczytywaniu, upewni się, że plik został poprawnie zamknięty.
@@ -116,6 +59,9 @@ with open('plik.txt') as f:
 Możecie też porównać co daje `f.read()` w porównaniu do `f.readlines()`.
 
 ## Pętle
+> :warning: na windowsie jeżeli chcecie bez problemów wykonać zadanie z pętlami przeszukując wszystkich autorów, koniecznie odpalcie je w `jupyter qtconsole`. Problem polega na tym, że zwykła konsola pythona, jak i `ipython` działają w klasycznym terminalu windowsa (wierszu poleceń), który ma problem z wyświetlaniem niektórych znaków (takich jak znaki specjalne w nazwiskach niektórych autorów). :warning:  
+> Użytkownicy linuxa bądź osxa nie mają tego (oraz wielu innych) problemów. :rowboat:  
+
 Do autorów jeszcze wrócimy, gdy nauczymy się tworzyć proste pętle oraz pisać własne funkcje. Zaczniemy od pętli - prostego mechanizmu do powtarzania jakiejś komendy czy zestawu komend dla wielu elementów.
 Weźmy na początek kilu pierwszych autorów jako oddzielną listę:
 ```python
@@ -149,7 +95,7 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 
 * pisząc pętle najpierw zastanówmy się co chcemy zrobić z każdym elementem, a potem obudujmy to pętlą
 * np. - chcemy wyświetlić dwa pierwsze znaki każdego autora...
-* co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora?
+* co jeżeli chcemy wyświetlić tylko ostatnie trzy litery autora? a co jeżeli trzy ostatnie nazwiska autora?
   
 #### Dodatkowe:
 * dwie pętle poniżej są tożsame:
@@ -158,7 +104,7 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
       print(a)
 
   for i in range(len(au)):
-      print(a[i])
+      print(au[i])
   ```
 * co jeżeli chcemy wyświetlić autorów tylko zaczynających się na pewną literę? Wtedy musimy skorzystać z nowego konstruktu - `if`.
 * spróbujmy teraz wyświetlić tylko autorów których nazwiska kończą się na `"ski"`.
@@ -166,67 +112,8 @@ W naszym wypadku jest podobnie przy czym ta definicja to:
 * dodatkowo - są jeszcze bajery takie jak `enumerate` albo `zip`, ale w to zajrzymy tylko jeżeli jest czas oraz panuje ład i zrozumienie
 
   
-## comprehensions
-:construction:
-
-W poprzedniej sekcji wyświetlaliśmy między innymi autorów zaczynających się na `"A"` za pomocą krótkiej pętli:
-```python
-for autor in autorzy:
-    if autor.beginswith('A'):
-        print(autor)
-```
-Często do takich krótkich pętli przydają się bardzo comprehensions:
-```python
-[print(x) for x in autorzy if x.beginswith("A")]
-```
-w ten sposób często szybciej napisać pętlę.
-
-Ale po kolei, weźmy najprosty przykład, tworzymy listę wartości będących kwadratami liczb całkowitych od 0 do 10:
-```python
-kwadraty = [x**2 for x in range(11)]
-```
-*(przy okazji - dlaczego piszemy `range(11)`?)*
-
-## Piszemy funkcje
-
-* zadanie główne: funkcja `czy_polak`
-* zaczniemy jednak od banalnej funkcji `dodaj`
-* schemat funkcji:
-  ```python
-  def nazwa_funkcji(argument):
-      # coś robimy z argumentem
-  ```
-* funkcja `dodaj`:
-  ```python
-  def dodaj(a, b):
-      return a + b
-  ```
-* funkcja `czy_konczysie`, ma działać tak:
-```python
-czy_konczysie('misie konczysie', 'ysie')
-# zwraca nam True
-```
-* poprawka do funkcji `czy_konczysie` - podajemy listę możliwych końcówek
-* (ewentualnie) - zróbmy tak aby działało dla listy i dla tekstu
-  
-* jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych"
-
-## Słowniki
-Krótki przykład działania słowników:
-* mapowanie wartości --> wartości np. `'jeden' -> 1`, słownik tworzymy tak:
-```python
-d = {'jeden': 1, 'dwa': 2}
-# albo tak:
-d = dict(jeden=1, dwa=2)
-# albo też tak:
-d = dict() # d = {}
-d['jeden'] = 1
-d['dwa'] = 2
-```
-
-
 ## Numpy
-Aby wykonywać sprawnie i szybko obliczenia na setkach tysięcy wartości liczbowych musimy skorzystać ze specjalnego pakietu - `numpy` (num jest od numerical). Zapoznamy się teraz z jego podstawami. Korzystamy teraz z `Jupyter QT console`.
+Aby wykonywać sprawnie i szybko obliczenia na setkach tysięcy wartości liczbowych musimy skorzystać ze specjalnego pakietu - `numpy` (num jest od numerical). Zapoznamy się teraz z jego podstawami. Korzystamy teraz z `Jupyter QT console` albo `Spyer`'a (do uczenia się podstaw `numpy` polecam `spyder`'a).
 
 Najczęściej wykorzystywaną w nauce reprezentacją danych są macierze (i wektory). Zaczniemy od wektorów - są bardzo podobne do list, tylko że przechowują wartości tylko jednego typu (np. tylko 32-bitowe integer). Dzięki temu każda wartość zajmuje tyle samo miejsca w pamięci komputera - wartości są więc układane po kolei w pamięci co umożliwia wykonywanie szybkich obliczeń (poza pythonem - numpy korzysta z pradawnych bibliotek w fortranie i C). Te technikalia nie są takie istotne. Ważne jest przede wszystkim to, że numpy umożliwia wykonywanie obliczeń szybko. Wkrótce się o tym zresztą przekonamy.
 
@@ -263,13 +150,18 @@ i macierzy z losowymi wartościami zmiennoprzecinkowymi między
 0 i 1. Funkcja ta znajduje się w podmodule
 `random`, dostajemy się do niej w związku z tym w taki sposób:
 ```python
-x = np.random.rand(250)
+x = np.random.rand(15)
 ```
 
 Stworzylimy w ten sposob wektor 250 losowych wartosci.  
 Gdy chcemy obliczyć sumę ze wszystkich wartości tego wektora, piszemy:
 ```python
-np.sum(x)
+x.sum()
+```
+
+Możemy też policzyć średnią pisząc:
+```python
+x.mean()
 ```
 
 Gdy chcemy do wszystkich wartości dodać 2.3 piszemy po prostu:
@@ -282,60 +174,24 @@ Wektory możemy adresować tak samo jak listy:
 z = y[5:11] # bierze elementy nr 5,6,7,8,9,10 (czyli szósty, siódmy ... i tak aż do jedenastego)
 ```
 
-Aby dobrze zrozumieć adresowanie przerobimy je na rosnących wartościach całkowitych. Utworzymy je korzystając z funkcji `arange` z biblioteki `numpy`. Najpierw sprawdźmy jakie argumenty ona przyjmuje:
+Aby przypomnieć sobie adresowanie (teraz w nowym kontekście - wektorów) przerobimy je na rosnących wartościach całkowitych. Utworzymy je korzystając z funkcji `arange` z biblioteki `numpy`. Najpierw sprawdźmy jakie argumenty ona przyjmuje:
 ```python
-np.arange?
+np.arange? # albo ctrl+i w spyderze
 ```
 
-* 2d macierze i adresowanie
+Tworzymy sobie wektor wartości od zera do 25:
+```
+vec = np.arange(26) # działa tak samo jak range tyle że zwraca `np.array` czyli wektor/macierz
+```
+Teraz pobawcie się indeksowaniem na `vec` - sprawdźcie to, co działa na listach.
+Ale sprawdźcie również coś takiego:
+```python
+vec[[2, 3, 8, 11]]
+vec[[5, 2, 21, 14]]
+```
+
+
+* 2d macierze i adresowanie. Tworzymy macierz `A = np.random.rand(10, 10)` i bawimy się w adresowanie.
 * podstawowe operacje - uśrednianie, dodawanie itp.
-* inplace i kopie!
-* from showit import image
-* `image(x, cmap='hot')
-
-* wracamy do mne, wczytujemy dane, wczytujemy eventy, filtrujemy, epokujemy, rysujemy erp'a
-
-
-## eventy w `mne`
-MNE-python w wielu kwestiach stara się nie komplikować fromatu wykorzystywanych danych i korzysta z najprostszych reprezentacji takich jak listy, słowniki bądź macierze numpy. Tak jest w przypadku formatu w jakim mne interpretuje wydarzenia (np. pojawienie się bodźca) - są to macierze numpy o wymiarach: liczba wydarzeń (wiersze) na 3 (kolumny). Każdy wiersz to wydarzenie, pierwsza kolumna mówi o latencji (w próbkach) wydarzenia, druga kolumna jest ignorowana (przyczyną są w dużej mierze kwestie historyczne i kompatybilność wstecz, nie przejmujmy się tym), trzecia kolumna to natomiast rodzaj wydarzenia - określany liczbą całkowitą. Jako że liczby całkowite nie są dla ludziego umysłu tak sensowne, co dla komputera, będziemy używać dodatkowo słownika, który będzie tłumaczył nazwy wydarzeń na liczby całkowite.
-Ale wszystko po kolei, zerknijmy najpierw na przykładową macierz opisującą eventy:
-```python
-events = np.array([[1439, 0, 1], [2892, 0, 2],
-				   [4533, 0, 1], [6108, 0, 2]],
-				   dtype='int')
-print(events)
-```
-```
-[[1439    0    1]
- [2892    0    2]
- [4533    0    1]
- [6108    0    2]]
-```
-Taka macierz znaczy dla mne tyle:
-* mamy dwa wydarzenia: `1` oraz `2`
-* wydarzenie `1` następuje w próbkach sygnału: `1439` oraz `4533` 
-* wydarzenie `2` następuje w próbkach sygnału: `2892` oraz `6108` 
-
-Mne nie chce i nie potrzebuje wiedzieć więcej. My zwykle potrzebujemy dlatego będziemy korzystać ze słownika.
-Jak zobaczycie później (dzielenie na epoki) - taki słownik będzie pomocny i osługiwany na poziomie epoch przez mne.
-```python
-events_dict = {'twarz': 1, 'samochód': 2}
-
-# ale możemy też tak utworzyć ten sam słownik:
-events_dict = dict(twarz=1, samochód=2) 
-```
-
-## Matplotlib
-
-```python
-import matplotlib.pyplot as plt
-```
-
-* proste plotowanie
-* styl linii
-* dodawanie tytułu, opisów osi
-* legenda i `label=`
-* `plt.style.use`
-* znów mne - rysujemy sygnał z kanałów
-
-## `pandas` oraz `seaborn` pewnie się nie zmieszczą na tych zajęciach
+* `from showit import image`
+* `image(x, cmap='hot')`
