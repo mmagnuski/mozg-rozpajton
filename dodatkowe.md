@@ -87,7 +87,7 @@ Często do takich krótkich pętli przydają się bardzo comprehensions:
 autorzy_na_A = [x for x in autorzy if x.startswith("A")]
 
 # powyżej używamy x aby było krótko i treściwie, ale to to samo co np.:
-autorzy_na_A = [sutor for autor in autorzy if autor.startswith("A")]
+autorzy_na_A = [autor for autor in autorzy if autor.startswith("A")]
 ```
 w ten sposób często szybciej i wygodniej pisze się pętlę. Zwykle też jest ona bardziej przejrzysta.
 
