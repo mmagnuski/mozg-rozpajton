@@ -48,7 +48,8 @@ from showit import image
 A = np.random.rand(10, 10)
 
 # chcemy wyświetlać wykresy nie w oddzielnym okienku, ale w konsoli/notebook'u:
-%matplotlib inline   # działa tylko w `jupyter qtconsole` lub `jupyter notebook`
+# komenda poniżej działa tylko w jupyter notebook albo jupyter qtconsole
+%matplotlib inline
 
 # wyświetlamy tę macierz:
 image(A)
@@ -106,12 +107,12 @@ podstawowe:
   plt.plot(x, y)
   ```
 * styl linii (`--r`), kolor(`color='g'` albo `color=[0.4, 0.9, 0.5]`), grubość (`lw=3`)
+* bogata dokumentacja: zarówno `numpy` jak i `matplotlib`
+
+Tego nie zrobiliśmy:
 * dodawanie tytułu (`plt.title`), opisów osi (`plt.xlabel`, `plt.ylabel`)
 * `plt.style.use`
 * `plt.scatter`
-* bogata dokumentacja: zarówno `numpy` jak i `matplotlib`
-
-dodatkowe:
 * legenda i `label=`
 * ewentualnie `plt.imshow`
 
@@ -122,7 +123,7 @@ Jesteśmy już gotowi aby postawić kilka pierwszych kroków w `mne` - pakiecie 
 * zaimportujemy z mne funkcję do wczytywania plików typu `.raw` (w takim formacie zapisujemy pliki z naszego Netstation) 
 * wczytamy za pomocą tej funkcji dane
 * wyświetlimy te dane (otworzymy GUI do przeglądania sygnału)
-* przefiltrujemy je
+* przefiltrujemy je (na zajęciach nie przefiltrowaliśmy)
 * jeszcze raz wyświetlimy aby zobaczyć zmiany
 
 Sprawdźcie czy macie `mne`:
@@ -167,7 +168,11 @@ Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (
 eeg.plot()
 ```
 
-Niewiele na razie widać, to dlatego że... :construction:
+Niewiele na razie widać, to dlatego że dane nie są automatycznie skalowane, możemy to rozwiązać tak:
+```python
+sk = dict(eeg=20)
+eeg.plot(scalings=sk)
+```
 
 Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
 ```python
@@ -215,23 +220,3 @@ events_dict = dict(twarz=1, samochód=2)
 
 ## mne basics - linki
 - [epoki - podstawy](https://circle-artifacts.com/gh/mne-tools/mne-python/751/artifacts/0/home/ubuntu/mne-python/doc/_build/html/auto_tutorials/plot_object_epochs.html)
-
-
-## Pandas
-* wczytywanie danych `pd.read_excel()`, `pd.read_csv()`, `pd.read_table()`
-* przeglądanie danych `pd.head()`, `pd.nazwa_kolumny[od:do]`
-* `pd.loc[5:10, 'nazwa_kolumny']`, `pd.iloc[:6, 2:4]`
-* `groupby`, `aggregate`, `pivot_table`, `cut`
-* (widget for interactive pivot table)
-
-
-## seaborn
-Najpierw korzystając z komendy `conda` w konsoli instalujemy pakiet `seaborn`.
-```
-conda install seaborn
-```
-
-W pythonie importujemy tak:
-```python
-import seaborn as sns
-```
