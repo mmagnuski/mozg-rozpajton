@@ -1,7 +1,14 @@
-### Materiały do tych zajęć
+### Materiały do warsztatów
 Dane, z których będziemy korzystać znajdziesz [na Dropboxie](https://www.dropbox.com/sh/rexe6smd9sjkus1/AAD83oxSbup3s0VOGL5j8Qpha?dl=0) oraz [na google drive](https://drive.google.com/a/swps.edu.pl/folderview?id=0B3VsSOe5fKjeX3BlNmpDeE1Oc2c&usp=sharing).
 
-### Materiały do nauki
+### Biblioteki i narzędzia:
+Tych narzędzi/bibliotek uczymy się na zajęciach:
+* [Jupyter Notebook](http://jupyter.readthedocs.io/en/latest/index.html) ([ogólna strona projektu Jupyter](http://jupyter.org/))
+* [NumPy](http://www.numpy.org/)
+* [matplotlib](http://matplotlib.org/)
+* [pandas](http://pandas.pydata.org/)
+
+### Dalsza nauka
 
 W sieci, jak zawsze, można znaleźć materiały różnej jakości. Bardzo dobre (moim zdaniem) materiały to:
 
@@ -21,16 +28,7 @@ Tych tematów na przyklad nie będziemy omawiać na zajęciach:
 * [machine learning (o tym w ogóle nie bedzie)](http://www.scipy-lectures.org/packages/scikit-learn/index.html)
 
 
-### Biblioteki i narzędzia:
-
-#### Podstawowe:
-Tych będziemy się uczyć na zajęciach:
-* Jupyter Notebook
-* NumPy
-* matplotlib
-* pandas
-
-### Przydatne w naszym kontekście
+### Biblioteki, które warto "obczaić"
 
 #### Nowe/ciekawe:
 NumPy jest podstawowym pakietem do zastosowań naukowych. Jest jednak sporo nowych bibliotek, które rywalizują z NumPy i mogą w przyszłości go zastąpić:
