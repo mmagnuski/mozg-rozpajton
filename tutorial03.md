@@ -186,37 +186,3 @@ eeg.plot()
 
 * krótki opis opcji interfejsu do przeglądania danych
 * zaznacznie złych kanałów
-
-
-## eventy w `mne`
-MNE-python w wielu kwestiach stara się nie komplikować fromatu wykorzystywanych danych i korzysta z najprostszych reprezentacji takich jak listy, słowniki bądź macierze numpy. Tak jest w przypadku formatu w jakim mne interpretuje wydarzenia (np. pojawienie się bodźca) - są to macierze numpy o wymiarach: liczba wydarzeń (wiersze) na 3 (kolumny). Każdy wiersz to wydarzenie, pierwsza kolumna mówi o latencji (w próbkach) wydarzenia, druga kolumna jest ignorowana (przyczyną są w dużej mierze kwestie historyczne i kompatybilność wstecz, nie przejmujmy się tym), trzecia kolumna to natomiast rodzaj wydarzenia - określany liczbą całkowitą. Jako że liczby całkowite nie są dla ludziego umysłu tak sensowne, co dla komputera, będziemy używać dodatkowo słownika, który będzie tłumaczył nazwy wydarzeń na liczby całkowite.
-Ale wszystko po kolei, zerknijmy najpierw na przykładową macierz opisującą eventy:
-```python
-events = np.array([[1439, 0, 1], [2892, 0, 2],
-           [4533, 0, 1], [6108, 0, 2]],
-           dtype='int')
-print(events)
-```
-```
-[[1439    0    1]
- [2892    0    2]
- [4533    0    1]
- [6108    0    2]]
-```
-Taka macierz znaczy dla mne tyle:
-* mamy dwa wydarzenia: `1` oraz `2`
-* wydarzenie `1` następuje w próbkach sygnału: `1439` oraz `4533` 
-* wydarzenie `2` następuje w próbkach sygnału: `2892` oraz `6108` 
-
-Mne nie chce i nie potrzebuje wiedzieć więcej. My zwykle potrzebujemy dlatego będziemy korzystać ze słownika.
-Jak zobaczycie później (dzielenie na epoki) - taki słownik będzie pomocny i osługiwany na poziomie epoch przez mne.
-```python
-events_dict = {'twarz': 1, 'samochód': 2}
-
-# ale możemy też tak utworzyć ten sam słownik:
-events_dict = dict(twarz=1, samochód=2) 
-```
-
-
-## mne basics - linki
-- [epoki - podstawy](https://circle-artifacts.com/gh/mne-tools/mne-python/751/artifacts/0/home/ubuntu/mne-python/doc/_build/html/auto_tutorials/plot_object_epochs.html)
