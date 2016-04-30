@@ -8,21 +8,58 @@
   - wczytywanie lokalizacji elektrod, korekta nazw elektrod
   - epokowanie, usuwanie epok, ERPy...
 
+## Jupyter notebook
+Poznajemy środowisko Jupyter notebook.
+* pokazówka
+* korzystając z terminala idziemy tam gdzie chcemy rozpocząć pracę a następnie piszemy `jupyter notebook`
+* wykonywanie komórek: `shift`+`enter` gdy chcemy przejść do kolejnej komórki, `ctrl`+`enter` gdy chcemy pozostać w bieżącej (jest jeszcze `alt`+`enter` - wykonuje bieżącą komórkę i tworzy nową poniżej).
+* notebook możemy zapisać - jest to plik o rozszerzeniu `.ipynb`
 
 ## Piszemy funkcje
 
-* zadanie główne: funkcja `czy_polak`
+* zadanie główne (prawdopodobnie do domu): funkcja `czy_polak`
 * zaczniemy jednak od banalnej funkcji `dodaj`
 * schemat funkcji:
   ```python
   def nazwa_funkcji(argument):
       # coś robimy z argumentem
   ```
+  
 * funkcja `dodaj`:
   ```python
   def dodaj(a, b):
       return a + b
   ```
+
+* w jakich sytuacjach funkcje są wygodne? Przypomnijcie sobie, co robiliśmy ostatnio:
+```python
+import numpy as np
+from showit import image
+
+# tworzymy macierz losowych wartości (10 wierszy na 10 kolumn)
+A = np.random.rand(10, 10)
+
+# chcemy wyświetlać wykresy nie w oddzielnym okienku, ale w konsoli/notebook'u:
+%matplotlib inline   # działa tylko w `jupyter qtconsole` lub `jupyter notebook`
+
+# wyświetlamy tę macierz:
+image(A)
+
+# chcemy jednak w kolorze:
+image(A, cmap='viridis')
+
+# albo jak kotś woli:
+image(A, cmap='magma')
+```
+
+Powiedzmy, że bardzo podoba nam się mapa kolorystyczna `viridis` i chcemy domyślnie z jej użyciem wyświetlać sobie macierze.
+Piszemy więc funkcję!
+```python
+def img(matrix):
+    image(matrix, cmap='viridis')
+```
+Teraz `img(A)` wyświetli nam macierz z mapą kolorystyczną `viridis`. W ten sposób oszczędzamy sobie pisania. O to właśnie chodzi w funkcjach - skracamy wielokrotnie wykonywane operacje (czasami nawet kilka-kilkanaście albo i kilkadziesiąt linijek kodu) do jednego wywołania funkcji.
+
 * funkcja `czy_konczysie`, ma działać tak:
 ```python
 czy_konczysie('misie konczysie', 'ysie')
@@ -32,52 +69,67 @@ czy_konczysie('misie konczysie', 'ysie')
 * (ewentualnie) - zróbmy tak aby działało dla listy i dla tekstu - to trudniejsze `isinstance`
   
 * jesteśmy wreszcie gotowi by napisać funkcję `czy_polak` a następnie zastosować ją do gąszczu autorów jednej z ostatnich prac na temat bożonu Higgsa aby wydobyć "naszych". Funkcja `czy_polak` ma sprawdzać czy końcówka nazwiska brzmi "polsko". Aby uprościć sobie zadanie stworzymy listę końcówek nazwisk wszystkich uczestników.
+
+dodatkowe:
 * Gdy już zrobimy to pętlą - robimy za pomocą comprehension
 * następnie tworzymy zmienną `nazwiska` oraz korzystamy z funkcji `filter`
 
 
 ## Matplotlib
+Matplotlib to główna biblioteka do plotowania w pythonie ("plotowanie" to wyświetlanie grafik takich jak wykresy liniowe itp.).
 Konwencja importu jest taka:
 ```python
 import matplotlib.pyplot as plt
 ```
 
 podstawowe:
-* proste plotowanie (`plt.plot`)
-* styl linii, kolor, grubość
-* dodawanie tytułu, opisów osi
+* proste plotowanie (`plt.plot`) - tworzymy wektor 25 wartości losowych i wyświetlamy
+* korzystamy z x i y: tworzymy wektor 1000 równo rozmieszczonych wartości pomiędzy -10 i 10:
+  ```python
+  x = np.linspace(-10, 10, num=1000)
+  ```
+  
+  tworzymy zmienną `y` - sinus z wartości `x`:
+  ```python
+  y = np.sin(x)
+  ```
+  wyświetlamy:
+  ```python
+  plt.plot(x, y)
+  ```
+* styl linii (`--r`), kolor(`color='g'` albo `color=[0.4, 0.9, 0.5]`), grubość (`lw=3`)
+* dodawanie tytułu (`plt.title`), opisów osi (`plt.xlabel`, `plt.ylabel`)
 * `plt.style.use`
-* `plt.scatter` oraz `plt.imshow`
+* `plt.scatter`
+* bogata dokumentacja: zarówno `numpy` jak i `matplotlib`
 
 dodatkowe:
 * legenda i `label=`
+* ewentualnie `plt.imshow`
 
 
 ## Słowniki
-Krótki przykład działania słowników:
+Przerywnik. Krótki przykład działania słowników:
 * mapowanie wartości --> wartości np. `'jeden' -> 1`, słownik tworzymy tak:
 ```python
 d = {'jeden': 1, 'dwa': 2}
+
 # albo tak:
 d = dict(jeden=1, dwa=2)
-# albo też tak:
+
+# możemy też utworzyć pusty słownik i później go uzupełnić:
 d = dict() # d = {}
 d['jeden'] = 1
 d['dwa'] = 2
 ```
 
 Zadanie:
-sprawdź co daje nam `d.keys()` i zastanów się co robi poniższa pętla:
+sprawdź co robi poniższa pętla:
 ```python
-for k in d.keys():
+for k in d:
+    print(k)
     print(d[k])
 ```
-
-## Spyder
-* otwieramy spydera
-* krótkie wprowadzenie, podstawy
-
-
 
   
 ## Pierwsze kroki w `mne`
@@ -94,7 +146,7 @@ Sprawdźcie czy macie `mne`:
 import mne
 ```
 
-Instalacja z poziomu konsoli (wymaga gita, ale ściąganajświeższą (developerską) wersję mne):
+Instalacja z poziomu konsoli (wymaga gita, ale ściąga najświeższą (developerską) wersję mne):
 ```
 pip install git+https://github.com/mne-tools/mne-python
 ```
@@ -105,7 +157,7 @@ pip install mne
 
 Teraz skorzystamy z modułu `os` aby przejść do folderu z plikami i wylistować je sobie.
 ```python
-os.chdir(r')
+os.chdir(r'C:\dane')
 fls = os.listdir()
 # albo: fls = glob.glob('*.raw')
 print(fls[:4])
@@ -130,6 +182,8 @@ Nie będziemy się na razie wkopywać w funkcjonalność obiektów klasy `Raw` (
 ```python
 eeg.plot()
 ```
+
+Niewiele na razie widać, to dlatego że... :construction:
 
 Dane nie są przefiltrowane, dlatego niedużo w nich widać. Przefiltrujemy je w związku z tym.
 ```python
