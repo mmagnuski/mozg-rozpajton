@@ -1,12 +1,7 @@
 * funkcje  
-* słowniki
 * `matplotlib` - czyli tworzenie wykresów w pythonie
-* pierwsze kroki w `mne` (wczytywanie, wyświetlanie, filtrowanie)
-* rysujemy sygnał eeg, zmieniamy style
-* `mne` i ćwiczenia na koniec 
-  - wczytywanie macierzy wydarzń
-  - wczytywanie lokalizacji elektrod, korekta nazw elektrod
-  - epokowanie, usuwanie epok, ERPy...
+* pierwsze kroki w `mne` (wczytywanie, wyświetlanie)
+* w ostatniej chwili - rysujemy sygnał eeg
 
 ## Jupyter notebook
 Poznajemy środowisko Jupyter notebook.
@@ -30,6 +25,19 @@ Poznajemy środowisko Jupyter notebook.
   def dodaj(a, b):
       return a + b
   ```
+`return` to specjalna komenda - kończy funkcję i zwraca jakąś wartość. Na przykład:
+```python
+def głupia_funkcja():
+    return 2 + 4
+```
+ta funkcja zawsze zwraca 6:
+```python
+głupia_funkcja()
+6
+
+głupia_funkcja() > 4
+True
+```
 
 * w jakich sytuacjach funkcje są wygodne? Przypomnijcie sobie, co robiliśmy ostatnio:
 ```python
@@ -106,30 +114,6 @@ podstawowe:
 dodatkowe:
 * legenda i `label=`
 * ewentualnie `plt.imshow`
-
-
-## Słowniki
-Przerywnik. Krótki przykład działania słowników:
-* mapowanie wartości --> wartości np. `'jeden' -> 1`, słownik tworzymy tak:
-```python
-d = {'jeden': 1, 'dwa': 2}
-
-# albo tak:
-d = dict(jeden=1, dwa=2)
-
-# możemy też utworzyć pusty słownik i później go uzupełnić:
-d = dict() # d = {}
-d['jeden'] = 1
-d['dwa'] = 2
-```
-
-Zadanie:
-sprawdź co robi poniższa pętla:
-```python
-for k in d:
-    print(k)
-    print(d[k])
-```
 
   
 ## Pierwsze kroki w `mne`
