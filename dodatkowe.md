@@ -7,6 +7,7 @@ Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintry
   i faktycznie wybieramy tyle elementów ile wynosi dodaj.
 * dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie. To też czasami jest wygodne w programowaniu.
 * to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje (dyskusyjne)  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
+
 Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego. Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania, porównaj:
 ```python
 # python
@@ -22,7 +23,8 @@ imie[1:3] # tak samo jak w Julii
 ```
 ```matlab
 % matlab
-imie(1:3) % tutaj też, ale matlab stosuje do tego inny nawias (to po Fortranie, bardzo starym języku programowania)
+imie(1:3) % tutaj też
+% matlab stosuje do adresowania inny nawias (to po Fortranie, bardzo starym języku programowania)
 ```
   
   
