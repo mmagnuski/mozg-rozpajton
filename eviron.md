@@ -6,7 +6,8 @@ Bardzo szkicowy przegląd środowisk do pythona, z których będziemy korzystać
 | ipython console | przede wszystkim do prostych, szybkich spraw - ipython uruchamia się szybko a jest wygodniejszy od domyślego terminala pythona |
 | jupyter qt consle | też uruchamia się bardzo szybko, ale jest wygodniejsze od ipython console |
 | jupyter notebook | uruchamia się trochę wolniej, ma spro fajnych opcji, najbardziej przydaje się gdy chcemy udokumentować to, co robimy w kodzie aby np. później podzielić się z innymi. Niektórzy jednak wszystko robią w notebooku. |
-| spyder | otwiera się wolniej, ale stanowi całe zintegrowane środowisko do kodowania (IDE), na początku ilość guzików, menu i okien może nieco przestraszyć, ale szybko okazuje się że gdy planujemy dłuższą posiadówkę z pythonem - spyder potrafi być wygodniejszy od jupyter notebooka |
+| spyder | otwiera się wolniej, ale stanowi całe zintegrowane środowisko do kodowania (IDE), na początku ilość guzików, menu i okien może nieco przestraszyć, ale szybko okazuje się że gdy planujemy dłuższą posiadówkę z pythonem - spyder potrafi być wygodniejszy od jupyter notebooka. Tryb debugowania spydera bardzo się przydaje. |
+| [rodeo](https://www.yhat.com/products/rodeo) | IDE w stylu R Studio, bardziej ograniczone od spydera (przynajmniej na razie) ale niektórym może przypaść do gustu większą prostotą i przejrzystością. |
 
 Na warsztatach będziemy korzystać przede wszystkim z:
 * jupyter qt console
