@@ -15,6 +15,10 @@ Aby sprawdzić czy Wasza znajomość pakietu `NumPy` jest na odpowiednim poziomi
 Każde pytanie wymaga napisania adekwatnej komendy. Poprawna odpowiedź na każde z pytań zajmuje jedną linijkę.
 
 ## Podstawowe
+
+* jak sprawdzić kształt macierzy `A`? (tzn. odpowiednik matlabowego `size(A)`)
+* jak zrobić transpozycję macierzy `A`? (tzn. odpowiednik `A'`)
+
 ### Adresowanie
 
 * Zaadresuj macierz dwuwymiarową `A` wybierając element na przecięciu drugiej kolumny i trzeciego wiersza.
