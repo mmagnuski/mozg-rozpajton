@@ -1,6 +1,14 @@
 # Instalacja dodatkowa
 Nieobowiązkowe pakiety, które jednak warto zainstalować.
 
+## `progressbar` i `showit`
+```
+pip install progressbar2
+```
+```
+pip install showit
+```
+
 ## RPy2
 Jeżeli chcemy korzystać z R'a z poziomu pythona będziemy potrzebować pakietu `rpy2`. Większość funkcji statystycznych, które Wam się przydadzą jest w pakietach `scipy.stats` oraz `statsmodels` ale bardziej zaawansowane procedury statystyczne mogą nie być dostępne pod pythona. Wtedy warto skorzystać z R'a, ale aby nie trzeba było co chwilę przeskakiwać między pythonem i R'em oraz przemieszczać zmiennych warto skorzystać właśnie z `rpy2`. Niestety instalacja tego pakietu na Windowsie do prostych nie należy (jak to zwykle jest w open-source - na Linuxie nie ma problemu - `pip install rpy2`).
 
