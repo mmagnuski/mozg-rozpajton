@@ -5,10 +5,6 @@ Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 * `seaborn` - do ładnych wizualizacji
 * `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych (aby ściągnąć najnowszą wersję `mne` z GitHub'a będziecie jeszcze musieli zainstalować program `git`).
 
-Dodatkowo, aby móc generować 3D wizualizacje mózgu przyda się `mayavi`, którą niestety nie jest łatwo zainstalować na windowsie na pythonie 3 (na pythonie 2 `mayavi` jest dostępne razem z Anacondą). Do korzystania z R'a bez wychodzenia z pythona przyda się też `rpy2`, który niestety też nie jest łatwy w instalowaniu na Windowsie.  
-  
-:warning: Na pierwsze zajęcia wystarczy Wam sama Anaconda oraz `mne`. Nie warto abyście męczyli się instalacją `mayavi` oraz `rpy2`.
-
 ## Anaconda
 Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib` czy `pandas`. Ściągamy instalator dla pythona 3.5.
 :warning: Na zdjęciu poniżej zaznaczony jest guzik do ściągnięcia anacondy z pythonem 3.5 dla 64-bitowego windowsa, jeżeli Twój system jest 32-bitowy, wybierz instalator 32-bitowy. Jeżeli nie wiesz jaki masz system [możesz to sprawdzić stosując się do tych instrukcji](http://windows.microsoft.com/pl-pl/windows/32-bit-and-64-bit-windows).:  
@@ -66,14 +62,23 @@ następnie przechodzimy całą instalację krok po kroku (nie musicie zmieniać 
   
 
 ## `mne`
-Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, ale nie będziemy tak robić.  
-Będziemy bowiem korzystać z nieopublikowanej jeszcze, najnowszej wersji mne (`v0.12`). mne-python rozwija się bardzo dynamicznie i wiele fajnych funkcji dodanych w ostatnim czasie nie zostało jeszcze oficjalnie opublikowanych. Do instalacji wykorzystamy komendę `pip` informując, że chcemy instalować bezpośrednio z githuba:
-```
-pip install git+https://github.com/mne-tools/mne-python
-```
+Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, przy czym wersja `mne`, z której będziemy korzystać (`0.13`) jeszcze nie została "opublikowana". W związku z tym z komendą `pip install mne` możecie jeszcze poczekać :). Jakby co - pierwszego dnia warsztatów sprawdzimy czy wszystkim wszystko działa.
+
 
 ## `mypy`
-W pewnym momencie przyda się Wam również pakiet `mypy` - to taka moja przechowalania kodu, z którego często korzystam. Pakiet ten można ściągnąć komendą `pip` z githuba:
+W pewnym momencie przyda się Wam również pakiet `mypy` - to taka moja przechowalania kodu, z którego często korzystam. Z instalacją tego pakietu poczekajcie do dnia warsztatów. Pakiet ten można ściągnąć komendą `pip` z githuba:
 ```
 pip install git+https://github.com/mmagnuski/mypy
 ```
+
+## Czy wszystko działa?
+Możecie w pythonie wykonać poniższe komendy:
+```python
+import seaborn as sns
+from mne.io import read_raw_eeglab
+from mypy.proj import find_dropbox
+
+import mne
+assert mne.__version__.startswith('0.13')
+```
+Jeżeli komendy poszły bez błędu - z dużym prawdopodobieństwem wszystko jest ok.
