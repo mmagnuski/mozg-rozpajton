@@ -8,6 +8,76 @@ Upewnijcie się, że nie sprawiają Wam problemów:
 * tworzenie prostych funkcji
 * list comprehensions (jakby ktoś potrzebował powtórki: [link](http://stackoverflow.com/documentation/python/196/comprehensions))
 
+# Ćwiczenia na podstawy
+
+Potestujcie sobie jak działają komendy przedstawione poniżej.
+Pokrywają one podstawy potrzebne do bezproblemowego warsztatowania.
+
+## Stringi
+```python
+tekst = 'taki sobie tekst'
+inny_tekst = str(23)
+tekst2 = 'dobra' + 'zmiana'
+tekst2 * 10
+
+# join i split
+tekst3 = ' '.join(['dobra', 'zmiana'])
+print(tekst3 + '!' * 5)
+tekst.split()
+tekst2.split('a')
+
+# adresowanie
+tekst[:5]
+tekst[5:10]
+tekst[5::2]
+tekst3[::-1]
+
+# bobry wszystkich krajów odbudowują Polskę z ruin
+final_tekst = '\n'.join([tekst3, 'bobrza tama'])
+print(final_tekst)
+
+# endswith
+final_tekst[-4:]
+final_tekst.endswith('tama')
+
+# Freudowskie zabawy
+t1, t2 = ('pisać', 'listy')
+print(' '.join([t2[0] + t1[1:], t1[0] + t2[1:]]))
+```
+
+:construction:
+więcej o adresowaniu tutaj: ...  
+itp itd: ...
+
+## Listy
+
+```python
+l1 = ['ala', 'ma', 'kota', 'stefan', 'poliglota']
+print(l1[2], l1[1], l1[-1])
+
+l2 = list('abcd')
+l3 = list(range(1, 6))
+
+l2.index('c')
+l3.index(1)
+
+# kopiowanie
+l4 = l1
+l4[2] = 'drona'
+print(l4)
+print(l1) # ups, l1 też się zmieniło
+
+l5 = l1.copy()
+l5[-1] = 'ma smartfona'
+print(l5)
+print(l1) # l1 się nie zmieniło
+
+# sformatujmy jeszcze ładnie
+rymowanka = ' '.join(l5[:3]) + '\n' + ' '.join(l5[3:])
+print(rymowanka)
+```
+
+## więcej wkrótce
 
 # Powtórka/quiz z NumPy:
 
