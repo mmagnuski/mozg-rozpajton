@@ -26,22 +26,35 @@ quit()
 
 ## rozgrzewka
 
-instalacja i setup
-konsola i jupyter notebook
-moduł os, list comprehensions, listy
-w końcu: tworzymy listę plików
+* konsola i jupyter notebook. W konsoli piszemy:
+  ```
+  jupyter notebook
+  ```
+  aby odpalić **w danym folderze** jupyter notebook.
+  
+* moduł os, list comprehensions celem utworzenia listy plików:
+  ```python
+  import os
+  pth = r'C:\DANE\EEG'
+  fls = [f for f in os.listdir(pth) if f.endswith('.raw')
+  ```
 
-wczytujemy plik
+wczytujemy plik (`mne.io.read_raw_egi`)
 * plotujemy, widzimy diny i sygnał
-* co jest w obiekcie `Raw`...
+* co jest w obiekcie `Raw`: `info`, `ch_names`, `times`, `_data`
 
 `mypy.events.get_events_from_din` daje nam macierz wydarzeń
-adresowanie macierzy wydarzeń
-(normalnie mamy `mne.find_events`)
+adresowanie macierzy wydarzeń dla danych EGI
+
+(dla większości innych plików robimy:
+```python
+events = mne.find_events(raw)
+```
+gdzie raw to obiekt typu Raw - tzn. właśnie takie wczytane przez nas dane)
 
 
 event codes:
-* pełne informacje w prezentacji `nazwa_pres.pptx`
+* pełne informacje w prezentacji w folderze warsztatowym
 * ogólny opis jest taki:
   ```
   32 + is_face * 16 + (deg / 90 + 1) * 4
@@ -64,6 +77,7 @@ event codes:
 ```python
 mypy.events.correct_egi_channel_names(eeg)
 ```
+Ten krok też jest specyficzny dla plików EGI (`*.raw`), dla innych nie będzie potrzebny.
   
 * filtrowanie jest proste - `eeg.filter()`
   
