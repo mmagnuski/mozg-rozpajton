@@ -93,7 +93,8 @@ i zobacz co się stanie. :boom:
 
 Jeżeli jesteś w jupyter notebook'u (a jesteś jeżeli jesteś na piątkowych zajęciach na swps):
 zamiast korzystać z funkcji `help` mając kursor wewnątrz nawiasu jakiejś funkcji naciśnij <key>shift</key> + <key>tab</key>:
- ile razy | jaki efekt |
+
+ile razy | jaki efekt |
  ---------|------------|
  raz | *sprawdź i uzupełnij* |
  raz | *sprawdź i uzupełnij* |
