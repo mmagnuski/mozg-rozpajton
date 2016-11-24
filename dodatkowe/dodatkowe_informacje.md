@@ -110,37 +110,6 @@ Zadanie:
 wszystkie pętle które przerabialiśmy dopiero co przerób na comprehensions.
 
 
-## Słowniki, krótki przykład
-Słowniki spotkaliśmy już na ostatnich zajęciach - są one nieuporządkowanym zbiorem mapowań.
-Mapowań w takim samym sensie jak normalny słownik mapuje słowa na ich definicje. W przypadku pythonowych słowników mówimy o mapowaniu kluczy na wartości. Nieuporządkowanym z kolei ze względu na to, że w przydpaku słowników kolejność kluczy nie ma znaczenia - istotne jest tylko jaka wartość odpowiada danemu kluczowi, a nie który to z kolei klucz.
-Słownik tworzymy tak:
-```python
-d = {'jeden': 1, 'dwa': 2}
-
-# albo tak:
-d = dict(jeden=1, dwa=2)
-
-# możemy też utworzyć pusty słownik i później go uzupełnić:
-d = dict() # d = {}
-d['jeden'] = 1
-d['dwa'] = 2
-```
-
-Otrzymany słownik pozwala nam "tłumaczyć" tekstową reprezentację liczb na reprezentację cyfrową:
-```python
-d['dwa']
-
-2
-```
-
-Zadanie:
-Słowniki można używać w pętli. Sprawdź co robi poniższa pętla:
-```python
-for k in d:
-    print(k)
-    print(d[k])
-```
-
 
 ## *przykład pliku konfiguracyjnego IPythona*
 
