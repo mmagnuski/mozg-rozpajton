@@ -1,10 +1,5 @@
 ## Materiały do warsztatów na SWPS listopad 2016 - styczeń 2017
-
-:construction:
-### dane 1
-Dane, z których korzystaliśmy na pierwszych 3 warsztatach znajdziesz [na Dropboxie](https://www.dropbox.com/sh/rexe6smd9sjkus1/AAD83oxSbup3s0VOGL5j8Qpha?dl=0) oraz [na google drive](https://drive.google.com/a/swps.edu.pl/folderview?id=0B3VsSOe5fKjeX3BlNmpDeE1Oc2c&usp=sharing).
-### dane 2
-Dane, z których korzystaliśmy później - te same, z których korzystacie w ramach pracy domowej są natomiast [tutaj, na Dropboxie](https://www.dropbox.com/sh/8lhwx9b12ci2c91/AACM1fA_Av5YkxXTPk-wlDDQa?dl=0). 
+Dane, z których korzystamy - są [tutaj, na Dropboxie](https://www.dropbox.com/sh/8lhwx9b12ci2c91/AACM1fA_Av5YkxXTPk-wlDDQa?dl=0). 
 
 
 ## Biblioteki i narzędzia:
