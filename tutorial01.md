@@ -103,7 +103,7 @@ ile razy | jaki efekt |
   
   
 ## Zmienne tekstowe
-Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.
+Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.  
 Zmienne tekstowe definiujemy używając znaków `'` lub `"` okalających tekst (oba muszą być takie same).
 Zaczniemy od krótkich zmiennych tekstowych, np.:
 ```python
@@ -132,7 +132,7 @@ Mówimy *zmienna `teskst2` to obiekt klasy `string`* - znaczy to tyle co *przeds
 
  (dla tekstu to np. `lower` czy `endswith`)
 
-Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Tu znów analogia do biologii - to podobnie jak specyficzne dla danego gatunku zachowania - człowiek mówi, lew ryczy a foka wyleguje się na piasku. :seal: 
+Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Tu znów analogia do biologii - to podobnie jak specyficzne dla danego gatunku zachowania - człowiek mówi, lew ryczy a foka wyleguje się na piasku. :seal:  
 Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
 ```python
 # tak:
@@ -148,7 +148,7 @@ Znów czerpiąc z biologii/życia codziennego: gatunek pies (*canis lupus famili
 
 :exclamation: Gdy nawias jest pusty - wywołujemy funkcję albo metodę bez argumentów. Niektóre funkcje i metody (ale też i psy) takie są, że nie trzeba im podawać jak mają szczekać, a i tak szczekają. Przy czym funkcje oraz metody zwykle "odpalają" tylko wtedy gdy tego chcemy - z psami bywa różnie.
 
-:clock: (tzn jeżeli starczy czasu):
+:clock: (tzn jeżeli starczy czasu):  
 Warto poznać jeszcze dwie metody tekstu: `replace` oraz `endswith`.
 `replace` pozwala podmienić w całym tekście pewne ciągi znaków (np. zwroty) na inne.
 Z `replace` korzystamy tak:
@@ -202,7 +202,7 @@ To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a
 ```
 
 ### Podstawowe zasady adresowania:
-* Python numeruje od zera, więc pierwszy element - w tym wypadku pierwsza litera tekstu to dla niego element numer zero
+* Python numeruje od zera, więc pierwszy element - to dla niego element numer zero
 * możemy też wybierać całe zakresy znaków używając operatora `:`:  
   ```python
   imie[0:3]
@@ -213,7 +213,7 @@ To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a
 
 Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
 
-*dodatkowe informacje*:
+*dodatkowe informacje*:  
 Prawda jest taka, że w pewnych sytuacjach to jest nawet wygodne, ale początkowy koszt poznawczy związany z kontrinuicyjnością chyba nie jest tego wart. Cóż, to też musicie przeboleć - mimo tych dwóch kontrintuicyjności python jest jednym z najprostszych, najbardziej czytelnych i wygodnych języków programowania. Matlab, który cały czas jest dominującym językiem w neuronauce ma dużo więcej bolączek i uwieradeł, które wołają o postę do nieba i skłaniają neuronaukowców coraz częściej do przesiadania się na pythona.
 
 
@@ -298,25 +298,8 @@ Ok, wiemy w jakim jesteśmy folderze, ale jak przejść do innego? Służy do te
 os.chdir(r'D:\dane\eksperyment01\eeg')
 ```
 
-### `r"?"`
-Zastanawiacie się pewnie po co to `r` przed nazwą ścieżki. `r` przed tekstem oznacza aby znaki `\` nie były w tym tekście traktowane jako znaki specjalne. 
-Większość języków programowania, a w tym python, traktuje znak `\` jako znak specjalny. Gdy w tekście pojawia się ten znak oznacza on, że kolejny znak otrzymuje specjalnie znaczenie. `"\n"` jest na przykład traktowane jako return/enter tzn. przejście do kolejnej linijki. `"\t"` to z kolei tab. Możecie to sprawdzić używając funkcji `print()`:
-```python
-print('\tto\tjest\n\t\ttaki\n\ntekst')
-```
-Problem polega tylko na tym, że gdy chcemy podać nazwę ścieżki to (przynajmniej na Windowsie) musimy użyć znaków `\` nie jako znaków specjalnych, ale po prostu ukośników (backslash). Można to zrobić na dwa sposoby:
-* stawiając `r` przed tekstem (r jest od *raw string*):
-  
-  ```python
-  print(r'\tto\tjest\n\t\ttaki\n\ntekst')
-  ```
-* zamiast `\` pisząc `\\`:
-  
-  ```python
-  print('\\tto\\tjest\\n\\t\\ttaki\\n\\ntekst')
-  ```
-  
-Ta pierwsza metoda jest bardzo często wygodniejsza.
+(jeżeli zastanawiasz się po co jest to `r` przed napisem zerknij tutaj :construction: (tu będzie link do FAQ))
+
 
 ### listy plików
 Inną bardzo przydatną funkcją `os` jest funkcja `listdir()`. Funkcja ta zwraca nam listę nazw plików znajdujących się w danym folderze:
