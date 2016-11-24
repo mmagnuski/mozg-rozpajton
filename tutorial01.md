@@ -132,7 +132,7 @@ Mówimy *zmienna `teskst2` to obiekt klasy `string`* - znaczy to tyle co *przeds
 
  (dla tekstu to np. `lower` czy `endswith`)
 
-Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Tu znów analogia do biologii - to podobnie jak specyficzne dla danego gatunku zachowania - człowiek mówi, lew ryczy a foka wyleguje się na piasku. :seal:  
+Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Tu znów analogia do biologii - to podobnie jak specyficzne dla danego gatunku zachowania - człowiek mówi, lew ryczy a foka wyleguje się na piasku. :beach_umbrella:  
 Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
 ```python
 # tak:
@@ -148,7 +148,7 @@ Znów czerpiąc z biologii/życia codziennego: gatunek pies (*canis lupus famili
 
 :exclamation: Gdy nawias jest pusty - wywołujemy funkcję albo metodę bez argumentów. Niektóre funkcje i metody (ale też i psy) takie są, że nie trzeba im podawać jak mają szczekać, a i tak szczekają. Przy czym funkcje oraz metody zwykle "odpalają" tylko wtedy gdy tego chcemy - z psami bywa różnie.
 
-:clock: (tzn jeżeli starczy czasu):  
+:clock2: (tzn jeżeli starczy czasu):   
 Warto poznać jeszcze dwie metody tekstu: `replace` oraz `endswith`.
 `replace` pozwala podmienić w całym tekście pewne ciągi znaków (np. zwroty) na inne.
 Z `replace` korzystamy tak:
@@ -318,7 +318,7 @@ fls = glob.glob('*.set')
 ```
 
 ## Słowniki
-Ostatni (albo przedostatni jeżeli :clock:) typ zmiennych, omówimy go na razie tylko skrótowo.
+Ostatni (albo przedostatni jeżeli :clock2:) typ zmiennych, omówimy go na razie tylko skrótowo.
 
 :construction:
 
