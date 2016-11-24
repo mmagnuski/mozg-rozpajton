@@ -33,7 +33,7 @@ Nie możemy w nawie zmiennej:
 Stwórz jeszcze dwie zmienne przechowujące dowolne wartości. Zmienne możesz nazwać jak chcesz ale dlaczego nie np. `delfin` oraz `saper`? Odejmij od siebie te zmienne.
 
 ## Prawda i fałsz
-Ważnymi i czesto wykorzystywanymi zmiennymi są zmienne typu prawda i fałsz:
+Ważnymi i czesto wykorzystywanymi zmiennymi są zmienne typu `boolean`: `True` oraz `False` reprezentujące prawda oraz fałsz:
 ```python
 prawda = True
 fałsz = False
@@ -46,16 +46,6 @@ True and False
 prawda or fałsz
 ```
 
-Wartości liczbowe takie jak `0` i `1` będą interpretowane jako `False` oraz `True` odpowiednio (w kontekście operacji logicznych):
-```python
-0 and True
-True and 1
-0 or 1
-```
-
-#### *ZADANIE*
-Przetestuj sobie działanie operatora `==` oraz `<` pisząc w pythonie stwierdzenia typu: `liczba1 operator liczba2` (podmieniając oczywiście odpowiednio `operator` na `<` lub `==` oraz `liczba1` i `liczba2` na konkretne wartości liczbowe bądź nazwy zmiennych przechowujących wartości liczbowe). Co robi operator `==` a co `<`?
-  
   
 ## Funkcje
 Oprócz zmiennych do podstawowych elementów programu zaliczamy też funkcje. Funkcje to operacje, które możemy wykonać na zmiennych. Korzystamy z nich zwykle tak:
@@ -70,16 +60,25 @@ nazwa_funkcji(zmienna1, zmienna2)
 Najprostsza operacja to wyświetlenie wartości zmiennej. Funkcja ta nazywa się `print`, korzystamy z niej tak:
 
 ```python
+print('hello world!')
+
+moja_zmienna = 'ciemno, szaro, zima'
+twoja_zmienna = 'jak tutaj wytrzymać?'
+
 print(moja_zmienna)
 print(twoja_zmienna)
-print(moja_zmienna, twoja_zmienna)
+
+print(moja_zmienna, '\n', twoja_zmienna)
 ```
 
 Inna operacja to sprawdzenie typu zawartości zmiennej - ta funkcja to `type`:
 ```python
 type(moja_zmienna)
-type(twoja_zmienna)
-``` 
+type(True)
+type(23)
+```
+Typ danej zmiennej to trochę tak jak gatunek zwierzęcia - w ramach gatunku obserwujemy zróżnicowanie, ale wszystkie egzemplarze mają ze sobą wspólne pewne podstawowe cechy.
+
 
 #### *ZADANIE*
 Bardzo wygodna jest funkcja `help`. Funkcji `help` podajemy zazwyczaj jakąś inną funkcję i otrzymujemy o tej funkcji pomocne informacje. Zobacz sobie na przykład co pojawia nam się na ekranie gdy wpiszemy w pythonie:
@@ -91,6 +90,15 @@ Skorzystaj teraz z funkcji `help` aby dowiedzieć się co robi funkcja `dir`. P�
 dir()
 ```
 i zobacz co się stanie. :boom:
+
+Jeżeli jesteś w jupyter notebook'u (a jesteś jeżeli jesteś na piątkowych zajęciach na swps):
+zamiast korzystać z funkcji `help` mając kursor wewnątrz nawiasu jakiejś funkcji naciśnij <key>shift</key> + <key>tab</key>:
+ ile razy | jaki efekt |
+ ---------|------------|
+ raz | *sprawdź i uzupełnij* |
+ raz | *sprawdź i uzupełnij* |
+ raz | *sprawdź i uzupełnij* |
+ sto | :boom: |
   
   
 ## Zmienne tekstowe
@@ -119,10 +127,12 @@ len(tekst2)
 len(tekst3)
 ```
 
-* wspomnieć ogólnie o *`teskst2` to obiekt klasy `string`* - tak jak *przedstawiciel gatunku*
-* specyficzne dla danego gatunku zachowania (dla tekstu to np. `lower` czy `endswith`)
+Mówimy *zmienna `teskst2` to obiekt klasy `string`* - znaczy to tyle co *przedstawiciel gatunku* w biologii. Tyle tylko że gatunek jest trudniej zdefiniować a typ/klasę zmiennej łatwo: `type(tekst2)`.
 
-Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
+ (dla tekstu to np. `lower` czy `endswith`)
+
+Zmienne tekstowe mają też specjalne "moce" (nazywamy je metodami). Tu znów analogia do biologii - to podobnie jak specyficzne dla danego gatunku zachowania - człowiek mówi, lew ryczy a foka wyleguje się na piasku. :seal: 
+Jedna z takich mocy to `lower`, która zamienia wszystkie litery tekstu z wielkich na małe. Moce wywołuje się podając nazwę zmiennej, kropkę, a następnie nazwę metody i (w tym wypadku pusty) nawias. 
 ```python
 # tak:
 tekst3.lower()
@@ -130,9 +140,15 @@ tekst3.lower()
 # albo tak:
 'ABCDEF'.lower()
 ```
-W tym sensie możemy rozumieć kropkę jako otwierającą paletę mocy, a nawiast jako zatwierdzenie (wywołanie) danej mocy.
+W tym sensie możemy rozumieć kropkę jako otwierającą "paletę mocy", a nawiast jako zatwierdzenie (wywołanie) danej mocy.
 
-Warto poznać jeszcze dwie moce tekstu: `replace` oraz `endswith`.
+:exclamation: Zauważ, że czym innym jest `tekst2.lower` oraz `tekst2.lower()` - to drugie (`.lower()`) "odpala" tę metodę, a to pierwsze daje nam samą metodę (nieodpaloną). 
+Znów czerpiąc z biologii/życia codziennego: gatunek pies (*canis lupus familiaris*) ma umiejętnośc szczekania. `pies.szczekaj` zwraca nam samą umiejętność szczekania (którą możemy później sobie "odpalić" - tzn. możemy zabrać psu szczekanie i jego szczekaniem szekać nawet gdy go nie ma :smile:), a `pies.szczekaj()` powoduje że pies szczeka.
+
+:exclamation: Gdy nawias jest pusty - wywołujemy funkcję albo metodę bez argumentów. Niektóre funkcje i metody (ale też i psy) takie są, że nie trzeba im podawać jak mają szczekać, a i tak szczekają. Przy czym funkcje oraz metody zwykle "odpalają" tylko wtedy gdy tego chcemy - z psami bywa różnie.
+
+:clock: (tzn jeżeli starczy czasu):
+Warto poznać jeszcze dwie metody tekstu: `replace` oraz `endswith`.
 `replace` pozwala podmienić w całym tekście pewne ciągi znaków (np. zwroty) na inne.
 Z `replace` korzystamy tak:
 ```python
@@ -153,46 +169,31 @@ mick = mick.replace('zdrowie', 'złoto')
 print(mick)
 ```
 
-`endswith` pozwala sprawdzić czy tekst kończy się określoną literą bądź ciągiem liter. `enswith` potrzebuje więc jako argumentu zmiennej tekstowej:
-```python
-"Szczepan Beztroski".endswith("ski")
-# kończy się na "ski" więc dostaniemy w odpowiedzi: 
-True
-
-# można też tak:
-username = "Szczepan Beztroski"
-czypolak = username.endswith("ski")
-
-# albo tak:
-username = "Szczepan Beztroski"
-koncówka = "ski"
-czypolak = username.endswith(koncówka)
-```
-
-Ogólny format jest więc taki:
-```python
-tekst.endswith(tekst)
-```
 
 #### *ZADANIE*
-Utwórz zmienną `imie` zawierającą Twoje imię oraz zmienną `nazwisko`, która zawierać będzie Twoje nazwisko. Następnie połącz imię i nazwisko tworząc zmienną `toja`. Sprawdź czy nazwisko kończy się na `'ski'` albo `'ska'` (w zależności od Twojej płci).
-
-#### *ZADANIE*
-Utwórz zmienna `tekst` o zawartości `"Kangury mieszkają w Australii. Bardzo lubię kangury"`. Użyj metody `replace` aby podmienić `"kangury"` na `"wombaty"` (może przydać się metoda `lower`). Następnie sprawdź czy zmieniony tekst kończy się na `"baty"`.  
-Metody można ze sobą łączyć (układać je po kolei w jednej linijce) - gdy już zrobisz to zadanie pokombinuj jak je zrobić w jednej linijce.
+Utwórz zmienna `tekst` o zawartości `"Kangury mieszkają w Australii. Bardzo lubię kangury"`. Najpierw użyj metody `lower` aby wszystkie litery były małe i zapisz wynik tej komendy w zmiennej `małe_kangury`. Następnie użyj metody `replace` aby podmienić `"kangury"` na `"wombaty"`
+Metody można ze sobą łączyć (układać je po kolei w jednej linijce) - gdy już zrobisz to zadanie pokombinuj jak je zrobić w jednej linijce. Łączenie metod w jednej linijce to ważna operacja (przynajmniej pod kątem przejrzystości i czytelności kodu) - 
   
   
 ## Adresowanie
 Adresowanie to wydobywanie elementów z jakiejś sekwencji. W naszym wypadku na razie sekwencją tą będzie tekst - tekst to w końcu po prostu ciąg znaków. Gdy chcemy dostać się do konkretnych znaków tekstu piszemy:
 ```python
 nazwa_zmiennej[numer_elementu]
-
+```
+Python numeruje od zera, więc pierwszy element - w tym wypadku pierwsza litera tekstu to dla niego element numer zero.
+W związku z tym czwarty element to element o indeksie 3.
+```
 # np:
 imie = "Mikołaj"
 imie[0] # aby dostać się do pierwszej litery (indeks zero)
 imie[3] # aby dostać się do czwartej litery (indeks trzy)
+```
+To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a czy Julii), ale tak to już jest, musicie to zapamiętać i się z tym pogodzić.
 
-# przy czym wcale nie musimy tworzyć zmiennej:
+
+*Dodatkowe informacje*:
+```
+#wcale nie musimy tworzyć zmiennej aby adresować:
 "Alojzy"[4]
 
 # możemy indeksowanie grupować z innymi operacjami:
@@ -200,18 +201,20 @@ imie[3] # aby dostać się do czwartej litery (indeks trzy)
 ```
 
 ### Podstawowe zasady adresowania:
-* Python numeruje od zera, więc pierwsza litera to dla niego litera numer zero
-* Gdy używamy ujemnych wartości - indeksujemy od końca. `imie[-1]` da nam ostatnią literę a `imie[-3]` przed-przedostatnią.
+* Python numeruje od zera, więc pierwszy element - w tym wypadku pierwsza litera tekstu to dla niego element numer zero
 * możemy też wybierać całe zakresy znaków używając operatora `:`:  
   ```python
   imie[0:3]
   ```  
-  pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`). 
+  pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`).
 * jeżeli indeksujemy od początku możemy pominąć zero i pisać tylko `imie[:4]`
 * Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]`
-* Możemy też indeksować w formacie `od:do:co_ile` np. `imie[1:5:2]` albo `imie[::2]`
 
 Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
+
+*dodatkowe informacje*:
+Prawda jest taka, że w pewnych sytuacjach to jest nawet wygodne, ale początkowy koszt poznawczy związany z kontrinuicyjnością chyba nie jest tego wart. Cóż, to też musicie przeboleć - mimo tych dwóch kontrintuicyjności python jest jednym z najprostszych, najbardziej czytelnych i wygodnych języków programowania. Matlab, który cały czas jest dominującym językiem w neuronauce ma dużo więcej bolączek i uwieradeł, które wołają o postę do nieba i skłaniają neuronaukowców coraz częściej do przesiadania się na pythona.
+
 
 #### *ZADANIE*
 Stwórz zmienną `a` zawierającą tekst: `"123456789"`. Postaraj się zaznajomić z indeksowaniem sprawdzając operacje takie jak:
@@ -222,14 +225,9 @@ a[-2]
 
 a[1:4]
 a[:3]
-a[::2]
-a[:5:2]
+a[2:]
 ```
 
-#### *ZADANIE*
-Pomyśl jak za pomocą adresowania odwrócić tekst. Pamiętaj o składni `[od:do:co_ile]` i pamiętaj, że nie trzeba podawać wszystkich wartości (tzn. np `[2::2]` albo `[:6:3]`).
-Utwórz zmienną tekstową o dowolnej nazwie zawierającą treść "ZAKOPANEINIENAPOKAZ", zmień litery z wielkich na małe i odwróć tekst.
-  
   
 ## Listy
 Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy uporządkowaną sekwencję elementów, w której każdy element może być dowolny. Listę tworzymy otaczając nawiasem kwadratowym jej elementy rozdzielone przecinkami. Brzmi mało konkretnie? Zobaczmy w praktyce:
@@ -237,6 +235,11 @@ Kolejnym bardzo często wykorzystywanym typem zmiennych są listy. Lista tworzy 
 ```python
 moja_lista = ['to', 'jest', 23, 'moja', 3.14, 'lista']
 len(moja_lista) # poda nam długość listy
+```
+
+Inny sposób na stworzenie listy to skorzystanie z funkcji `list`:
+```python
+lista_liter = list('ABCDE')
 ```
 
 Listy działają bardzo podobnie do tekstu, tyle że pojedynczy element listy to nie znak, ale cokolwiek.  Sprawdźcie teraz:
@@ -251,68 +254,29 @@ Adresowanie można łączyć, np:
 moja_lista[3][-2:]
 ```
 
-Sprawdzanie czy w liście znajduje się jakiś element jest bajecznie proste:
+Ważną metodą listy jest `.append`:
 ```python
-kuchnia = ['toster', 'garnek', 'patelnia', 'klucze', 'okruszki']
-# uniwersalna ludzka niedola: szukanie kluczy. Zastanawiamy się czy klucze
-# są w kuchni. W przypadku tak krótkiej listy łatwo to zobaczyć, ale wyobraźcie
-# sobie listę 100 albo 100 000 elementów.
+l = list()
+l.append('kilof')
+l.append('tik-tok ' * 4)
+l.append([2, 3])
 
-# sprawdzamy to tak:
-'klucze' in kuchnia
+print(l)
 ```
 
-#### *ZADANIE 1*
-Funkcja `help` pozwala sprawdzić dokumentację dla jakiejś funkcji / metody. Wcześniej sprawdzaliśmy w ten sposób dokumentację funkcji. Teraz chcemy dowiedzieć się co robi **metoda** `reverse`, możemy to sprawdźić tak:
+#### *ZADANIE*
+Funkcja `list` zamienia cokolwiek jej podamy w listę :boom:. Co jednak gdy checemy utworzyć listę numerów od zera do 99? - nie będziemy tego przecież pisać ręcznie... 
+Zakres liczbowy możemy sobie stworzyć korzystając z funkcji `range`:
 ```python
-help(moja_lista.reverse) # bo reverse jest metodą obiektów tekstowych
-```
-Zauważ, że czym innym jest `moja_lista.reverse` oraz `moja_lista.reverse()` - to pierwsze daje nam metodę, to drugie "odpala" tę metodę (gdy nawias jest pusty - bez argumentów).  
-Twoim zadaniem jest dowiedzieć się co robi metoda `append` i użyć tej metody na liście `moja_lista` w taki sposób aby komenda `moja_lista[-1]` zwracała nam `"oczywistość oczywista"`.
-
-#### *ZADANIE 2*
-W tym zadaniu poznasz funkcję `range` oraz funkcę `list`.  
-Funkcja `range` pozwala nam stworzyć zakres liczbowy:
-```python
-rng = range(10)
-print(rng)
-print(len(rng))
+rng = range(0, 100)
 ```
 
-funkcja `list` zamienia cokolwiek jej podamy w listę :boom:. Zakres liczbowy, który dopiero co stworzyliśmy, działa w zasadzie jak lista (ale nie do końca, zobaczcie na przykład co zwraca wam `print(rng)` - o tym powiem więcej po tym zadaniu). Zamienimy zakres na listę za pomocą funkcji `list`:
+Zakres (`range`) działa w zasadzie jak lista (ale nie do końca, zobaczcie na przykład co zwraca wam `print(rng)`). Nie jest jednak listą (jest jej skompresowanym opisem) - ale możemy go na listę zamienic korzystając z funkcji `list`:
 ```python
 lst = list(rng)
 print(rng)
 print(lst)
 ```
-Sprawdź dokumentację funkcji `range` i utwórz zakres zaczynający się na wartości 3, rosnący o 4 i kończący się na wartości 23.
-  
-#### *ZADANIE 3*
-Teraz zastosujemy funkcję `list` do wcześniej utworzonej przez nas zmiennej `a`. Co się wtedy dzieje?
-
-#### *ZADANIE 4*
-Bez kopiowania dwie zmienne będą wskazywać na tę samą listę, a więc wszelkie zmiany będą odbywać się na tym samym fragmencie pamięci komputera.
-```
-A = ['delfin', 'przebrany za', 'pastora']
-B = A
-B[-1] = 'zielonego stwora'
-print(B)
-# ale, uwaga:
-print(A)
-```
-Jak sobie z tym poradzić? Sprawdź metodę `copy` listy. Użyj jej w miejscu gdzie w powyższym przykładzie jest `B = A`.
-
-#### *ZADANIE 5*
-Ostatnie ćwiczenie - dzielenie tekstu na listę oddzielnych elementów. Tekst ma metodę `split`, która pozwala dzielić tekst na listę mniejszych "tekstów". Domyślnie `split` dzieli po spacji:
-```python
-tekst = "Tekst taki niepozorny, niewiele znaczący."
-elementy = tekst.split()
-print(elementy)
-
-elementy2 = tekst.split(", ")
-print(elementy2)
-```
-  
   
 ## Moduł `os`
 Sam python oferuje bardzo podstawową funkcjonalność, do jej rozszerzania służą moduły (biblioteki). Poznamy za chwilę podstawy importowania i korzystania z bibliotek w kontekście operacji na plikach.
@@ -350,7 +314,7 @@ Problem polega tylko na tym, że gdy chcemy podać nazwę ścieżki to (przynajm
   ```python
   print('\\tto\\tjest\\n\\t\\ttaki\\n\\ntekst')
   ```
-
+  
 Ta pierwsza metoda jest bardzo często wygodniejsza.
 
 ### listy plików
@@ -368,3 +332,11 @@ Często jednak chcemy mieć listę plików, które znajdują się w danym folder
 import glob
 fls = glob.glob('*.set')
 ```
+
+## Słowniki
+Ostatni (albo przedostatni jeżeli :clock:) typ zmiennych, omówimy go na razie tylko skrótowo.
+
+:construction:
+
+## *do domu* :house:
+... Co trzeba umieć/wiedziec na przyszłe zajęcia + praca domowa ...
