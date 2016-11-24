@@ -56,3 +56,32 @@
 * test końcowy
 * projekt własny (w formacie ipnb)
 * możliwe niezapowiedziane kartkówki oraz prace domowe :imp:
+
+## Key concepts - `python`
+### Zajęcia 0
+#### dane
+* zmienne tekstowe (i liczbowe)
+* importowanie, moduł `os`
+* listy, adresowanie list
+* słowniki
+* numpy array (tylko prosty przykład tworzenia i adresowania)
+
+#### operacje
+* funkcje - na przykładzie funkcji `print`
+* argumenty nazwowe (`print('tekst', 23, list('abcd'), sep='; ')`)
+* metody - na przykładzie zmiennych tekstowych (np `join` i `split`)
+
+## Key concepts - `mne`
+### Zajęcia 0
+#### dane
+* `Raw` - co tam w środku gra
+* `Montage`
+* `events` - co znaczą wartości w kolumnie 0 i 2
+* `Epochs`
+
+#### operacje
+* wyświetlanie i przeglądanie sygnału
+* filtrowanie
+* epokowanie
+* uśrednianie (ERP)
+* metody wizualizacji uśrednionego sygnału
