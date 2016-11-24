@@ -97,9 +97,10 @@ zamiast korzystać z funkcji `help` mając kursor wewnątrz nawiasu jakiejś fun
 ile razy | jaki efekt |
  ---------|------------|
  raz | *sprawdź i uzupełnij* |
- raz | *sprawdź i uzupełnij* |
- raz | *sprawdź i uzupełnij* |
+ dwa | *sprawdź i uzupełnij* |
+ cztery | *sprawdź i uzupełnij* |
  sto | :boom: |
+ Pamiętaj że po naciśnięciu raz po chwili możesz nacisnąć drugi raz, co liczy się jako dwa razy (itp.) - miej to na uwadze testując powyższe.
   
   
 ## Zmienne tekstowe
