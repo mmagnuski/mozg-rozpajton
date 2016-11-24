@@ -320,7 +320,59 @@ fls = glob.glob('*.set')
 ## Słowniki
 Ostatni (albo przedostatni jeżeli :clock2:) typ zmiennych, omówimy go na razie tylko skrótowo.
 
-:construction:
+Słowniki są nieuporządkowanym zbiorem mapowań. Co to znaczy?
+*zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słownik mapuje słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
+W przypadku pythonowych słowników mówi się o mapowaniu *klucz* -> *wartość* (*key - value pairs*). 
+*nieuporządkowany* - w przydpaku pythonowych słowników kolejność kluczy nie ma znaczenia - istotne jest tylko jaka wartość odpowiada danemu kluczowi, a nie który to z kolei klucz. Porównaj to z listami, dla których najważniejsze jest *co jest gdzie*, a więc porządek elementów.
+
+Słownik tworzymy tak:
+```python
+d = {'jeden': 1, 'dwa': 2}
+
+# albo tak:
+d = dict(jeden=1, dwa=2)
+
+# możemy też utworzyć pusty słownik i później go uzupełnić:
+d = dict() # d = {}
+d['jeden'] = 1
+d['dwa'] = 2
+```
+
+Otrzymany słownik pozwala nam "tłumaczyć" tekstową reprezentację liczb na reprezentację cyfrową:
+```python
+d['dwa']
+
+2
+```
+
+## :clock2: Macierze
+
+```python
+import numpy as np
+
+A = np.zeros((3, 3))
+print(A)
+
+B = np.random.random((3, 3))
+print(B)
+```
+
+przykładowy wynik drugiego printa
+```
+[[ 0.11320907  0.80013606  0.07407269]
+ [ 0.95201376  0.81726886  0.53849516]
+ [ 0.44352304  0.13394462  0.21847961]]
+```
+
+
+Adresowanie:
+```python
+A[0, 1]
+
+A[:, 2]
+```
+
 
 ## *do domu* :house:
 ... Co trzeba umieć/wiedziec na przyszłe zajęcia + praca domowa ...
+**:construction:**
