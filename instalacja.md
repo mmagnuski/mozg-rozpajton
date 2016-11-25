@@ -6,7 +6,7 @@ Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 * `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych (aby ściągnąć najnowszą wersję `mne` z GitHub'a będziecie jeszcze musieli zainstalować program `git`).
 
 ## Anaconda
-Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib` czy `pandas`. Ściągamy instalator dla pythona 3.5.
+Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib`, `scipy`, `pandas` czy `statsmodels`. Ściągamy instalator dla pythona 3.5.
 :warning: Na zdjęciu poniżej zaznaczony jest guzik do ściągnięcia anacondy z pythonem 3.5 dla 64-bitowego windowsa, jeżeli Twój system jest 32-bitowy, wybierz instalator 32-bitowy. Jeżeli nie wiesz jaki masz system [możesz to sprawdzić stosując się do tych instrukcji](http://windows.microsoft.com/pl-pl/windows/32-bit-and-64-bit-windows).:  
 <img src="/img/anaconda_install_00.PNG" width="450">  
   
@@ -46,8 +46,17 @@ conda install seaborn
 później odpowiadamy na zapytanie (patrz screen poniżej): `y`
 <img src="/img/anaconda_install_09.PNG" width="500">  
 
+
+
+## `mne`
+Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować tak:
+```
+pip install mne
+```
+
+
 ## git
-Aby zainstalować `mne` (oraz kilka innych pakietów) bezpośrednio z GitHub'a trzeba wcześniej zainstalować `git` - system kontroli wersji na którym opiera się GitHub. Gita znajdziemy wpisując w google `git`:  
+Aby zainstalować `mypy` (mój pakiet z którego będziemy korzystać podczas zajęć) bezpośrednio z GitHub'a trzeba wcześniej zainstalować `git` - system kontroli wersji na którym opiera się GitHub. Gita znajdziemy wpisując w google `git`:  
 <img src="/img/git_install_01.PNG" width="500">  
   
 pierwszy wynik w screenshocie powyżej (https://git-scm.com) to interesująca nas strona, wchodzimy. Na dole po prawej stronie mamy guzik do instalacji gita, kilkamy.  
@@ -60,11 +69,6 @@ następnie przechodzimy całą instalację krok po kroku (nie musicie zmieniać 
 <img src="/img/git_install_04.PNG" width="500">  
   
   
-
-## `mne`
-Niektóre pakiety nie są jednak dostępne w ramach condy. Instalujemy je wtedy za pomocą komendy `pip` (od `python install package`). `pip` to moduł do pythona, który jest dostępny w ramach Anacondy. Działa bardzo podobnie do komendy `conda`, piszemy `pip install nazwa_pakietu`. `mne` można by więc zainstalować poprzez `pip install mne`, przy czym wersja `mne`, z której będziemy korzystać (`0.13`) jeszcze nie została "opublikowana". W związku z tym z komendą `pip install mne` możecie jeszcze poczekać :). Jakby co - pierwszego dnia warsztatów sprawdzimy czy wszystkim wszystko działa.
-
-
 ## `mypy`
 W pewnym momencie przyda się Wam również pakiet `mypy` - to taka moja przechowalania kodu, z którego często korzystam. Z instalacją tego pakietu poczekajcie do dnia warsztatów. Pakiet ten można ściągnąć komendą `pip` z githuba:
 ```
@@ -79,6 +83,6 @@ from mne.io import read_raw_eeglab
 from mypy.proj import find_dropbox
 
 import mne
-assert mne.__version__.startswith('0.13')
+assert mne.__version__.startswith('0.14')
 ```
 Jeżeli komendy poszły bez błędu - z dużym prawdopodobieństwem wszystko jest ok.
