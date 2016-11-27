@@ -1,12 +1,14 @@
 # Praca domowa
 
 Na pracę domową składa się:
-* zainstalowanie pythona u siebie na komputerze (krok **Anaconda** z `instalacja.md`)
+* zainstalowanie pythona u siebie na komputerze (krok **Anaconda** z `instalacja.md`) oraz wrzucenie do wątku [PD0](https://github.com/mmagnuski/mozg-rozpajton/issues/9) screenshota z otwartym jupyter notebookiem w którym zdefiniowaliście zmienną `krab_kawalarz`, której wartość to Twoje imię i nazwisko.
 * powtórzenie tego, co zrobiliśmy na zajęciach 0 (`zajecia_0.md`)
 * przerobienie materiału poniżej  
 
 powyższe przygotuje Was na możliwość niezapowiedzianej kartkówki.  
-Pamiętajcie też, że przerobienie materiału nie znaczy tylko *przeczytanie* - ale **przetestowanie** go w `jupyter notebook`'u (prawdziwe zrozumienie, nawet poza nauką, pochodzi z eksperymentów).
+:exclamation: Nie czekajcie do ostatniej chwili - inaczej może się okazać, że nie starczy Wam czasu aby przygotować się na zajęcia i materiał przerabiany na nich będzie niezbyt zrozumiały, a więc będzie więcej do nadrobienia. Im więcej do nadrobienia tym większe prawdopodobieństwo, że nie zdążycie nadrobić do kolejnych zajęć i tak to się toczy i nakręca, aż do koszmarów z duszącym Was pythonem i grozą niezaliczenia zajęć  
+:exclamation: Pamiętajcie, że przerobienie materiału nie znaczy tylko *przeczytanie* - ale **przetestowanie** go w `jupyter notebook`'u (prawdziwe zrozumienie, nawet poza nauką, pochodzi z eksperymentów).
+
 
 # Materiał do przerobienia w domu:
 ## Prawda i fałsz
