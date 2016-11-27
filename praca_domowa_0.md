@@ -8,7 +8,7 @@ Na pracę domową składa się:
 powyższe przygotuje Was na możliwość niezapowiedzianej kartkówki.  
 Pamiętajcie też, że przerobienie materiału nie znaczy tylko *przeczytanie* - ale **przetestowanie** go w `jupyter notebook`'u (prawdziwe zrozumienie, nawet poza nauką, pochodzi z eksperymentów).
 
-
+# Materiał do przerobienia w domu:
 ## Prawda i fałsz
 Ważnymi i czesto wykorzystywanymi zmiennymi są zmienne typu `boolean`: `True` oraz `False` reprezentujące prawda oraz fałsz:
 ```python
