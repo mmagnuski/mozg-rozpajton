@@ -45,8 +45,8 @@ Znów czerpiąc z biologii/życia codziennego: gatunek pies (*canis lupus famili
 
 > :exclamation: Gdy nawias jest pusty - wywołujemy funkcję albo metodę bez argumentów. Niektóre funkcje i metody (ale też i psy) takie są, że nie trzeba im podawać jak mają szczekać, a i tak szczekają. Przy czym funkcje oraz metody zwykle "odpalają" tylko wtedy gdy tego chcemy - z psami bywa różnie.
 
-
-Warto poznać jeszcze dwie metody tekstu: `replace` oraz `endswith`.  
+### `.replace()`
+Warto poznać jeszcze jedną metodę tekstu: `replace`.  
 `replace` pozwala podmienić w całym tekście pewne ciągi znaków (np. zwroty) na inne.
 Z `replace` korzystamy tak:
 ```python
@@ -68,9 +68,25 @@ mick = mick.replace('jak zdrowie', 'ponura')
 print(mick + '\nprzywdziewasz maskę urody szczura')
 ```
 
+
+
 #### *ZADANIE 1*
 Przetestuj krok po kroku co dzieje się w przykładzie zbrodni na klasyce, upewniając się że wszystko jest zrozumiałe (wliczając w to gorzką refleksję autora nad optymizmem pogody w jego ojczyźnie).
 
 #### *ZADANIE 2*
 Utwórz zmienna `tekst` o zawartości `"Kangury mieszkają w Australii. Bardzo lubię kangury"`. Najpierw użyj metody `lower` aby wszystkie litery były małe i zapisz wynik tej komendy w zmiennej `małe_kangury`. Następnie użyj metody `replace` aby podmienić `"kangury"` na `"wombaty"`
 Metody można ze sobą łączyć (układać je po kolei w jednej linijce) - gdy już zrobisz to zadanie pokombinuj jak je wykonać w jednej linijce. Łączenie metod w jednej linijce to ważna operacja (przynajmniej pod kątem przejrzystości i czytelności kodu) - `pies.daj_jesc().wyprowadz_na_spacer()`
+
+#### *ZADANIE 3*
+Przetestuje przykład poniżej:
+```python
+nazwisko = 'Magnuski'
+czy_polak = nazwisko.endswith('ski')
+print(czy_polak)
+
+nazwa = 'krabkolaborant.txt'
+czy_obrazek = nazwa.endswith('.png')
+print(czy_obrazek)
+```
+Co robi metoda tekstu `endswith`?
+Jeżeli nie masz pewności - poeksperymentuj.
