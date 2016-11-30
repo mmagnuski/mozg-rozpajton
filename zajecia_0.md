@@ -94,7 +94,14 @@ Funkcje w pythonie mogą posiadać też specjalne argumenty - tzw. argumenty naz
 print('dzień dobry', 'krab', 'Zbigniew.', sep='...')
 ```
 
-:construction:
+Argumenty nazwowe to takie specjalne argumenty (w przykładzie powyżej to `sep=`) - są specjalne właśnie dlatego, że podaje się je po nazwie. Nie trzeba ich podawać bo mają domyślne wartości. Dlatego jest to bardzo wygodne w sytuacji gdy funkcja ma wiele argumentów nazwowych - trzeba podać tylko te, które chcemy zmienić względem domyślnych wartości.
+Poniżej przykład, w zmiennej `raw` mamy surowy sygnał eeg, który chcemy przyciąć - tak aby uciąć mu pierwsze 10 sekund. Sygnał eeg w mne pythonie ma metodę [`crop`](http://martinos.org/mne/stable/generated/mne.io.Raw.html#mne.io.Raw.crop), która ma dwa podstawowe argumenty nazwowe - `tmin` oraz `tmax`. My chcemy wykorzystać tylko `tmin`, ponieważ przycinamy początek (*time minimum*), nie musimy wtedy ustawiać wartości `tmax`:
+```python
+raw.crop(tmin=10.)
+```
+
+`crop` nie ma dużo argumentów, ale wyobraźcie sobie funkcję, która ma 10 argumentów nazwowych - wtedy po nazwie ustawiamy tylko te argumenty, które mają przyjąć wartość inną od domyślnej.
+  
   
 ## Zmienne tekstowe
 Jednym z najczęściej używanych typów zmiennych (poza liczbowymi) są zmienne tekstowe. W ten sposób przechowujemy nazwy plików, treść całych wiadomości (e-mail) czy nawet całego Pana Tadeusza.  
