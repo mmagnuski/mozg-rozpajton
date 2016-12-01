@@ -7,7 +7,7 @@ nazwa_zmiennej[numer_elementu]
 ```
 Python numeruje od zera, więc pierwszy element - w tym wypadku pierwsza litera tekstu to dla niego element numer zero.
 W związku z tym czwarty element to element o indeksie 3.
-```
+```python
 # np:
 imie = "Mikołaj"
 imie[0] # aby dostać się do pierwszej litery (indeks zero)
@@ -17,7 +17,7 @@ To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a
 
 
 *Dodatkowe informacje*:
-```
+```python
 #wcale nie musimy tworzyć zmiennej aby adresować:
 "Alojzy"[4]
 
@@ -36,7 +36,7 @@ To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a
 * Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]`
 
 Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
-
+[Więcej o adresowaniu](https://github.com/mmagnuski/mozg-rozpajton/blob/zajecia-swps-2016-2017/dodatkowe/dodatkowe_informacje.md#indeksowanie-dla-zmieszanych-i-zainteresowanych)
 
 #### *ZADANIE*
 Stwórz zmienną `a` zawierającą tekst: `"123456789"`. Postaraj się zaznajomić z indeksowaniem sprawdzając operacje takie jak:
@@ -119,7 +119,7 @@ Ok, wiemy w jakim jesteśmy folderze, ale jak przejść do innego? Służy do te
 os.chdir(r'D:\dane\eksperyment01\eeg')
 ```
 
-(jeżeli zastanawiasz się po co jest to `r` przed napisem zerknij tutaj :construction: (tu będzie link do FAQ))
+(jeżeli zastanawiasz się po co jest to `r` przed napisem [zerknij tutaj](https://github.com/mmagnuski/mozg-rozpajton/blob/zajecia-swps-2016-2017/dodatkowe/dodatkowe_informacje.md#r))
 
 
 ### listy plików
