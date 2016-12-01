@@ -35,7 +35,7 @@ To dosyć kontrintuicyjna własność pythona (w porównaniu np. do matlaba, R'a
 * jeżeli indeksujemy od początku możemy pominąć zero i pisać tylko `imie[:4]`
 * Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]`
 
-Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).
+Podobnie jak adresowanie od zera, wyłączanie ostatniego elementu z zakresu nie jest intuicyjne i wymaga trochę czasu aby się doń przyzwyczaić, ale [ma swoje (dyskusyjne) uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html).  
 [Więcej o adresowaniu](https://github.com/mmagnuski/mozg-rozpajton/blob/zajecia-swps-2016-2017/dodatkowe/dodatkowe_informacje.md#indeksowanie-dla-zmieszanych-i-zainteresowanych)
 
 #### *ZADANIE*
