@@ -5,13 +5,22 @@ Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintry
   prosiaczek[od:od+dodaj]
   ```
   i faktycznie wybieramy tyle elementów ile wynosi dodaj.
-* dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie. To też czasami jest wygodne w programowaniu.
+* dodatkowo zakres `nazwisko[0:2]` oraz `nazwisko[2:4]` nie nachodzą na siebie. To też czasami jest wygodne w programowaniu. Na przykład gdy piszemy kod mający realizować okienko o długości `120` kroczące o `20` przez dane:
+
+   ```python
+   step_size = 20
+   window_size = 120
+   for current_step in range(0, dlugosc_danych, step_size):
+       data_slice = dane[current_step:current_step + window_size]
+       # coś robimy z data_slice
+   ```
 * to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje (dyskusyjne)  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
 
 Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego. Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania, porównaj:
 ```python
 # python
 imie[1:3] # od drugiego do trzeciego elementu (tzn. bez czwartego)
+          # tzn. indeksy 1 oraz 2 (bez 3)
 ```
 ```julia
 # julia
@@ -28,8 +37,34 @@ imie(1:3) % tutaj też
 ```
   
   
+### `r"?"`
+Zastanawiacie się pewnie po co to `r` przed nazwą ścieżki. `r` przed tekstem oznacza aby znaki `\` nie były w tym tekście traktowane jako znaki specjalne.
+Większość języków programowania, a w tym python, traktuje znak `\` jako znak specjalny. Gdy w tekście pojawia się ten znak oznacza on, że kolejny znak otrzymuje specjalnie znaczenie. `"\n"` jest na przykład traktowane jako return/enter tzn. przejście do kolejnej linijki. `"\t"` to z kolei tab. Możecie to sprawdzić używając funkcji `print()`:
+```python
+print('\tto\tjest\n\t\ttaki\n\ntekst')
+```
+Problem polega tylko na tym, że gdy chcemy podać nazwę ścieżki to (przynajmniej na Windowsie) musimy użyć znaków `\` nie jako znaków specjalnych, ale po prostu ukośników (backslash). Można to zrobić na dwa sposoby:
+* stawiając `r` przed tekstem (r jest od *raw string*):
+
+  ```python
+  print(r'\tto\tjest\n\t\ttaki\n\ntekst')
+  ```
+* zamiast `\` pisząc `\\`:
+
+  ```python
+  print('\\tto\\tjest\\n\\t\\ttaki\\n\\ntekst')
+  ```
+
+Ta pierwsza metoda jest bardzo często wygodniejsza.
+
+
 ## *dla ciekawskich, pętle w innych językach*
 Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać operację (funkcję) `wyslij_w_kosmos()`:
+```python
+# najpierw python:
+for x in vec:
+    wyslij_w_kosmos(x)
+```
 ```julia
 # julia
 for x in vec
@@ -109,24 +144,3 @@ znalezione_w_kuchni = [item for item in poszukiwane if item in w_kuchni]
 Zadanie:
 wszystkie pętle które przerabialiśmy dopiero co przerób na comprehensions.
 
-
-
-## *przykład pliku konfiguracyjnego IPythona*
-
-```python
-# plik ipython_config.py
-c = get_config()
-
-c.TerminalIPythonApp.display_banner = True
-c.InteractiveShellApp.log_level = 20
-
-c.InteractiveShellApp.exec_lines = [
-    'import numpy as np',
-    'import matplotlib.pyplot as plt',
-    'import pandas as pd'
-]
-c.InteractiveShellApp.exec_files = [
-    'jakis_plik.py',
-    'jakis_inny_plik.ipy'
-]
-```
