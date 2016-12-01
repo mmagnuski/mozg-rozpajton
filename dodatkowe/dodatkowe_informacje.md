@@ -83,6 +83,9 @@ Wyobraźmy sobie listę `vec` dla której kolejnych elementów chcemy wykonać o
 # najpierw python:
 for x in vec:
     wyslij_w_kosmos(x)
+
+# albo jeszcze prościej, list comprehension:
+[wyslij_w_kosmos(x) for x in vec]
 ```
 ```julia
 # julia
