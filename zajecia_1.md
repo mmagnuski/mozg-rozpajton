@@ -142,9 +142,9 @@ fls = glob.glob('*.set')
 Ostatni (albo przedostatni jeżeli :clock2:) typ zmiennych, omówimy go na razie tylko skrótowo.
 
 Słowniki są nieuporządkowanym zbiorem mapowań. Co to znaczy?
-*zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słownik mapuje słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
-W przypadku pythonowych słowników mówi się o mapowaniu *klucz* -> *wartość* (*key - value pairs*). 
-*nieuporządkowany* - w przydpaku pythonowych słowników kolejność kluczy nie ma znaczenia - istotne jest tylko jaka wartość odpowiada danemu kluczowi, a nie który to z kolei klucz. Porównaj to z listami, dla których najważniejsze jest *co jest gdzie*, a więc porządek elementów.
+* *zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
+  W przypadku pythonowych słowników mówi się o mapowaniu *klucz* -> *wartość* (*key - value pairs*). 
+* *nieuporządkowany* - w przydpaku pythonowych słowników kolejność kluczy nie ma znaczenia - istotne jest tylko jaka wartość odpowiada danemu kluczowi, a nie który to z kolei klucz. Porównaj to z listami, dla których najważniejsze jest *co jest gdzie*, a więc porządek elementów.
 
 Słownik tworzymy tak:
 ```python
@@ -166,31 +166,7 @@ d['dwa']
 2
 ```
 
-## :clock2: Macierze
-
-Na razie tylko skrótowo, importujemy moduł `numpy` i tworzymy dwie macierze:
+Wszystkie klucze danego słownika możemy otrzymać korzystając z metody `keys` słownika:
 ```python
-import numpy as np
-
-A = np.zeros((3, 3))
-print(A)
-
-B = np.random.random((3, 3))
-print(B)
+d.keys()
 ```
-
-przykładowy wynik drugiego printa
-```
-[[ 0.11320907  0.80013606  0.07407269]
- [ 0.95201376  0.81726886  0.53849516]
- [ 0.44352304  0.13394462  0.21847961]]
-```
-
-
-Podstawowe adresowanie macierzy:
-```python
-A[0, 1]
-
-A[:, 2]
-```
-
