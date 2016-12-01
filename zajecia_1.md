@@ -132,14 +132,20 @@ Możemy jako argument podać funkcji `listdir` ścieżkę folderu:
 fls = os.listdir(r'C:\mojebadanaia\nieudane')
 ```
 
-Często jednak chcemy mieć listę plików, które znajdują się w danym folderze, ale mają konkretne rozszerzenie (np. `.set` albo `.raw`). Najwygodniej jest skorzystać wtedy z modułu `glob`:
+Często jednak chcemy mieć listę plików, które znajdują się w danym folderze, ale mają konkretne rozszerzenie (np. `.set` albo `.raw`). Można skorzystać wtedy z modułu `glob`:
 ```python
 import glob
 fls = glob.glob('*.set')
 ```
 
+W niedługiej przyszłości, gdy poznacie pętle i comprehensions będziecie mogli robić tak:
+```python
+fls = [f for f in os.listdir(folder_name) if f.endswith('.raw')]
+```
+
+
 ## Słowniki
-Ostatni (albo przedostatni jeżeli :clock2:) typ zmiennych, omówimy go na razie tylko skrótowo.
+Ostatni typ zmiennych jaki omówimy dzisiaj, na razie dosyć skrótowo.
 
 Słowniki są nieuporządkowanym zbiorem mapowań. Co to znaczy?
 * *zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
