@@ -1,5 +1,23 @@
 ## Indeksowanie *dla zmieszanych i zainteresowanych*
 Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintrygowani:
+
+### więcej o zasadach indeksowania
+* Python numeruje od zera, więc pierwszy element to dla niego element numer zero
+* Gdy używamy ujemnych wartości - indeksujemy od końca. `imie[-1]` da nam ostatnią literę a `imie[-3]` przed-przedostatnią.
+* możemy też wybierać całe zakresy znaków używając operatora `:`:
+  ```python
+  imie[0:3]
+  ```
+  pozwala wziąć pierwszą, drugą i trzecią literę (elementy numer zero, jeden oraz dwa). Adresowanie zakresem `od:do` w pythonie daje nam w związku z tym wszystkie elementy znajdujące się w tym zakresie z wyłączeniem ostatniego elementu zakresu (`do`).
+* jeżeli indeksujemy od początku możemy pominąć zero i pisać tylko `imie[:4]`
+* Jeżeli indeksujemy do końca możemy pominąć ostatni indeks: `imie[2:]`
+* Możemy też indeksować w formacie `od:do:co_ile` np. `imie[1:5:2]` albo `imie[::2]`
+* Dzięki temu możemy odwrócić napis/listę tak: `imie[::-1]`
+
+### kontrintuicyjność zakresów i indeksowania od zera - kiedy to jest wygodne?
+Prawda jest taka, że w pewnych sytuacjach to jak działają zakresy jest nawet wygodne (zobacz niżej), ale początkowy koszt poznawczy związany z kontrinuicyjnością chyba nie jest tego wart. Cóż, to też musicie przeboleć - mimo tych dwóch kontrintuicyjności (indeksowanie od zera i to jak działają zakresy) python jest jednym z najprostszych, najbardziej czytelnych i wygodnych języków programowania. Matlab, który cały czas jest dominującym językiem w neuronauce ma dużo więcej bolączek i uwieradeł, które wołają o postę do nieba i skłaniają neuronaukowców coraz częściej do przesiadania się na pythona (no ale przede wszystkim - matlab nie jest darmowy).
+
+
 * zwróćcie uwagę, że ilość wybranych elementów to różnica między indeksem `od` oraz `do`. Tzn. `nazwisko[1:3]` wybiera nam dwa elementy, ten o indeksie 1 oraz o indeksie 2. Różnica `3 - 1` to właśnie dwa. Niektórzy uważają, że to eleganckie ponieważ mając zmienną `od`, która zawiera jakąś wartość całkowitą i zmienną `dodaj` (też z wartością całkowitą) możemy adresować listę `prosiaczek` w ten sposób:
   ```python
   prosiaczek[od:od+dodaj]
@@ -10,12 +28,13 @@ Jeżeli Was zastanawia adresowanie w Pythonie i jesteście nim zmieszani/zaintry
    ```python
    step_size = 20
    window_size = 120
-   for current_step in range(0, dlugosc_danych, step_size):
-       data_slice = dane[current_step:current_step + window_size]
-       # coś robimy z data_slice
+   for current_step in range(0, dlugosc_danych - window_size, step_size):
+       data_slice = dane[current_step:current_step + window_size] # o tę linijkę chodzi
+       # dalej coś robimy z data_slice
    ```
 * to że pierwszy element ma adres zero też ułatwia pewne sytuacje (np. indeksowanie resztą z dzielenia) oraz ma [swoje (dyskusyjne)  uzasadnienie](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)  
 
+### porównanie z innymi językami
 Tego typu konsekwencje specyficznego indeksowania w pythonie sprawiają, że pewne zadania programistyczne są łatwiejsze. Niestety sprawiają też kłopoty wchodząc w konflikt z naszymi przyzwyczajeniami z życia codziennego. Języki typu `R`, `Matlab` czy `Julia` z tego powodu nie stosują takiego indeksowania, porównaj:
 ```python
 # python
