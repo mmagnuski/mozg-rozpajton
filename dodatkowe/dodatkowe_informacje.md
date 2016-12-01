@@ -56,7 +56,7 @@ imie(1:3) % tutaj też
 ```
   
   
-### `r"?"`
+## `r"?"`
 Zastanawiacie się pewnie po co to `r` przed nazwą ścieżki. `r` przed tekstem oznacza aby znaki `\` nie były w tym tekście traktowane jako znaki specjalne.
 Większość języków programowania, a w tym python, traktuje znak `\` jako znak specjalny. Gdy w tekście pojawia się ten znak oznacza on, że kolejny znak otrzymuje specjalnie znaczenie. `"\n"` jest na przykład traktowane jako return/enter tzn. przejście do kolejnej linijki. `"\t"` to z kolei tab. Możecie to sprawdzić używając funkcji `print()`:
 ```python
@@ -75,6 +75,33 @@ Problem polega tylko na tym, że gdy chcemy podać nazwę ścieżki to (przynajm
   ```
 
 Ta pierwsza metoda jest bardzo często wygodniejsza.
+
+
+## kopiowanie, zmiany na kopii oraz zmiany *in-place*
+Zmienne takie jak napisy czy wartości liczbowe w pythonie zawsze zmieniane są "na kopii" tzn. kiedy np. piszemy `"Pan Tadeusz".lower()` dostajemy kopię napisu `"Pan Tadeusz"`, która została zmieniona metodą `lower`. Tak jakby ktoś Pana Tadeusza sklonował a następnie zgolił mu wąsy. Jednak niektóre zmienne w pythonie (takie jak listy) można zmieniać bez kopiowania. Np. w przykładzie poniżej:
+
+``` python
+A = ['delfin', 'przebrany za', 'pastora'] # to jest lista
+B = A
+```
+
+Teraz `A` i `B` wskazują na tę samą listę. `A` i `B` nie są oddzielnymi kopiami, odnoszą się do tej samej listy. To trochę tak jak terminy "Prezydent Polski" oraz "Andrzej Duda" - wskazują faktycznie (przynajmniej obecnie) na tę samą osobę.
+W związku z tym gdy teraz prosimy pythona by w miejsce ostatniego elementu listy na którą wskazuje zmienna `A` wstawił napis `"zielonego stwora"`, zmieni się jedna i ta sama lista, którą widzimy ze zmiennej `A` oraz ze zmiennej `B`:
+
+``` python
+B[-1] = "zielonego stwora"
+print(B) # ok, zmieniło się
+print(A) # ojej, tutaj też!
+```
+
+Aby uniknąć takich nieprzyjemności możemy używać metody `copy` listy. Gdy piszemy:
+
+```
+B = A.copy()
+```
+
+`B` i `A` już nie odnoszą się do tej samej listy, `B` odnosi się do kopii tej listy (a więc niezależnego fragmentu pamięci komputera). 
+Czasami co prawda chcemy aby ta sama lista była zmieniana poprzez różne zmienne, więc nie będziemy zawsze używać metody `copy`.
 
 
 ## *dla ciekawskich, pętle w innych językach*
