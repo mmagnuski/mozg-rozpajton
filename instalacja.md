@@ -3,7 +3,8 @@
 Podstawowe pakiety jakie będą Wam potrzebne podczas warsztatów to:
 * Anaconda - dystrybucja pythona i wielu pakietów do analizy i wizualizacji danych (korzystamy z pythona 3.5, ale jeżeli ktoś woli 2.7 - nie powinno być problemu)
 * `seaborn` - do ładnych wizualizacji
-* `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych (aby ściągnąć najnowszą wersję `mne` z GitHub'a będziecie jeszcze musieli zainstalować program `git`).
+* `mne` (inaczej mne-python) - pakiet do analizy danych elektrofizjologicznych
+* `mypy` - mój pakiet, który będzie Wam potrzebny między innymi do wyłuskiwania z danych EGI wydarzeń (mne-pyhon nie do końca robi to tak jak chcemy). Do ściągnięcia tego pakietu bezpośrednio z GitHub'a będziecie potrzebowali oprogramowania `git`.
 
 ## Anaconda
 Python oraz jego standardowa biblioteka, którą mamy na starcie (np. moduł `os` czy `glob`), oferują podstawową funkcjonalność. Do analizy danych potrzebujemy przeróżnych dodatkowych pakietów. Polecana dystrybucja pythona, z której będziemy korzystać na warsztatach to [Anaconda](https://www.continuum.io/downloads). Anaconda zawiera wiele standardowych pakietów używanych do analizy i wizualizacji danych takich jak `numpy`, `matplotlib`, `scipy`, `pandas` czy `statsmodels`. Ściągamy instalator dla pythona 3.5.
@@ -83,6 +84,6 @@ from mne.io import read_raw_eeglab
 from mypy.proj import find_dropbox
 
 import mne
-assert mne.__version__.startswith('0.14')
+assert mne.__version__.startswith('0.13')
 ```
 Jeżeli komendy poszły bez błędu - z dużym prawdopodobieństwem wszystko jest ok.
