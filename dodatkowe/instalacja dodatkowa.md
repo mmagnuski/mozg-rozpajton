@@ -16,6 +16,37 @@ conda install -c menpo mayavi
 ```
 
 
+
+## Jeżeli chcecie korzystać z wersji deweloperskiej `mne-python`a
+Najwygodniej moim zdaniem zrobić tak:
+* w konsoli wchodzi do folderu do którego chcemy ściągnąć `mne`
+
+   ```
+   cd "tam\gdzie\checmy"
+   ```
+* klonujemy `mne` z GitHuba za pomocą `git`a:
+
+  ```
+  git clone https://github.com/mne-tools/mne-python
+  ```
+* wchodzimy do sklonowanego pakietu:
+
+  ```
+  cd mne-python
+  ```
+* instalujemy w wersji deweloperskiej (abyśmy potem mogli update'ować pakiet bez konieczności reinstalacji):
+
+  ```
+  python install develop
+  ```
+Tyle, powinno już działać.  
+Następnym razem gdy chcemy zupdate'ować sobie mne względem tego co jest na GitHubie, wchodzimy do folderu z mne-pythonem i piszemy (z konsoli):
+```
+git pull
+```
+I mamy najświeższą deweloperską wersję mne-pythona.
+
+
 ## RPy2
 Jeżeli chcemy korzystać z R'a z poziomu pythona będziemy potrzebować pakietu `rpy2`. Większość funkcji statystycznych, które Wam się przydadzą jest w pakietach `scipy.stats` oraz `statsmodels` ale bardziej zaawansowane procedury statystyczne mogą nie być dostępne pod pythona. Wtedy warto skorzystać z R'a, ale aby nie trzeba było co chwilę przeskakiwać między pythonem i R'em oraz przemieszczać zmiennych warto skorzystać właśnie z `rpy2`. Niestety instalacja tego pakietu na Windowsie do prostych nie należy (jak to zwykle jest w open-source - na Linuxie nie ma problemu - `pip install rpy2`).
 
