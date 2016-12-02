@@ -66,7 +66,7 @@ pierwszy wynik w screenshocie powyżej (https://git-scm.com) to interesująca na
 Instalator gita zostanie pobrany automatycznie, wystarczy teraz go odpalić.  
 <img src="/img/git_install_03.PNG" width="300">  
   
-następnie przechodzimy całą instalację krok po kroku (nie musicie zmieniać domyślnych ustawień). Upewnijcie się jednak gdy dotrzecie do momentu wyświetlonego poniżej że zaznaczony jest środkowy checkbox. Bez zaznaczenia tej opcji komenda `git` nie będzie działać w konsoli Windowsa i stoswne komendy do instalacji `mne` oraz `mypy` mogą nie działać.
+następnie przechodzimy całą instalację krok po kroku (nie musicie zmieniać domyślnych ustawień). Upewnijcie się jednak gdy dotrzecie do momentu wyświetlonego poniżej że zaznaczony jest środkowy checkbox. Bez zaznaczenia tej opcji komenda `git` nie będzie działać w konsoli Windowsa i stoswne komendy do instalacji `mypy` mogą nie działać.
 <img src="/img/git_install_04.PNG" width="500">  
   
   
