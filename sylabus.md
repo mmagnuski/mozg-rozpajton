@@ -1,55 +1,63 @@
 ## Tematyka zajęć
 
-### 1. Wprowadzenie do programowania i analizy danych w pythonie:
+### 1. Wprowadzenie do programowania i analizy danych w pythonie cz. 1:
   * wprowadzenie do tematyki zajęć - python i analiza danych elektrofizjologicznych
   * zapoznanie ze środowiskami do pythona: konsola, jupyter notebook
-  * zmienne i ich typy (int, float, string, list)
+  * zmienne i ich typy (int, float, string)
   * operacje na zmiennych (dodawanie i mnożenie wartości liczbowych, tekstowych)
-  * importowanie modułów - moduł `os`
-  * mne-python: wczytywanie plików oraz podstawowe operacje (filtrowanie, dodawanie montażu itp.)
 
-### 2. Potencjały wywołane macierze i wizualizacja
+### 2. Wprowadzenie do programowania i analizy danych w pythonie cz. 2:
+  * kilka metod zmiennych tekstowych
+  * adresowanie zmiennych tekstowych
+  * listy i ich adresowanie, łączenie wielu adresowań
+  * importowanie modułów; moduł `os`
+  * mne-python: wczytywanie plików oraz ich wyświetlanie
+
+### 3. Potencjały wywołane macierze i wizualizacja
+  * mne-python: podstawowe operacje (filtrowanie, dodawanie montażu itp.)
   * numpy, macierze, macierz wydarzeń (events)
-  * epokowanie i selekcja epok
+  * epokowanie i selekcja epok (+ słowniki)
   * potencjały wywołane, wizualizacja potencjałów w mne
   * operacje na macierzy danych obiektu Evoked
   * pakiet matplotlib i podstawy własnoręcznej wizualizacji
-  * funkcje
 
-### 3. ICA, Analiza potencjałów wywołanych
-  * listy, list comprehensions, słowniki
+### 4. ICA, Analiza potencjałów wywołanych
   * ica w mne pythonie
   * selekcja komponentów
+  * funkcje
+  * wstęp do pętli i list comprehensions
+  * corrmap - automatyczna selekcja komponentów
+
+dodatkowe:
+  * autoreject - automatyczna selekcja epok
+
+### 5. Przetwarzanie wielu plików, analiza statystyczna
+  * pętle
   * analiza peaku, inne metody oparte na obszarze zainteresowania
   * wstęp do analiz nie opartych o redukcje danych (cluster-correction)
-
-### 4. Przetwarzanie wielu plików, analiza statystyczna
-  * pętle
-  * autoreject - automatyczna selekcja epok
-  * corrmap - automatyczna selekcja komponentów
   * analiza statystyczna oparta o redukcję danych
   * przykład analizy z użyciem cluster-correction
 
-### 5. Kraina częstotliwości
+### 6. Kraina częstotliwości
   * wstęp do analiz częstotliwościowych, splot
   * analiza widma w mne
   * czas-częstość - podstawowe operacje w mne
   * wybór parametrów przy analizie czas-częstość
 
-### 6. Częstotliwościowych analiz część dalszy
+### 7. Częstotliwościowych analiz część dalszy, test, konsultacje
   * redukcja - częstotliwości i obszary zainteresowania
   * interaktywna eksploracja efektów
   * analiza statystyczna (+cluster-correction)
-  * inter-trial coherence
-  * decoding
-
-### 7. Test, konsultacje
   * test z zakresu podstaw pythona i wykorzystania mne-pythona i innych podstawowych pakietów
   * konsultacje projektów końcowych
-  * o czym nie było na zajęciach: 
-    - analiza źródeł - lokalizacja sygnału, analiza niezależnych komponentów
-    - connectivity, phase-amplitude coupling
-    - inne czary-mary
+
+Materiały dodatkowe, czyli o czym nie było na zajęciach: 
+  - inter-trial coherence
+  - decoding
+  - analiza źródeł - lokalizacja sygnału, analiza niezależnych komponentów
+  - connectivity, phase-amplitude coupling
+  - inne czary-mary
+
 
 ## Zaliczenie zajęć
 * obecność
@@ -58,21 +66,21 @@
 * możliwe niezapowiedziane kartkówki oraz prace domowe :imp:
 
 ## Key concepts - `python`
-### Zajęcia 0
+
 #### dane
 * zmienne tekstowe (i liczbowe)
-* importowanie, moduł `os`
+* adresowane zmiennych tekstowych
 * listy, adresowanie list
+* importowanie, moduł `os`
 * słowniki
-* numpy array (tylko prosty przykład tworzenia i adresowania)
+* numpy array (tworzenie i adresowanie)
 
 #### operacje
 * funkcje - na przykładzie funkcji `print`
 * argumenty nazwowe (`print('tekst', 23, list('abcd'), sep='; ')`)
-* metody - na przykładzie zmiennych tekstowych (np `join` i `split`)
+* metody zmiennych tekstowych - na przykładzie zmiennych tekstowych (np `join` i `split`)
 
 ## Key concepts - `mne`
-### Zajęcia 0
 #### dane
 * `Raw` - co tam w środku gra
 * `Montage`
