@@ -121,6 +121,17 @@ os.chdir(r'D:\dane\eksperyment01\eeg')
 
 (jeżeli zastanawiasz się po co jest to `r` przed napisem [zerknij tutaj](https://github.com/mmagnuski/mozg-rozpajton/blob/zajecia-swps-2016-2017/dodatkowe/dodatkowe_informacje.md#r))
 
+Będąc w jupyter notebook'u możecie też korzystać z normalnych komend unixowych (`ls`, `cd`, `mkdir` ...). Wtedy przejście do folderu opisane powyżej jest jeszcze prostsze:
+```
+cd D:\dane\eksperyment01\eeg
+```
+
+tego typu komendy najlepiej wywoływać w oddzielnej komórce (tzn. bez towarzyszącego im innego kodu w pythonie).
+W sytuacji gdy masz zmienną przechowującą napis będący ścieżką do folderu, do którego chcesz się przenieść, możesz skorzystać z `$` aby podać tylko nazwę zmiennej. Np. masz zmienną `pth`, w której jest napis `r'D:\dane\eksperyment01\eeg'`, możesz więc podać scieżkę tak:
+```
+cd $pth
+```
+
 
 ### listy plików
 Inną bardzo przydatną funkcją `os` jest funkcja `listdir()`. Funkcja ta zwraca nam listę nazw plików znajdujących się w danym folderze:
@@ -138,41 +149,15 @@ import glob
 fls = glob.glob('*.set')
 ```
 
-W niedługiej przyszłości, gdy poznacie pętle i comprehensions będziecie mogli robić tak:
+Możecie też wykorzystac `from ... import ...`:
+```
+from glob import glob
+fls = glob('*.set')
+```
+
+W niedługiej przyszłości, gdy poznacie pętle i comprehensions będziecie mogli robić też tak:
 ```python
 fls = [f for f in os.listdir(folder_name) if f.endswith('.raw')]
 ```
 
-
-## Słowniki
-Ostatni typ zmiennych jaki omówimy dzisiaj, na razie dosyć skrótowo.
-
-Słowniki są nieuporządkowanym zbiorem mapowań. Co to znaczy?
-* *zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
-  W przypadku pythonowych słowników mówi się o mapowaniu *klucz* -> *wartość* (*key - value pairs*). 
-* *nieuporządkowany* - w przydpaku pythonowych słowników kolejność kluczy nie ma znaczenia - istotne jest tylko jaka wartość odpowiada danemu kluczowi, a nie który to z kolei klucz. Porównaj to z listami, dla których najważniejsze jest *co jest gdzie*, a więc porządek elementów.
-
-Słownik tworzymy tak:
-```python
-d = {'jeden': 1, 'dwa': 2}
-
-# albo tak:
-d = dict(jeden=1, dwa=2)
-
-# możemy też utworzyć pusty słownik i później go uzupełnić:
-d = dict() # d = {}
-d['jeden'] = 1
-d['dwa'] = 2
-```
-
-Otrzymany słownik pozwala nam "tłumaczyć" tekstową reprezentację liczb na reprezentację cyfrową:
-```python
-d['dwa']
-
-2
-```
-
-Wszystkie klucze danego słownika możemy otrzymać korzystając z metody `keys` słownika:
-```python
-d.keys()
-```
+ale `glob` jest naprawdę wygodnym mini-modułem. [Tutaj więcej informacji o `glob`](https://docs.python.org/3.5/library/glob.html).
