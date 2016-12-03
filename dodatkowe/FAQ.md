@@ -16,4 +16,4 @@ Pomóc może Ci następująca komenda:
 ```
 conda remove _nb_ext_conf
 ```
-zerknij też w ten [wątek na GitHubie](https://github.com/jupyter/notebook/issues/1716)
+zerknij też w [ten](https://github.com/jupyter/notebook/issues/1716) lub [ten](https://github.com/jupyter/notebook/issues/1805) wątek na GitHubie. 
