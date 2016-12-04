@@ -7,6 +7,13 @@ Zadania do domu:
 3. zainstalować u siebie mne pythona i ściągnąć co najmniej kilka plików z Dropbox'a
 4. przerobić materiał do domu (poniżej) - wliczając w to wykonanie zadań.
 
+:exclamation: Uwaga, w tym tygodniu wysyłacie odpowiedzi (oznaczone w zadaniach ikoną :email:) mailem. Format odpowiedzi to jupyter notebook zapisany jako `.ipynb` (w jupyter notebooku: `File -> Download as... -> Notebook`).
+:exclamation: Mail musi być wysłany do dwóch adresatów: `mmagnsuki@swps.edu.pl` oraz `kobarska@st.swps.edu.pl` a tytuł musi mieć formę:
+`pd_1_inazwisko` gdzie `i` to pierwsza litera Twojego imienia a `nazwisko` to Twoje nazwisko - bez polskich znaków (tzn zamieniając `ą` na `a`, `ż` na `z` itd.). Odpowiedni tytuł jest ważny - będziemy wyszukiwać prace domowe używając odpowiedniego filtra w poczcie, więc złe nazwanie maila może doprowadzić do tego, że praca nie zostanie sprawdzona.
+Przykład poprawnego nazwania maila:
+> Student nazywa się Bogumił Żęszć, więc wysyła pracę domową w mailu o tytule `pd_1_bzeszc`. Wszyscy żyją długo i szczęśliwie.
+
+
 # materiał do domu
 
 ## Słowniki
@@ -40,7 +47,9 @@ Wszystkie klucze danego słownika możemy otrzymać korzystając z metody `keys`
 d.keys()
 ```
 
-:construction: Tu dojdzie jeszcze jedno-dwa zadania ze słowników... :construction:
+### :email: ZADANIE
+:construction: work in progress :construction:
+
 
 ## plotowanie w `mne`
 Wczytaj dane eeg w formacie `.raw` do zmiennej `raw` (tak jak na zajęciach), odpal `%matplotlib` (w oddzielnej komórce), a następnie:
