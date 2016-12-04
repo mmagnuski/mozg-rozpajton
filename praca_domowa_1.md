@@ -16,6 +16,24 @@ Przykład poprawnego nazwania maila:
 
 # materiał do domu
 
+## Listy i adresowanie
+
+### :email: ZADANIE :email:
+Utwórz następującą listę:
+```python
+lst = [[1, 2, 3], '1234', [[5, 6], [7, 7, 9]], 'tik-tok', 5]
+```
+
+Za pomocą adresowania otrzymaj:
+* wartość 5 - zrób to na co najmniej dwa sposoby
+* tekst '23'
+* wartość 6
+* listę `[1, 3]`
+* listę `[3, 1]`
+* listę `[7, 9]` (spróbuj na dwa sposoby)
+* napis 'kot'
+
+
 ## Słowniki
 Słowniki są nieuporządkowanym zbiorem mapowań. Co to znaczy?
 * *zbiór mapowań* - prawdziwy słownik (papierowy albo komputerowy) mapuje nam słowa na ich definicje albo słowa jednego języka na słowa innego języka. Innymi słowy słownik tworzy pary skierowanych relacji takich jak `słowo po polsku` `->` `słowo po holendersku` albo `słowo po polsku` `->` `lista słów po holendersku` albo jeszcze `słowo po holendersku` `->` `opis po węgiersku`. Pythonowe słowniki też dokonują takich przyporządkowań, ale zmiennych do innych zmiennych. Możemy na przykład utworzyć słownik, który mapuje wartości liczbowe na zmienne tekstowe (np. nazwy tych liczb w jakimś języku). Ale słowniki możemy też wykorzystywać nawet do mapowania takich relacji: nazwa osoby badanej -> wyniki eeg tej osoby.
