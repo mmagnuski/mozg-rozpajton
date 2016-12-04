@@ -1,17 +1,15 @@
-:construction: Work in progress... :construction:
-
-Zadania do domu:
+# Zadania do domu:
 
 1. Powtórzyć materiał obecny w pliku `zajcia_1.md`.
 2. Powtórzyć materiał z [notebooka, którego utworzyliśmy na zajęciach](https://github.com/mmagnuski/mozg-rozpajton/blob/zajecia-swps-2016-2017/notebooks/zajecia_1.ipynb).
 3. zainstalować u siebie mne pythona i ściągnąć co najmniej kilka plików z Dropbox'a
 4. przerobić materiał do domu (poniżej) - wliczając w to wykonanie zadań.
 
-:exclamation: Uwaga, w tym tygodniu wysyłacie odpowiedzi (oznaczone w zadaniach ikoną :email:) mailem. Format odpowiedzi to jupyter notebook zapisany jako `.ipynb` (w jupyter notebooku: `File -> Download as... -> Notebook`).
+:exclamation: Uwaga, w tym tygodniu wysyłacie odpowiedzi (oznaczone w zadaniach ikoną :email:) mailem. Format odpowiedzi to jupyter notebook zapisany jako `.ipynb` (w jupyter notebooku: `File -> Download as... -> Notebook`).  
 :exclamation: Mail musi być wysłany do dwóch adresatów: `mmagnsuki@swps.edu.pl` oraz `kobarska@st.swps.edu.pl` a tytuł musi mieć formę:
-`pd_1_inazwisko` gdzie `i` to pierwsza litera Twojego imienia a `nazwisko` to Twoje nazwisko - bez polskich znaków (tzn zamieniając `ą` na `a`, `ż` na `z` itd.). Odpowiedni tytuł jest ważny - będziemy wyszukiwać prace domowe używając odpowiedniego filtra w poczcie, więc złe nazwanie maila może doprowadzić do tego, że praca nie zostanie sprawdzona.
+`pd_1_inazwisko` gdzie `i` to pierwsza litera Twojego imienia a `nazwisko` to Twoje nazwisko - bez polskich znaków (tzn zamieniając `ą` na `a`, `ż` na `z` itd.). Odpowiedni tytuł jest ważny - będziemy wyszukiwać prace domowe używając odpowiedniego filtra w poczcie, więc złe nazwanie maila może doprowadzić do tego, że praca nie zostanie sprawdzona.  
 Przykład poprawnego nazwania maila:
-> Student nazywa się Bogumił Żęszć, więc wysyła pracę domową w mailu o tytule `pd_1_bzeszc`. Wszyscy żyją długo i szczęśliwie.
+> Student nazywa się Bogumił Żęść, więc wysyła pracę domową w mailu o tytule `pd_1_bzesc`. Wszyscy żyją długo i szczęśliwie.
 
 
 # materiał do domu
@@ -65,8 +63,16 @@ Wszystkie klucze danego słownika możemy otrzymać korzystając z metody `keys`
 d.keys()
 ```
 
-### :email: ZADANIE
-:construction: work in progress :construction:
+### :email: ZADANIE :email:
+Utwórz słownik, który dokonuje takiego mapowania:
+```
+'warunek1' -> ['plik02.raw', 'plik05.raw', 'plik06.raw']
+'warunek2' -> ['plik01.raw', 'plik03.raw', 'plik04.raw']
+```
+
+Teraz napisz komendy, które wyświetlają:
+* pliki dla warunku drugiego
+* pierwszy i ostatni plik warunku pierwszego
 
 
 ## plotowanie w `mne`
@@ -78,10 +84,14 @@ albo przez google search dla hasła `mne python raw plot` albo po prostu wchodz�
   * `n_channels`
   * `duration`
   * `start`
+
 2. podobnie sprawdź dokumentację dla metody `filter`. Zobacz jak zmieniają się dane gdy wykonasz komendę:
 ```python
 raw.filter(0.5, None)
 raw.plot()
 ```
 
-:construction: work in progress... :construction:
+### :email: ZADANIE :email:
+Napisz komendy, które:
+* filtrują sygnał dolnoprzepustowo - przepuszczają poniżej 45 Hz
+* wyświetlają 2 sekundy 4 pierwszych kanałów
