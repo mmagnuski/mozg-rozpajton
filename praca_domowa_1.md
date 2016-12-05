@@ -6,7 +6,7 @@
 4. przerobić materiał do domu (poniżej) - wliczając w to wykonanie zadań.
 
 :exclamation: Uwaga, w tym tygodniu wysyłacie odpowiedzi (oznaczone w zadaniach ikoną :email:) mailem. Format odpowiedzi to jupyter notebook zapisany jako `.ipynb` (w jupyter notebooku: `File -> Download as... -> Notebook`).  
-:exclamation: Mail musi być wysłany do dwóch adresatów: `mmagnsuki@swps.edu.pl` oraz `kobarska@st.swps.edu.pl` a tytuł musi mieć formę:
+:exclamation: Mail musi być wysłany do dwóch adresatów: `mmagnuski@swps.edu.pl` oraz `kobarska@st.swps.edu.pl` a tytuł musi mieć formę:
 `pd_1_inazwisko` gdzie `i` to pierwsza litera Twojego imienia a `nazwisko` to Twoje nazwisko - bez polskich znaków (tzn zamieniając `ą` na `a`, `ż` na `z` itd.). Odpowiedni tytuł jest ważny - będziemy wyszukiwać prace domowe używając odpowiedniego filtra w poczcie, więc złe nazwanie maila może doprowadzić do tego, że praca nie zostanie sprawdzona.  
 Przykład poprawnego nazwania maila:
 > Student nazywa się Bogumił Żęść, więc wysyła pracę domową w mailu o tytule `pd_1_bzesc`. Wszyscy żyją długo i szczęśliwie.
