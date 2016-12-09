@@ -90,18 +90,6 @@ event_colors = {1: 'red', 2: 'green', 36: 'seagreen', 40: 'seagreen',
   (przekopiujcie powyższy kod, uruchomcie i naprawcie błędy)
 * set_eeg_reference
 
-## kolejne kroki:
-przerobimy teraz podstawy numpy i macierzy - to nam się później bardzo przyda.
-* numpy, numpy arrays
-  - importowanie
-  - tworzenie losowej macierzy
-  - tworzymy listę wartośći, `np.array()` a następnie `reshape`
-  - proste adresowanie
-  - uśrednianie
-  - średnia z elektrod [2, 5, 8] dla próbek czasowych `500:750`
-* gąszcz wartości mało nam zwykle mówi, trzeba go sobie wyświetlić:
-  - matplotlib, import 
-  - prosty plot, na razie tyle
 
 * epokujemy, przyda nam się słownik tłumaczący co znaczą wartości wydarzeń. Tworzymy taki słownik:
 ```python
@@ -110,13 +98,6 @@ event_id = {"response\left": 1, "response\right": 2, "response\space": 3,
             "face\0": 52, "face\90": 56, "face\180": 60,
             "blank_screen": 64, "fixation": 128, "procedure_start": 192}
 ```
+* to są wszystkie wydarzenia, a do epokowania chcemy tylko prezentację bodźców - zmieńcie adekwatnie słownik
 * aby poepokować sygnał korzystamy z `mne.Epochs` - sprawdźcie w sieci dokomentację tej funkcji.
 * poepokowany sygnał przechowujemy w zmiennej `epochs` - :clock2: przejrzymy go i wyrzucimy najgorsze epoki)
-
-## erp i jego plotowanie
-* epoki -> plot_image i smoothing
-* average -> erp
-  * plot (bez i z spatial_colors)
-  * plot_joint
-  * plot_topomaps
-(* funkcje)
