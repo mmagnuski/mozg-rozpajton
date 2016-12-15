@@ -1,5 +1,10 @@
 zajecia 04:
-* notebook do ściągnięcia
+* przygotowanie:
+  - ściągnijcie edytor tekstowy atom - [tutaj](https://atom.io/)
+  - notebook i kod do ściągnięcia
+  - w tym czasie: pytania?
+* uruchamianie kodu w pliku `.py` z poziomu jupytera - `%run`
+  - jak radzić sobie z błędami w kodzie; jak zrozumieć wężowy język błędów
 * co to są funkcje
   - jak je piszemy
   - prosty przykład 
