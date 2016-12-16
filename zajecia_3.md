@@ -32,12 +32,25 @@ zajecia 04:
     Do środka funkcji wrzućcie wszystkie komendy aż do epokowania oprócz:
     - plotowania (nie chcemy aby wczytywanie jakiegoś pliku łączyło się z wyskakiwaniem wielu wykresów)
     - printów (podobnie: nie chcemy wypisywać na ekranie niepotrzebnych rzeczy)
-    - 
+    - importów (importujemy wszystko co potrzebne na początku, jeszcze przed definicją funkcji)
   
-* erpy i viz (+ operacje na danych erpa)
-* selekcja epok, złych kanałów, interpolacja, referencja do średniej
+* erpy i viz (+ :clock2: operacje na danych erpa):
+  - `plot_image`
+  - `epochs[warunek].average()`
+  - `plot` i `spatial_colors`
+  - `plot_topomap`
+  - `plot_joint`
+* selekcja epok, złych kanałów, referencja do średniej
 * ICA i selekcja komponentów
-  - przeglądanie topografii i własności komponentów
-  - przeglądanie sygnału komponentów
-  - sprawdzanie zmian po usunięciu komponentu
-* (:clock2: pętle i corrmap - inaczej do domu? :house:) 
+  - tworzymy obiekt ica i stosujemy go do danych:
+    ```python
+    from mne.preprocessing.ica import ICA
+    ica = ICA(n_components=0.95, method='extended-infomax')
+    ica.fit(epochs)
+    ```
+  
+  - przeglądanie topografii (`ica.plot_components`) i własności komponentów (`ica.plot_properties`)
+  - przeglądanie sygnału komponentów (`ica.plot_sources`)
+  - sprawdzanie zmian po usunięciu komponentu (`ica.plot_overlay`)
+* interpolacja złych kanałów (dopiero po ICA)
+* (:clock2: pętle i corrmap - inaczej do domu? :house:)
