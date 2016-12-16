@@ -1,7 +1,8 @@
 zajecia 04:
 * przygotowanie:
   - ściągnijcie edytor tekstowy atom - [tutaj](https://atom.io/)
-  - notebook i kod do ściągnięcia
+  - kod do ściągnięcia `code/fix_errors.py`
+  - notebook - `notebooks/zajecia_3_start.ipynb`
   - dziś będziemy korzystać z pliku `CAT107 20131027 1648002.raw` - upewnijcie się, że go macie
   - w tym czasie: pytania?
 * uruchamianie kodu w pliku `.py` z poziomu jupytera - `%run`
@@ -53,4 +54,4 @@ zajecia 04:
   - przeglądanie sygnału komponentów (`ica.plot_sources`)
   - sprawdzanie zmian po usunięciu komponentu (`ica.plot_overlay`)
 * interpolacja złych kanałów (dopiero po ICA)
-* (:clock2: pętle i corrmap - inaczej do domu? :house:)
+* (:clock2: pętle i corrmap - ale pewnie bedzie do :house:)
