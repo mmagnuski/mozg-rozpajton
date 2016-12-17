@@ -71,11 +71,6 @@ Bardzo wygodna jest funkcja `help`. Funkcji `help` podajemy zazwyczaj jakąś in
 ```python
 help(print)
 ```
-Skorzystaj teraz z funkcji `help` aby dowiedzieć się co robi funkcja `dir`. Później odpal w pythonie:
-```python
-dir()
-```
-i zobacz co się stanie. :boom:
 
 Jeżeli jesteś w jupyter notebook'u (a jesteś jeżeli jesteś na piątkowych zajęciach na swps):
 zamiast korzystać z funkcji `help` mając kursor wewnątrz nawiasu jakiejś funkcji naciśnij <key>shift</key> + <key>tab</key>:
@@ -91,16 +86,24 @@ ile razy | jaki efekt |
 ## Funkcje - keyword arguments
 Funkcje w pythonie mogą posiadać też specjalne argumenty - tzw. argumenty nazwowe (*keyword arguments*). Są argumenty, których nie podajemy funkcji normalnie, ale poprzedzając je identyfikatorem argumentu:
 ```python
+nazwa_funkcji(argument1, argument2, nazwa_argumentu=argument)
+```
+na przykład dla funkcji `print`:
+```python
 print('dzień dobry', 'krab', 'Zbigniew.', sep='...')
+```
+co wyświetla nam taki napis:
+```
+dzień dobry...krab...Zbigniew
 ```
 
 Argumenty nazwowe to takie specjalne argumenty (w przykładzie powyżej to `sep=`) - są specjalne właśnie dlatego, że podaje się je po nazwie. Nie trzeba ich podawać bo mają domyślne wartości. Dlatego jest to bardzo wygodne w sytuacji gdy funkcja ma wiele argumentów nazwowych - trzeba podać tylko te, które chcemy zmienić względem domyślnych wartości.
-Poniżej przykład, w zmiennej `raw` mamy surowy sygnał eeg, który chcemy przyciąć - tak aby uciąć mu pierwsze 10 sekund. Sygnał eeg w mne pythonie ma metodę [`crop`](http://martinos.org/mne/stable/generated/mne.io.Raw.html#mne.io.Raw.crop), która ma dwa podstawowe argumenty nazwowe - `tmin` oraz `tmax`. My chcemy wykorzystać tylko `tmin`, ponieważ przycinamy początek (*time minimum*), nie musimy wtedy ustawiać wartości `tmax`:
+W przykładzie poniżej mamy zmienną `raw`, która zawiera surowy sygnał eeg. Chcemy ten sygnał przyciąć - tak aby uciąć mu pierwsze 10 sekund. Sygnał eeg w mne pythonie ma metodę [`crop`](http://martinos.org/mne/stable/generated/mne.io.Raw.html#mne.io.Raw.crop), która ma dwa podstawowe argumenty nazwowe - `tmin` oraz `tmax`. My chcemy wykorzystać tylko `tmin` (*time minimum*), ponieważ przycinamy początek, nie musimy wtedy ustawiać wartości `tmax`:
 ```python
 raw.crop(tmin=10.)
 ```
 
-`crop` nie ma dużo argumentów, ale wyobraźcie sobie funkcję, która ma 10 argumentów nazwowych - wtedy po nazwie ustawiamy tylko te argumenty, które mają przyjąć wartość inną od domyślnej.
+`crop` nie ma dużo argumentów, ale wyobraźcie sobie funkcję, która ma 10 argumentów nazwowych - wtedy po nazwie ustawiamy tylko te argumenty, które mają przyjąć wartość inną od domyślnej. Oto przykład takiej funkcji: 
   
   
 ## Zmienne tekstowe
@@ -125,8 +128,8 @@ tekst3 = tekst + tekst2
 
 Bardzo często wykorzystywaną funkcją w pythonie jest `len`. Funkcja ta pozwala sprawdzić długość danego obiektu. W przypadku tekstu `len` zwraca nam liczbę znaków tworzących tekst.
 ```python
-len(tekst2)
-len(tekst3)
+len('abcd') # daje nam 4
+len(tekst3) # daje nam 6 (zmienną tekst3 tworzymy wcześniej)
 ```
 
 Mówimy *zmienna `teskst2` to obiekt klasy `string`* - znaczy to tyle co *przedstawiciel gatunku* w biologii. Tyle tylko że gatunek jest trudniej zdefiniować a typ/klasę zmiennej łatwo: `type(tekst2)`.
