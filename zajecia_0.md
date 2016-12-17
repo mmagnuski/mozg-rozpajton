@@ -103,7 +103,7 @@ W przykładzie poniżej mamy zmienną `raw`, która zawiera surowy sygnał eeg. 
 raw.crop(tmin=10.)
 ```
 
-`crop` nie ma dużo argumentów, ale wyobraźcie sobie funkcję, która ma 10 argumentów nazwowych - wtedy po nazwie ustawiamy tylko te argumenty, które mają przyjąć wartość inną od domyślnej. Oto przykład takiej funkcji: 
+`crop` nie ma dużo argumentów, ale wyobraźcie sobie funkcję, która ma 10 argumentów nazwowych - wtedy po nazwie ustawiamy tylko te argumenty, które mają przyjąć wartość inną od domyślnej. Oto przykład takiej funkcji: [wyświetlanie sygnału w mne](http://martinos.org/mne/stable/generated/mne.io.Raw.html#mne.io.Raw.plot) (bardziej dokładnie jest to *metoda*, a nie funkcja - ale o tym będzie później).
   
   
 ## Zmienne tekstowe
