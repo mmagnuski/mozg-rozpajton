@@ -3,16 +3,16 @@
 ## Wyczyść to sam
 To w pewnym sensie powtórka - Waszym zadaniem jest wybrać sobie jeden plik,
 a następnie go wyczyścić (wyrzucanie epok i ICA). Szkic do wczytywania i
-przeglądania macie w notebook'u `zajecia_4_czyszczenie`.
+przeglądania macie w notebook'u `zajecia_4_czyszczenie`.  
 Na to zadanie macie 30-45 minut, przy czym podlega ono ocenie,
 więc nie traktujcie go jako czas wolny do surfowania po przepastnego netu
 krainach. Po przeczyszczeniu epok (ale przed usunięciem z nich komponentów),
 zapisujecie je jako `'<%nazwa_pliku%>-epo.fif'` wykorzystując metodę `save`
 obiektu epochs. Po zaznaczeniu złych komponentów - zapisujecie `ica` z użyciem
-metody `save` jako `'<%nazwa_pliku%>-ica.fif'`.
+metody `save` jako `'<%nazwa_pliku%>-ica.fif'`.  
 Gdyby były jakieś problemy możecie
 korzystać z tutoriali na Dropboxie, bądź podnosić kończyny by uzyskać pomoc
-moją bądź Kasi.
+moją bądź Kasi.  
 UWAGA! Każdy musi wybrać inny plik!
 
 ## przygotowanie
