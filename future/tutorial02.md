@@ -21,6 +21,7 @@ Aby uruchomić ipythona piszemy w konsoli: `ipython`. Jeżeli macie już dosyć 
 
 ## Wczytywanie plików tekstowych
 (*czyli policz autorów jednej z publikacji na temat bożonu Higgsa*)
+Plik tekstowy jest [tutaj](https://opentechschool.github.io/python-beginners/en/loops.html)
 
 Otwieranie plików tekstowych i wczytywanie tekstu jest proste. Składa się z 3 kroków:
 * otwieramy plik
