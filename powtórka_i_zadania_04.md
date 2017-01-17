@@ -51,7 +51,7 @@ from mne.preprocessing.ica import read_ica
 from mne.epochs import read_epochs
 ```
 
-Dajmy na to, że mamy już zmienną `data_dir`, która zawiera napis - ścieżkę do folderu z danymi. Przy czym nasze epoki znajdują się w folderze `epochs` a ica jest z kolei w folderze `ica`. Plik z ica nazywa się `A01-ica.fif' a plik z epokami `A01-epo.fif`. Jak to wczytać? Zakładając, że wcześniej zaimportowaliśmy `os.path` jako `op`, piszemy:
+Dajmy na to, że mamy już zmienną `data_dir`, która zawiera napis - ścieżkę do folderu z danymi. Przy czym nasze epoki znajdują się w folderze `epochs` a ica jest z kolei w folderze `ica`. Plik z ica nazywa się `A01-ica.fif` a plik z epokami `A01-epo.fif`. Jak to wczytać? Zakładając, że wcześniej zaimportowaliśmy `os.path` jako `op`, piszemy:
 ```python
 file_id = 'A01'
 epochs_dir = op.join(data_dir, 'epochs')
@@ -93,7 +93,7 @@ Dalej w notebooku jest taki fragment:
 from scipy.stats import ttest_ind
 test1 = ttest_ind(peak_val_face, peak_val_car)
 ```
-W `scipy.stats` znajdziecie wszystkie podstawowe testy statystyczne (natomiast w `scipy.stats.distributions` jakie tylko Wam się wymarzą rodzaje rozkładów) - `ttest_ind` to, jak możecie sprawdzić mocą google'a, po prostu test t dla prób niezależnych. Robimy powiem porównanie na poziomie pojedynczych powtórzeń w związku z czym zakładamy, że powtórzenia są względem siebie niezależne. To nie jest do końca prawda - w końcu reakcje na bodźce pochodzą z jednego mózgu, którego działanie rozciąga się w czasie - wartości zarejestrowane w poszczególnych powtórzeniach mogą być więc podobne od siebie w zależności od czasu jaki je dzieli. Nie możemy jednak w łatwy sposób sparować powtórzenia dla jednego i drugiego warunku, więc stosujemy test dla niezależnych pomiarów.
+W `scipy.stats` znajdziecie wszystkie podstawowe testy statystyczne (natomiast w `scipy.stats.distributions` jakie tylko Wam się wymarzą rodzaje rozkładów) - `ttest_ind` to, jak możecie sprawdzić mocą google'a, po prostu test t dla prób niezależnych. Robimy bowiem porównanie na poziomie pojedynczych powtórzeń w związku z czym zakładamy, że powtórzenia są względem siebie niezależne. To nie jest do końca prawda - w końcu reakcje na bodźce pochodzą z jednego mózgu, którego działanie rozciąga się w czasie - wartości zarejestrowane w poszczególnych powtórzeniach mogą być więc podobne do siebie w zależności od czasu jaki je dzieli. Nie możemy jednak w łatwy sposób sparować powtórzeń dla jednego i drugiego warunku, więc stosujemy test dla niezależnych pomiarów.
 Gdy będziemy przeprowadzać porównania dla pomiarów zależnych (inaczej *powtarzanych*) - zastosujemy `scipy.stats.ttest_rel` (rel jest od `related`).
 
 ## `format`
@@ -226,22 +226,25 @@ for kubek in kubki:
     Robot.zalej_wrzątkiem(kubek)
 ```
 auć.
+> Pamiętajcie że to, jak nazwiemy sobie zmienną nie ma specjalnie znaczenia. Możemy zrobić: `liczba = 'niespodzianka!'` i w zmiennej `liczba` będzie tekst. Podobnie jeżeli listę gości nazwiemy sobie `kubki`, to nawet jak napiszemy sobie `for kubek in kubki:` nie sprawi to, że kolejne elementy listy `kubki` (czyli w naszym przypadku goście) staną się kubkami.
 
 Ostatnia sprawa - nie zawsze chcemy się odnosić do elementów, po których przemieszcza się pętla. Czasem chcemy powtórzyć pewną czynność wielokrotnie np. wykrzyczeć "python przyjacielem moim jest" sto razy:
 ```python
 for i in range(100):
     print('python przyjacielem moim jest')
 ```
+(*swoją drogą - możecie spróbować tego jako metody na python panic attack - jeżeli doznajecie ataków paniki na myśl o zajęciach z wykorzystaniem pythona. W tym wypadku pocieszyć Was mogę tym, że ten komputerowy python nie zrobi Wam krzywdy - najwyżej skopie Wam analizy jeżeli źle napiszecie kod. :)*)
+
 Porównaj z:
 ```python
 for i in range(100):
     print(i)
 ```
 
-Ćwiczenia na pętle:
-1. Masz listę wartości `wart`. Napisz pętlę, która (`print`) wyświetla każdą z tych wartości powiększoną o 2 (tzn `+ 2`).
-2. Znów goście, tym razem chcesz aby robot przywitał każdego (aby oszczędzić sobie kłopotu nieznajomości imion). Robot ma metodę `powitaj`, która przyjmuje jeden argument - to, co należy przywitać. Pamiętaj, że robot ma też metodę `znajdź_gości`.
-3. Napisz kod schematu swojego, albo jakiegoś wyimaginowanego życia. Przykład:
+Ćwiczenia na pętle:  
+1. Masz listę wartości `wart`. Napisz pętlę, która (`print`) wyświetla każdą z tych wartości powiększoną o 2 (tzn `+ 2`).  
+2. Znów goście, tym razem chcesz aby robot przywitał każdego (aby oszczędzić sobie kłopotu nieznajomości imion). Robot ma metodę `powitaj`, która przyjmuje jeden argument - to, co należy przywitać. Pamiętaj, że robot ma też metodę `znajdź_gości`.  
+3. Napisz kod schematu swojego, albo jakiegoś wyimaginowanego życia. Przykład:  
   ```python
   człowiek = stwórz_człowieka()
   dni = ile_jeszcze_dni()
@@ -252,4 +255,4 @@ for i in range(100):
           człowiek.zrób(rzecz)
       człowiek.idź_spać()
   ```
-  Wasz przykład może być prosty (zwróćcie uwagę, że powyżej mamy przykład pętli w pętli - nie musicie czegoś takiego robić we własnym przykładzie). W waszym przykładzie nie musicie też używać
+  Wasz przykład może być prosty (zwróćcie uwagę, że powyżej mamy przykład pętli w pętli - nie musicie czegoś takiego robić we własnym przykładzie). W waszym przykładzie nie musicie też używać dnia tzn jeżeli piszecie np. `for dzień in range(123):` - nie musicie korzystać w ogóle ze zmiennej `dzień` (patrz przykład z wykrzykiwaniem, że python jest naszym przyjacielem).
