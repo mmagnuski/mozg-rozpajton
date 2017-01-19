@@ -1,8 +1,8 @@
-# Zadania domowe
+# Pomoce po zajęciach 04
 
 ## *Your path leads you back to me*
-Sporo osób miało na ostatnich zajęciach problem z ustawieniem poprawnej ścieżki do pliku - w związku z tym znajdziecie tu kilka ćwiczeń mających Wam pomóc.
-Prawda jest taka, że w tym drugim notatniku nie napisałem jasno, że dane są
+Sporo osób miało na ostatnich zajęciach problem z ustawieniem poprawnej ścieżki do pliku - w związku z tym znajdziecie tu kilka dodatkowych materiałów mających Wam pomóc.
+Prawda jest taka, że w notatniku `zajecia_04.ipynb` nie napisałem jasno, że dane są
 wczytywane nie z pliku `.raw` ale z zapisanych wcześniej plików `-epo.fif` oraz
 `-ica.fif`. Jeżeli jednak przyjrzycie się notebookowi dokładniej - zobaczycie skąd i jak wczytywane są dane.
 
