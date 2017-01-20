@@ -1,6 +1,6 @@
 ## Materiały do warsztatów na SWPS listopad 2016 - styczeń 2017
-Dane, z których korzystamy - są [tutaj, na Dropboxie](https://www.dropbox.com/sh/8lhwx9b12ci2c91/AACM1fA_Av5YkxXTPk-wlDDQa?dl=0). 
-
+Dane, z których korzystamy - są [tutaj, na Dropboxie](https://www.dropbox.com/sh/8lhwx9b12ci2c91/AACM1fA_Av5YkxXTPk-wlDDQa?dl=0).  
+`epochs clean` - folder z wieloma wyczyszczonymi przez Was epokami jest [tutaj](https://www.dropbox.com/sh/gxot88an9wefl3f/AACnbKpmAYALnKw0KRpDulg0a?dl=0).
 
 ## Biblioteki i narzędzia:
 Tych narzędzi/bibliotek uczymy się na zajęciach:
